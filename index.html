@@ -148,14 +148,68 @@ table.lv th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
 .l1{background:#dcfce7;color:#166534}.l2{background:#e0f2fe;color:#075985}.l3{background:#fef3c7;color:#92400e}.l4{background:var(--red-50);color:var(--red-dd)}
 
 /* syllabus */
-.syl{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;align-items:stretch}
-@media (max-width:900px){.syl{grid-template-columns:1fr}}
-.syl .photo{aspect-ratio:auto;min-height:260px}
-.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
-.tab{padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font:700 14px "Plus Jakarta Sans",sans-serif;cursor:pointer;color:#3a3f4b}
-.tab.on{background:var(--ink);border-color:var(--ink);color:#fff}
-.topics{display:flex;flex-wrap:wrap;gap:8px}
-.topics span{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px}
+.syl-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:24px}
+.syl-head .sub{margin-bottom:0}
+.seg{display:inline-flex;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:4px;gap:4px}
+.seg button{border:0;background:transparent;border-radius:10px;padding:10px 18px;cursor:pointer;text-align:left;font:700 15px "Plus Jakarta Sans",sans-serif;color:#3a3f4b}
+.seg button small{display:block;font-weight:500;font-size:12px;color:var(--muted)}
+.seg button.on{background:var(--ink);color:#fff}
+.seg button.on small{color:#c9cdd6}
+.mix{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:20px}
+.mix-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:14px;color:var(--muted);margin-bottom:12px}
+.mix-top b{color:var(--ink)}
+.mixbar{display:flex;height:34px;border-radius:9px;overflow:hidden;gap:3px}
+.mixbar div{background:var(--c);color:#fff;font-size:12.5px;font-weight:700;display:flex;align-items:center;padding:0 10px;white-space:nowrap;overflow:hidden}
+.mixleg{display:none;grid-template-columns:1fr 1fr;gap:6px 12px;margin-top:12px;font-size:13px}
+.mixleg span{display:flex;align-items:center;gap:7px}
+.mixleg span::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--c)}
+@media (max-width:640px){.mixbar{height:12px}.mixbar div{font-size:0;padding:0}.mixleg{display:grid}}
+.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+@media (max-width:900px){.sgrid{grid-template-columns:1fr}}
+.sgrid>*{min-width:0}
+.scard{background:#fff;border:1px solid var(--line);border-top:4px solid var(--c);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:14px}
+.scard header{display:flex;gap:14px;align-items:center}
+.scard .ic{background:color-mix(in srgb,var(--c) 12%,#fff);color:var(--c)}
+.scard h3{margin:0;font-size:18px;color:var(--ink);line-height:1.25}
+.scard header span{font-size:13.5px;color:var(--muted)}
+.scard .time{margin-left:auto;text-align:right;line-height:1.2;white-space:nowrap}
+.scard .time b{display:block;font-size:18px;color:var(--ink)}
+.scard .time span{font-size:12px}
+.scard .tests{margin:0;color:var(--text);font-size:15px}
+.lvlbox{background:var(--soft);border-radius:12px;padding:12px 14px;font-size:14.5px;color:var(--text)}
+.lvlbox b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-bottom:2px}
+.lab{display:block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.topics{display:flex;flex-wrap:wrap;gap:7px}
+.topics span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:13.5px}
+.topics span.hot{border-color:var(--c);color:var(--ink);font-weight:700;background:color-mix(in srgb,var(--c) 8%,#fff)}
+.topics span.hot::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--c);margin-right:7px;vertical-align:2px}
+.try{align-self:flex-start;background:transparent;border:1.5px solid var(--c);color:var(--c);border-radius:10px;padding:9px 16px;cursor:pointer;font:700 14px "Plus Jakarta Sans",sans-serif}
+.try:hover{background:color-mix(in srgb,var(--c) 8%,#fff)}
+.quiz{border:1.5px dashed var(--line);border-radius:14px;padding:16px}
+.quiz .qq{margin:0 0 12px;font-weight:600;color:var(--ink);font-size:15px;white-space:pre-line}
+.quiz .figs{display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+.quiz .figs .qm{width:56px;height:56px;border:1.5px dashed var(--muted);border-radius:8px;display:grid;place-items:center;font-weight:800;color:var(--muted)}
+.qopts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.qopts button{display:flex;align-items:center;gap:8px;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:9px 12px;cursor:pointer;font:500 14px "Plus Jakarta Sans",sans-serif;color:var(--text)}
+.qopts button:hover:not(:disabled){border-color:var(--c)}
+.qopts button:disabled{cursor:default}
+.qopts button.ok{border-color:var(--green);background:#ecfdf3}
+.qopts button.bad{border-color:var(--red);background:var(--red-50)}
+.qopts .k{font-weight:800;color:var(--muted)}
+.fb{margin-top:12px;font-size:14px;padding:10px 12px;border-radius:10px;background:var(--soft)}
+.fb b{color:var(--ink)}
+.fig{width:56px;height:56px;flex:none}
+.prep{display:grid;grid-template-columns:.9fr 1.1fr;margin-top:24px;background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden}
+@media (max-width:900px){.prep{grid-template-columns:1fr}}
+.prep>*{min-width:0}
+.prep img{width:100%;height:100%;object-fit:cover;min-height:220px}
+.prep .body{padding:30px}
+.prep h3{margin:0 0 14px;font-size:22px;color:var(--ink)}
+.prep ol{margin:0 0 22px;padding:0;list-style:none;counter-reset:p;display:grid;gap:12px}
+.prep li{display:flex;gap:12px;font-size:15px}
+.prep li::before{counter-increment:p;content:counter(p);flex:none;width:28px;height:28px;border-radius:50%;background:var(--red-50);color:var(--red);font-weight:800;display:grid;place-items:center;font-size:14px}
+.prep .btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
 
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
@@ -248,6 +302,10 @@ footer a:hover{color:#fff}
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="M22 4L12 14l-3-3"/></symbol>
   <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><path d="M8.2 13.9L7 23l5-3 5 3-1.2-9.1"/></symbol>
   <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+  <symbol id="i-puzzle" viewBox="0 0 24 24"><path d="M9 3h6v3a2 2 0 1 0 4 0V3h2v6h-3a2 2 0 1 0 0 4h3v8h-6v-3a2 2 0 1 0-4 0v3H3v-8h3a2 2 0 1 0 0-4H3V3h6z"/></symbol>
+  <symbol id="i-calc" viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M8 6h8M8 11h.01M12 11h.01M16 11h.01M8 15h.01M12 15h.01M16 15v3M8 18.5h4"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24"><path d="M2 4h6a4 4 0 0 1 4 4v13a3 3 0 0 0-3-3H2z"/><path d="M22 4h-6a4 4 0 0 0-4 4v13a3 3 0 0 1 3-3h7z"/></symbol>
+  <symbol id="i-shapes" viewBox="0 0 24 24"><rect x="3" y="13" width="8" height="8" rx="1"/><circle cx="17" cy="17" r="4"/><path d="M12 3l4.5 7h-9z"/></symbol>
 </svg>
 
 <div class="draft">Draft prototype for internal review — not an official offer.</div>
@@ -391,19 +449,42 @@ footer a:hover{color:#fff}
 
 <section class="s soft" id="syllabus">
   <div class="w">
-    <div class="kicker">Syllabus</div>
-    <h2>What to prepare</h2>
-    <p class="sub">Topics across all four sections. UG papers stay close to Class 12 level, and PG papers go a step further.</p>
-    <div class="syl">
-      <div class="photo"><img src="assets/study.jpg" alt="Student taking notes while preparing" loading="lazy"></div>
-      <div class="card">
-        <div class="tabs" id="syl-tabs">
-          <button class="tab on" data-k="lr">Logical Reasoning</button>
-          <button class="tab" data-k="qa">Quantitative Aptitude</button>
-          <button class="tab" data-k="va">Verbal Ability &amp; RC</button>
-          <button class="tab" data-k="ar">Abstract Reasoning</button>
-        </div>
-        <div class="topics" id="syl-topics"></div>
+    <div class="syl-head">
+      <div>
+        <div class="kicker">Syllabus</div>
+        <h2>What to prepare</h2>
+        <p class="sub">One paper, four sections. Choose your level to see what each section asks of you, then try a sample question.</p>
+      </div>
+      <div class="seg" id="lvl-seg">
+        <button class="on" data-l="UG">UG programs<small>BA · BCom · BBA · BCA</small></button>
+        <button data-l="PG">PG programs<small>MA · MCom · MBA · MCA</small></button>
+      </div>
+    </div>
+
+    <div class="mix">
+      <div class="mix-top"><span><b>200 MCQs</b> · 150 minutes · 1 mark each · no negative marking</span><span>Share of the paper</span></div>
+      <div class="mixbar">
+        <div style="--c:#ee2c3c;flex:75">Logical Reasoning · 75</div>
+        <div style="--c:#2563eb;flex:50">Quant · 50</div>
+        <div style="--c:#059669;flex:50">Verbal · 50</div>
+        <div style="--c:#7c3aed;flex:25">Abstract · 25</div>
+      </div>
+      <div class="mixleg"><span style="--c:#ee2c3c">Logical · 75</span><span style="--c:#2563eb">Quant · 50</span><span style="--c:#059669">Verbal · 50</span><span style="--c:#7c3aed">Abstract · 25</span></div>
+    </div>
+
+    <div class="sgrid" id="sgrid"></div>
+
+    <div class="prep">
+      <img src="assets/study.jpg" alt="Student taking notes while preparing" loading="lazy">
+      <div class="body">
+        <div class="kicker">How to prepare</div>
+        <h3>Three steps before your attempt</h3>
+        <ol>
+          <li><span>Take the free 20-question practice paper to find your weakest section.</span></li>
+          <li><span>Spend the most time on Logical Reasoning. It is 75 of the 200 questions.</span></li>
+          <li><span>Answer every question on the day. Wrong answers cost nothing.</span></li>
+        </ol>
+        <div class="btns"><a class="btn red" href="exam.html">Take the practice paper</a><a class="btn ghost" href="#register">Register for the full test</a></div>
       </div>
     </div>
   </div>
@@ -532,16 +613,89 @@ function fill(lv){ sel.innerHTML = PROGRAMS[lv].map(([v,t]) => `<option value="$
 document.querySelectorAll('input[name=lv]').forEach(r => r.onchange = () => fill(r.value));
 fill('UG');
 
-const SYL = {
-  lr:['Coding–decoding','Series','Blood relations','Direction sense','Seating arrangement','Syllogisms','Statements & assumptions','Analogies','Odd one out','Input–output','Puzzles','Data sufficiency'],
-  qa:['Percentages','Profit & loss','Simple & compound interest','Ratio & proportion','Averages','Time, speed & distance','Time & work','Number system','Algebra basics','Mensuration','Data interpretation','Probability'],
-  va:['Reading comprehension','Synonyms & antonyms','Sentence correction','Fill in the blanks','Para jumbles','Error spotting','Idioms & phrases','Vocabulary in context'],
-  ar:['Figure series','Rotation patterns','Mirror & water images','Odd figure out','Pattern completion','Figure matrix','Analogy of figures'],
-};
-const tabs = document.querySelectorAll('#syl-tabs .tab'), box = document.getElementById('syl-topics');
-function showSyl(k){ tabs.forEach(t => t.classList.toggle('on', t.dataset.k === k)); box.innerHTML = SYL[k].map(x => `<span>${x}</span>`).join(''); }
-tabs.forEach(t => t.onclick = () => showSyl(t.dataset.k));
-showSyl('lr');
+const SECTIONS = [
+  {key:'lr', name:'Logical Reasoning', c:'#ee2c3c', icon:'i-puzzle', q:75, time:'~55 min',
+   tests:'Spotting patterns, following rules and drawing conclusions.',
+   UG:{what:'Single-step questions: number and letter series, coding, directions and blood relations.',
+       hot:['Series','Coding–decoding','Direction sense','Blood relations'], more:['Analogies','Odd one out','Alphabet test','Simple arrangements'],
+       quiz:{q:'In a certain code, CAT is written as DBU. How is DOG written in that code?', opts:['EPH','EPI','DPH','CNF'], a:0,
+             why:'Each letter moves one place forward: D→E, O→P, G→H.'}},
+   PG:{what:'Multi-step reasoning: seating arrangements, puzzles with several conditions, syllogisms and data sufficiency.',
+       hot:['Seating arrangement','Puzzles','Syllogisms','Coding–decoding'], more:['Series','Blood relations','Direction sense','Statements & assumptions','Input–output','Data sufficiency'],
+       quiz:{q:'Five friends sit in a row. C sits at one end. D sits next to both C and A. B sits to the immediate right of A. Who sits in the middle?', opts:['A','B','D','E'], a:0,
+             why:'C must be at the left end, giving C, D, A, B, E. A is in the middle.'}}},
+  {key:'qa', name:'Quantitative Aptitude', c:'#2563eb', icon:'i-calc', q:50, time:'~40 min',
+   tests:'Speed and accuracy with numbers, mostly arithmetic.',
+   UG:{what:'Class 10–12 arithmetic, solved in one or two steps.',
+       hot:['Percentages','Profit & loss','Ratio & proportion','Averages'], more:['Simple interest','Time, speed & distance','Time & work','Number system'],
+       quiz:{q:'A shirt bought for ₹800 is sold at a 25% profit. What is the selling price?', opts:['₹900','₹1,000','₹1,025','₹1,200'], a:1,
+             why:'25% of ₹800 is ₹200, so the selling price is ₹800 + ₹200 = ₹1,000.'}},
+   PG:{what:'Multi-step arithmetic, data interpretation sets and basic probability.',
+       hot:['Data interpretation','Percentages','Time, speed & distance','Time & work'], more:['Profit & loss','Simple & compound interest','Ratio & mixtures','Algebra','Mensuration','Probability'],
+       quiz:{q:'A car goes 180 km at 60 km/h and returns at 90 km/h. What is its average speed for the whole trip?', opts:['72 km/h','75 km/h','78 km/h','80 km/h'], a:0,
+             why:'Total distance is 360 km. Total time is 3 + 2 = 5 hours. 360 ÷ 5 = 72 km/h.'}}},
+  {key:'va', name:'Verbal Ability & RC', c:'#059669', icon:'i-book', q:50, time:'~35 min',
+   tests:'Reading, vocabulary and grammar in everyday English.',
+   UG:{what:'Synonyms, antonyms, grammar fixes and short reading passages.',
+       hot:['Synonyms & antonyms','Sentence correction','Short passages'], more:['Fill in the blanks','Spelling','Idioms & phrases'],
+       quiz:{q:'Choose the word most similar in meaning to METICULOUS.', opts:['Careful','Careless','Quick','Generous'], a:0,
+             why:'Meticulous means showing great attention to detail, so the closest word is careful.'}},
+   PG:{what:'Longer passages, inference questions, para jumbles and vocabulary in context.',
+       hot:['Reading comprehension','Para jumbles','Sentence correction'], more:['Vocabulary in context','Error spotting','Fill in the blanks','Idioms & phrases','Critical reasoning'],
+       quiz:{q:'Choose the grammatically correct sentence.', opts:['Hardly had we reached when the train left.','Hardly had we reached than the train left.','Hardly we had reached when the train left.','Hardly had we reach when the train left.'], a:0,
+             why:'"Hardly" takes inverted word order (had we) and pairs with "when", not "than".'}}},
+  {key:'ar', name:'Abstract Reasoning', c:'#7c3aed', icon:'i-shapes', q:25, time:'~15 min',
+   tests:'Visual patterns in figures, with no words or numbers.',
+   UG:{what:'Figure series that follow one rule, such as rotation or count.',
+       hot:['Figure series','Rotation patterns'], more:['Odd figure out','Mirror images','Pattern completion'],
+       quiz:{q:'Which figure comes next?', seq:[[0,0],[90,0],[180,0]], opts:[[270,0],[0,0],[90,0],[225,0]], a:0,
+             why:'The arrow turns 90° clockwise at each step, so it points left next.'}},
+   PG:{what:'Figure series and matrices that combine two rules at once.',
+       hot:['Figure matrix','Two-rule series'], more:['Rotation patterns','Odd figure out','Mirror & water images','Figure analogy'],
+       quiz:{q:'Which figure comes next?', seq:[[0,1],[45,2],[90,3]], opts:[[135,3],[135,4],[180,4],[90,4]], a:1,
+             why:'Two rules at once: the arrow turns 45° clockwise and one dot is added at each step.'}}},
+];
+let LVL = 'UG';
+const fig = ([deg, dots], c) => `<svg class="fig" viewBox="0 0 56 56"><rect x="1" y="1" width="54" height="54" rx="8" fill="#fff" stroke="#d5d9e2" stroke-width="1.5"/><g transform="rotate(${deg} 28 24)"><path d="M28 36V12M20 20l8-8 8 8" fill="none" stroke="${c}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>${Array.from({length:dots},(_,i)=>`<circle cx="${28-(dots-1)*4+i*8}" cy="47" r="2.6" fill="#101112"/>`).join('')}</svg>`;
+
+function renderSyllabus(){
+  document.getElementById('sgrid').innerHTML = SECTIONS.map(s => {
+    const L = s[LVL];
+    return `<article class="scard" style="--c:${s.c}">
+      <header><div class="ic"><svg class="i"><use href="#${s.icon}"/></svg></div>
+        <div><h3>${s.name}</h3><span>${s.q} questions · ${Math.round(s.q/2)}% of the paper</span></div>
+        <div class="time"><b>${s.time}</b><span>suggested</span></div></header>
+      <p class="tests">${s.tests}</p>
+      <div class="lvlbox"><b>At ${LVL} level</b>${L.what}</div>
+      <div><span class="lab">Key topics</span><div class="topics">${L.hot.map(t=>`<span class="hot">${t}</span>`).join('')}${L.more.map(t=>`<span>${t}</span>`).join('')}</div></div>
+      <button class="try" data-k="${s.key}">Try a sample question</button>
+      <div class="quiz" id="quiz-${s.key}" hidden></div>
+    </article>`;
+  }).join('');
+  document.querySelectorAll('.try').forEach(b => b.onclick = () => openQuiz(b));
+}
+function openQuiz(btn){
+  const s = SECTIONS.find(x => x.key === btn.dataset.k), Q = s[LVL].quiz, box = document.getElementById('quiz-' + s.key);
+  btn.hidden = true; box.hidden = false;
+  const isFig = !!Q.seq;
+  box.innerHTML = `<p class="qq">${Q.q}</p>
+    ${isFig ? `<div class="figs">${Q.seq.map(f => fig(f, s.c)).join('')}<div class="qm">?</div></div>` : ''}
+    <div class="qopts">${Q.opts.map((o,i) => `<button data-i="${i}"><span class="k">${'ABCD'[i]}</span>${isFig ? fig(o, s.c) : o}</button>`).join('')}</div>
+    <div class="fb" hidden></div>`;
+  box.querySelectorAll('.qopts button').forEach(b => b.onclick = () => {
+    const i = +b.dataset.i, right = i === Q.a;
+    box.querySelectorAll('.qopts button').forEach((x, j) => { x.disabled = true; if(j === Q.a) x.classList.add('ok'); });
+    if(!right) b.classList.add('bad');
+    const fb = box.querySelector('.fb'); fb.hidden = false;
+    fb.innerHTML = `<b>${right ? 'Correct.' : 'Not quite. The answer is ' + 'ABCD'[Q.a] + '.'}</b> ${Q.why}`;
+  });
+}
+document.querySelectorAll('#lvl-seg button').forEach(b => b.onclick = () => {
+  LVL = b.dataset.l;
+  document.querySelectorAll('#lvl-seg button').forEach(x => x.classList.toggle('on', x === b));
+  renderSyllabus();
+});
+renderSyllabus();
 
 document.getElementById('register').addEventListener('submit', e => {
   e.preventDefault();
