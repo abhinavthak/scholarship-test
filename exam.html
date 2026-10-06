@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CU Scholarship Test</title>
+<title>YDST Scholarship Test</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f6f7fb; --surface:#ffffff; --surface-2:#f0f2f7; --text:#151a2d; --muted:#5b6380;
-  --border:#dde1ec; --brand:#c8102e; --brand-ink:#ffffff; --accent:#1d4ed8;
+  --border:#dde1ec; --brand:#ee2c3c; --brand-ink:#ffffff; --accent:#1d4ed8;
   --good:#15803d; --good-bg:#e7f6ec; --warn:#b45309; --warn-bg:#fdf3e2; --bad:#b91c1c; --bad-bg:#fdecec;
   --answered:#16a34a; --review:#7c3aed; --visited:#e5484d;
 }
@@ -103,11 +103,11 @@ ul.rules{padding-left:20px;margin:8px 0} ul.rules li{margin:5px 0}
 </style>
 </head>
 <body>
-<div style="background:#fef3c7;color:#78350f;text-align:center;padding:8px 16px;font:600 13px Inter,system-ui,sans-serif;border-bottom:1px solid #f59e0b">Draft prototype for internal review — not an official Online CU offer.</div>
+<div style="background:#fef3c7;color:#78350f;text-align:center;padding:8px 16px;font:600 13px Inter,system-ui,sans-serif;border-bottom:1px solid #f59e0b">Draft prototype for internal review — not an official offer.</div>
 
 <!-- 1. Register -->
 <section id="s-register" class="wrap">
-  <div class="brandbar"><div class="logo">CU</div>Online CU · Scholarship Test</div>
+  <div class="brandbar"><img src="assets/yourdegree-logo.svg" alt="YourDegree" style="height:34px;background:#fff;padding:4px 8px;border-radius:8px"><span class="muted" style="font-weight:600">· YDST 2026 Scholarship Test</span></div>
   <div class="card">
     <h1>Register for the scholarship test</h1>
     <p class="muted">Score 170/200 or above to get 50% off your first-semester tuition. Open to new applicants. One attempt per month.</p>
@@ -136,7 +136,7 @@ ul.rules{padding-left:20px;margin:8px 0} ul.rules li{margin:5px 0}
       <label class="mode"><input type="radio" name="mode" value="demo" checked><b>Demo paper</b><div class="muted" style="font-size:13px">20 questions · 15 min · cutoff 17</div></label>
       <label class="mode"><input type="radio" name="mode" value="full"><b>Full paper</b><div class="muted" style="font-size:13px">200 questions · 150 min · cutoff 170</div></label>
     </div>
-    <label class="consent"><input type="checkbox" id="newapp"> I am a new applicant and have never been enrolled in an Online CU program.</label>
+    <label class="consent"><input type="checkbox" id="newapp"> I am a new applicant and have never been enrolled in a Chandigarh University Online program.</label>
     <label class="consent"><input type="checkbox" id="consent"> I agree to the Terms &amp; Conditions and consent to webcam, microphone and screen monitoring during the test.</label>
     <div class="err" id="reg-err"></div>
     <div class="actions"><button class="btn primary" id="to-instr">Continue</button>
@@ -147,7 +147,7 @@ ul.rules{padding-left:20px;margin:8px 0} ul.rules li{margin:5px 0}
 
 <!-- 2. Instructions -->
 <section id="s-instr" class="wrap hidden">
-  <div class="brandbar"><div class="logo">CU</div>Online CU · Scholarship Test</div>
+  <div class="brandbar"><img src="assets/yourdegree-logo.svg" alt="YourDegree" style="height:34px;background:#fff;padding:4px 8px;border-radius:8px"><span class="muted" style="font-weight:600">· YDST 2026 Scholarship Test</span></div>
   <div class="card">
     <h1>Before you begin</h1>
     <p class="muted" id="instr-sub"></p>
@@ -203,7 +203,7 @@ ul.rules{padding-left:20px;margin:8px 0} ul.rules li{margin:5px 0}
 
 <!-- 4. Result -->
 <section id="s-result" class="wrap hidden">
-  <div class="brandbar"><div class="logo">CU</div>Online CU · Scholarship Test</div>
+  <div class="brandbar"><img src="assets/yourdegree-logo.svg" alt="YourDegree" style="height:34px;background:#fff;padding:4px 8px;border-radius:8px"><span class="muted" style="font-weight:600">· YDST 2026 Scholarship Test</span></div>
   <div class="card" id="result"></div>
 </section>
 
@@ -372,6 +372,10 @@ const $ = id => document.getElementById(id);
 const show = id => ['s-register','s-instr','s-exam','s-result'].forEach(s => $(s).classList.toggle('hidden', s !== id));
 let S = null; // exam state
 
+// prefill from the landing page form
+(() => { const p = new URLSearchParams(location.search);
+  [['name','name'],['email','email'],['phone','phone'],['course','course']].forEach(([k,id]) => { if(p.get(k)) $(id).value = p.get(k); });
+})();
 $('reset-demo').onclick = () => { store.del('ocu_attempts'); $('reg-err').textContent = 'Demo attempts cleared.'; };
 
 $('to-instr').onclick = () => {
@@ -417,7 +421,7 @@ $('start').onclick = async () => {
   rnd = mulberry32(Date.now() ^ S.phone.split('').reduce((a,c) => a*31 + c.charCodeAt(0) | 0, 7));
   S.sections = SECTIONS.map(s => ({...s, qs: buildSection(s.key, S.cfg.counts[s.key], S.level).map(q => ({...q, resp:null, status:'nv'}))}));
   S.sec = 0; S.idx = 0; S.active = true; S.started = Date.now(); S.end = Date.now() + S.cfg.minutes*60000;
-  $('exam-title').textContent = `${COURSE_NAME[S.course]} Scholarship Test`;
+  $('exam-title').textContent = `YDST 2026 · ${COURSE_NAME[S.course]}`;
   show('s-exam'); renderTabs(); renderQ(); tick(); S.timer = setInterval(tick, 1000);
   $('start').disabled = false;
 };
@@ -505,7 +509,7 @@ function finish(how){
   const mins = Math.round((Date.now() - S.started)/60000);
   let verdict;
   if(qualified && !flagged){
-    const code = `OCU-${S.course}-${Math.random().toString(36).slice(2,8).toUpperCase()}`;
+    const code = `YDST-${S.course}-${Math.random().toString(36).slice(2,8).toUpperCase()}`;
     const exp = new Date(Date.now() + 30*864e5).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'});
     verdict = `<div class="verdict good"><b>Congratulations, you've qualified!</b><br>Your scholarship code for 50% off ${COURSE_NAME[S.course]} first-semester tuition:<br><span class="code">${code}</span><br>Valid until <b>${exp}</b>, for the ${COURSE_NAME[S.course]} program only. An admissions counsellor will call you within 24 hours.</div>`;
   } else if(qualified){

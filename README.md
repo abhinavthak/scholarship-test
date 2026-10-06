@@ -1,4 +1,4 @@
-# Scholarship Test — prototype
+# YDST 2026 — YourDegree Scholarship Test (prototype)
 
 Draft prototype of an always-open, AI-proctored scholarship test (MAH MBA CET pattern). Not an official offer.
 

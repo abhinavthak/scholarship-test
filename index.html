@@ -4,221 +4,475 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>CU Scholarship Test</title>
-<meta name="description" content="Score 170/200 in the Online CU Scholarship Test and get 50% off your first-semester tuition.">
+<title>YourDegree Scholarship Test</title>
+<meta name="description" content="YDST 2026: score 170/200 and get 50% off your first-semester tuition at Chandigarh University Online.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#ffffff; --surface:#f6f7fb; --card:#ffffff; --text:#151a2d; --muted:#5b6380; --border:#e3e6ef;
-  --brand:#c8102e; --brand-2:#8a0b20; --accent:#1d4ed8; --gold:#b7791f; --hero-ink:#ffffff;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0e111a; --surface:#131725; --card:#181d2c; --text:#e8eaf2; --muted:#9aa2bd; --border:#2b3146;
-    --brand:#ef4058; --brand-2:#7a0a1c; --accent:#6d8dff; --gold:#f6c560;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0e111a; --surface:#131725; --card:#181d2c; --text:#e8eaf2; --muted:#9aa2bd; --border:#2b3146;
-  --brand:#ef4058; --brand-2:#7a0a1c; --accent:#6d8dff; --gold:#f6c560;
+  --red:#ee2c3c; --red-d:#c41a29; --red-dd:#8f0f1b; --red-50:#fff1f2; --red-100:#fcd5d8;
+  --ink:#101112; --text:#1d2027; --muted:#5d6577; --line:#e6e8ee; --bg:#ffffff; --soft:#f6f7fa;
+  --gold:#f5b301; --green:#16a34a;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 Inter,system-ui,sans-serif}
-a{color:inherit}
-.w{max-width:1100px;margin:0 auto;padding:0 16px}
-nav{display:flex;align-items:center;justify-content:space-between;padding:16px 0}
-.brand{display:flex;align-items:center;gap:10px;font-weight:800;text-decoration:none}
-.logo{width:36px;height:36px;border-radius:9px;background:var(--brand);color:#fff;display:grid;place-items:center;font-size:13px}
-.nav-links{display:flex;gap:22px;font-size:14px;color:var(--muted)}
-.nav-links a{text-decoration:none}
-@media (max-width:720px){.nav-links{display:none}}
-.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 22px;border-radius:12px;font-weight:700;text-decoration:none;border:1px solid transparent;font-size:15px}
-.btn.primary{background:var(--brand);color:#fff}
-.btn.primary:hover{background:var(--brand-2)}
-.btn.ghost{border-color:rgba(255,255,255,.4);color:#fff}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 "Plus Jakarta Sans",system-ui,sans-serif}
+a{color:inherit;text-decoration:none}
+.w{max-width:1200px;margin:0 auto;padding:0 16px}
+.draft{background:#fef3c7;color:#78350f;text-align:center;padding:7px 16px;font-size:13px;font-weight:600;border-bottom:1px solid #f59e0b}
+
+/* header */
+header.top{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
+.top .w{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo img{height:38px;display:block}
+.menu{display:flex;gap:24px;font-size:14.5px;font-weight:600;color:#3a3f4b}
+.menu a:hover{color:var(--red)}
+.top-r{display:flex;align-items:center;gap:14px}
+.phone{font-size:14px;font-weight:700;color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;font-weight:700;padding:12px 22px;border:0;cursor:pointer;font:700 15px "Plus Jakarta Sans",sans-serif}
+.btn.red{background:var(--red);color:#fff}
+.btn.red:hover{background:var(--red-d)}
 .btn.sm{padding:9px 16px;font-size:14px}
+.btn.white{background:#fff;color:var(--red)}
+.btn.outline{background:transparent;border:1.5px solid rgba(255,255,255,.6);color:#fff}
+@media (max-width:980px){.menu,.phone{display:none}}
 
-.hero{background:linear-gradient(135deg,#7a0a1c 0%,#c8102e 55%,#e2384f 100%);color:var(--hero-ink);padding:64px 0 72px}
-.hero-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
-@media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
-.eyebrow{display:inline-block;background:rgba(255,255,255,.15);padding:6px 12px;border-radius:999px;font-size:13px;font-weight:600;margin-bottom:16px}
-.hero h1{font-size:clamp(32px,5vw,52px);line-height:1.1;margin:0 0 16px;letter-spacing:-.02em}
-.hero p.lead{font-size:18px;opacity:.92;margin:0 0 28px;max-width:560px}
-.cta{display:flex;gap:12px;flex-wrap:wrap}
-.offer{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:28px;backdrop-filter:blur(4px)}
-.offer .big{font-size:64px;font-weight:800;line-height:1}
-.offer .k{display:flex;justify-content:space-between;padding:12px 0;border-top:1px solid rgba(255,255,255,.2);font-size:15px}
-.offer .k:first-of-type{margin-top:16px}
-.offer .k b{font-weight:700}
+/* hero */
+.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(1200px 500px at 85% -10%,#ff5a67 0%,transparent 60%),linear-gradient(120deg,#5c0911 0%,#a3101e 45%,#ee2c3c 100%);padding:48px 0 0}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:start}
+@media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
+.hero-grid>*,.pat>*,.reward>*,.rules>*{min-width:0}
+.tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.02em}
+.tag i{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.25)}
+.ydst{font-size:15px;font-weight:800;letter-spacing:.18em;opacity:.85;margin:18px 0 6px}
+.hero h1{font-size:clamp(34px,5.4vw,60px);line-height:1.05;margin:0 0 16px;font-weight:800;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .lead{font-size:18px;opacity:.92;max-width:580px;margin:0 0 28px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:640px}
+@media (max-width:560px){.stats{grid-template-columns:1fr 1fr}}
+.stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:14px}
+.stat b{display:block;font-size:26px;line-height:1.1;font-weight:800}
+.stat span{font-size:12.5px;opacity:.85}
+.dates{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 28px;font-size:14.5px}
+.dates b{color:var(--gold)}
 
-section.s{padding:72px 0}
-section.alt{background:var(--surface)}
-h2{font-size:clamp(26px,3.4vw,36px);margin:0 0 10px;letter-spacing:-.01em}
-.sub{color:var(--muted);margin:0 0 36px;max-width:640px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:st}
-@media (max-width:860px){.steps{grid-template-columns:1fr 1fr}}
+/* form */
+.formcard{background:#fff;color:var(--text);border-radius:18px;padding:24px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45)}
+.formcard h3{margin:0 0 4px;font-size:21px;color:var(--ink)}
+.formcard p.s{margin:0 0 16px;color:var(--muted);font-size:14px}
+.fld{margin-bottom:12px}
+.fld label{display:block;font-size:13px;font-weight:700;margin-bottom:5px;color:#30343e}
+.fld input,.fld select{width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;font:500 15px "Plus Jakarta Sans",sans-serif;color:var(--ink);background:#fff}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--red)}
+.ph{display:flex}
+.ph span{display:grid;place-items:center;padding:0 12px;border:1.5px solid var(--line);border-right:0;border-radius:10px 0 0 10px;font-weight:700;background:var(--soft)}
+.ph input{border-radius:0 10px 10px 0}
+.lvl{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px}
+.lvl label{border:1.5px solid var(--line);border-radius:10px;padding:10px;text-align:center;font-weight:700;cursor:pointer;font-size:14px}
+.lvl input{display:none}
+.lvl label:has(input:checked){border-color:var(--red);background:var(--red-50);color:var(--red-d)}
+.chk{display:flex;gap:8px;font-size:12.5px;color:var(--muted);margin:6px 0 14px;align-items:flex-start}
+.ferr{color:var(--red-d);font-size:13px;font-weight:600;min-height:18px;margin:-4px 0 8px}
+.formcard .btn{width:100%;padding:14px}
+.fnote{text-align:center;font-size:12px;color:var(--muted);margin-top:10px}
+
+.ribbon{position:relative;z-index:1;margin-top:44px;background:rgba(0,0,0,.25);backdrop-filter:blur(4px)}
+.ribbon .w{display:flex;justify-content:space-around;flex-wrap:wrap;gap:12px;padding:14px 16px;font-size:14px;font-weight:600}
+.ribbon span::before{content:"✓";color:var(--gold);margin-right:8px;font-weight:800}
+
+/* sections */
+section.s{padding:80px 0}
+section.soft{background:var(--soft)}
+.kicker{color:var(--red);font-weight:800;font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+h2{font-size:clamp(28px,3.6vw,40px);line-height:1.15;margin:8px 0 12px;color:var(--ink);letter-spacing:-.01em}
+.sub{color:var(--muted);max-width:680px;margin:0 0 40px;font-size:17px}
+.center{text-align:center}.center .sub{margin-left:auto;margin-right:auto}
+
+/* reward */
+.reward{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+@media (max-width:900px){.reward{grid-template-columns:1fr}}
+.big-reward{position:relative;overflow:hidden;border-radius:22px;padding:36px;color:#fff;background:linear-gradient(135deg,#101112 0%,#2a0a0e 60%,#5c0911 100%)}
+.big-reward .pct{font-size:clamp(80px,12vw,140px);font-weight:800;line-height:.9;color:var(--gold);letter-spacing:-.04em}
+.big-reward h3{font-size:24px;margin:10px 0 8px}
+.big-reward p{opacity:.8;margin:0 0 22px;max-width:440px}
+.score-pill{display:inline-flex;gap:10px;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:8px 16px;font-weight:700}
+.score-pill b{color:var(--gold)}
+.trophy{position:absolute;right:-20px;bottom:-30px;font-size:200px;opacity:.08;line-height:1}
+.perks{display:grid;gap:14px}
+.perk{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
+.perk .ic{flex:none;width:46px;height:46px;border-radius:12px;background:var(--red-50);color:var(--red);display:grid;place-items:center;font-size:22px}
+.perk h4{margin:0 0 3px;font-size:16.5px;color:var(--ink)}
+.perk p{margin:0;color:var(--muted);font-size:14.5px}
+
+/* features */
+.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media (max-width:980px){.feat{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.feat{grid-template-columns:1fr}}
+.fc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;transition:.2s}
+.fc:hover{border-color:var(--red-100);box-shadow:0 14px 30px -18px rgba(238,44,60,.4);transform:translateY(-2px)}
+.fc .ic{font-size:30px;margin-bottom:12px}
+.fc h4{margin:0 0 6px;font-size:17px;color:var(--ink)}
+.fc p{margin:0;color:var(--muted);font-size:14.5px}
+
+/* pattern */
+.pat{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+@media (max-width:900px){.pat{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px}
+.secrow{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;padding:12px 0;border-bottom:1px solid var(--line)}
+.secrow:last-of-type{border-bottom:0}
+.secrow b{color:var(--ink)}
+.secrow .q{font-weight:800;color:var(--red);font-variant-numeric:tabular-nums}
+.secrow .bar{grid-column:1/-1;height:8px;border-radius:4px;background:var(--soft);overflow:hidden}
+.secrow .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--red),#ff7a85);border-radius:4px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.facts div{background:var(--soft);border-radius:12px;padding:12px 14px}
+.facts b{display:block;font-size:20px;color:var(--ink)}
+.facts span{font-size:13px;color:var(--muted)}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font:700 14px "Plus Jakarta Sans",sans-serif;cursor:pointer;color:#3a3f4b}
+.tab.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.topics{display:flex;flex-wrap:wrap;gap:8px}
+.topics span{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px}
+table.lv{width:100%;border-collapse:collapse;margin-top:6px}
+table.lv th,table.lv td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line);font-size:14.5px}
+table.lv th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.lvl-tag{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:800}
+.l1{background:#dcfce7;color:#166534}.l2{background:#e0f2fe;color:#075985}.l3{background:#fef3c7;color:#92400e}.l4{background:var(--red-50);color:var(--red-dd)}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+@media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.steps{grid-template-columns:1fr}}
-.step{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px}
-.step::before{counter-increment:st;content:counter(st);display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--brand);color:#fff;font-weight:700;margin-bottom:14px}
-.step h3{margin:0 0 6px;font-size:17px}
-.step p{margin:0;color:var(--muted);font-size:14px}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;position:relative}
+.step .n{width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:800;font-size:18px;margin-bottom:14px;box-shadow:0 0 0 6px var(--red-50)}
+.step h4{margin:0 0 6px;font-size:17px;color:var(--ink)}
+.step p{margin:0;color:var(--muted);font-size:14.5px}
 
-.two{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-@media (max-width:860px){.two{grid-template-columns:1fr}}
-.panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:26px}
-table{width:100%;border-collapse:collapse}
-th,td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--border);font-size:15px}
-th{color:var(--muted);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:.04em}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
-tfoot td{font-weight:700;border-bottom:none}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
-.chip{border:1px solid var(--border);border-radius:999px;padding:5px 12px;font-size:14px;background:var(--surface)}
-ul.ticks{list-style:none;padding:0;margin:0}
-ul.ticks li{padding:10px 0 10px 30px;position:relative;border-bottom:1px solid var(--border)}
-ul.ticks li:last-child{border-bottom:none}
-ul.ticks li::before{content:"✓";position:absolute;left:0;top:10px;width:20px;height:20px;border-radius:50%;background:var(--brand);color:#fff;font-size:12px;display:grid;place-items:center;font-weight:700}
-ul.ticks.no li::before{content:"✕";background:var(--muted)}
+/* partner */
+.partner{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px}
+@media (max-width:820px){.partner{grid-template-columns:1fr}}
+.uni{width:96px;height:96px;border-radius:20px;background:linear-gradient(135deg,#7a0a1c,#c8102e);color:#fff;display:grid;place-items:center;font-weight:800;font-size:28px}
+.partner h3{margin:0 0 6px;font-size:22px;color:var(--ink)}
+.partner p{margin:0;color:var(--muted)}
+.badges{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.badges span{font-size:12.5px;font-weight:700;padding:5px 10px;border-radius:8px;background:var(--soft);border:1px solid var(--line)}
 
-details{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:18px 20px;margin-bottom:10px}
-summary{cursor:pointer;font-weight:600;list-style:none;display:flex;justify-content:space-between;gap:16px}
+/* rules */
+.rules{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+@media (max-width:820px){.rules{grid-template-columns:1fr}}
+.rules ul{list-style:none;padding:0;margin:0}
+.rules li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
+.rules li:last-child{border-bottom:0}
+.rules li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;background:#dcfce7;color:var(--green)}
+.rules .no li::before{content:"✕";background:var(--red-50);color:var(--red)}
+.rules h4{margin:0 0 6px;font-size:17px;color:var(--ink)}
+
+/* faq */
+.faq{max-width:860px;margin:0 auto}
+details{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-bottom:10px}
+details[open]{border-color:var(--red-100)}
+summary{cursor:pointer;list-style:none;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;gap:16px}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";font-size:20px;line-height:1;color:var(--muted)}
+summary::after{content:"+";color:var(--red);font-size:22px;line-height:1}
 details[open] summary::after{content:"–"}
-details p{color:var(--muted);margin:12px 0 0}
+details p{margin:10px 0 0;color:var(--muted)}
 
-.band{background:var(--text);color:var(--bg);border-radius:20px;padding:40px;display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap}
-.band h2{margin:0}
-footer{padding:32px 0;color:var(--muted);font-size:13px;border-top:1px solid var(--border)}
+/* cta */
+.cta-band{border-radius:24px;padding:48px;color:#fff;background:linear-gradient(120deg,#5c0911,#ee2c3c);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta-band h2{color:#fff;margin:0 0 6px}
+.cta-band p{margin:0;opacity:.85}
+
+footer{background:var(--ink);color:#b9bfcc;padding:48px 0 90px;font-size:14px}
+.fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
+@media (max-width:820px){.fgrid{grid-template-columns:1fr}}
+footer h5{color:#fff;font-size:15px;margin:0 0 10px}
+footer a{display:block;padding:3px 0}
+footer a:hover{color:#fff}
+.flogo{background:#fff;border-radius:10px;padding:8px 12px;display:inline-block;margin-bottom:12px}
+.flogo img{height:30px;display:block}
+.disc{border-top:1px solid #2a2d33;margin-top:30px;padding-top:18px;font-size:12.5px;color:#8a90a0}
+
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid var(--line);padding:10px 16px;display:none;gap:10px;align-items:center;justify-content:space-between;box-shadow:0 -8px 20px rgba(0,0,0,.08)}
+.mbar small{display:block;color:var(--muted);font-size:12px}
+@media (max-width:980px){.mbar{display:flex}}
 </style>
 </head>
 <body>
-<div style="background:#fef3c7;color:#78350f;text-align:center;padding:8px 16px;font:600 13px Inter,system-ui,sans-serif;border-bottom:1px solid #f59e0b">Draft prototype for internal review — not an official Online CU offer.</div>
+<div class="draft">Draft prototype for internal review — not an official offer.</div>
 
-<header class="hero">
+<header class="top">
   <div class="w">
-    <nav>
-      <a class="brand" href="#"><span class="logo">CU</span><span>Online CU</span></a>
-      <div class="nav-links"><a href="#how">How it works</a><a href="#pattern">Test pattern</a><a href="#eligibility">Eligibility</a><a href="#faq">FAQ</a></div>
-      <a class="btn ghost sm" href="exam.html">Take the test</a>
+    <a class="logo" href="#"><img src="assets/yourdegree-logo.svg" alt="YourDegree"></a>
+    <nav class="menu">
+      <a href="#scholarship">Scholarship</a>
+      <a href="#pattern">Exam Pattern</a>
+      <a href="#syllabus">Syllabus</a>
+      <a href="#how">How to Register</a>
+      <a href="#faq">FAQs</a>
     </nav>
-    <div class="hero-grid" style="margin-top:36px">
-      <div>
-        <span class="eyebrow">Scholarship Test · Open anytime</span>
-        <h1>Score 170+ and get 50% off your first-semester tuition</h1>
-        <p class="lead">Take the free online CU Scholarship Test whenever you're ready. It follows the MAH MBA CET pattern, with difficulty set for the program you choose.</p>
-        <div class="cta">
-          <a class="btn primary" href="exam.html" style="background:#fff;color:#c8102e">Start free test</a>
-          <a class="btn ghost" href="#pattern">See test pattern</a>
-        </div>
-      </div>
-      <div class="offer">
-        <div class="big">50%</div>
-        <div>off first-semester tuition</div>
-        <div class="k"><span>Qualifying score</span><b>170 / 200</b></div>
-        <div class="k"><span>Test duration</span><b>150 minutes</b></div>
-        <div class="k"><span>Negative marking</span><b>None</b></div>
-        <div class="k"><span>Fee</span><b>Free</b></div>
-      </div>
+    <div class="top-r">
+      <a class="phone" href="tel:+918097918025">📞 +91 80979 18025</a>
+      <a class="btn red sm" href="#register">Register Free</a>
     </div>
   </div>
 </header>
 
-<section class="s" id="how">
+<section class="hero">
+  <div class="w hero-grid">
+    <div>
+      <span class="tag"><i></i>Registrations open · Test live 24×7</span>
+      <div class="ydst">YDST 2026 · YOURDEGREE SCHOLARSHIP TEST</div>
+      <h1>Scholarship Ka<br><em>Sabse Smart</em> Test</h1>
+      <p class="lead">Score 170 out of 200 and get <b>50% off your first-semester tuition</b> for an online degree from Chandigarh University. Free to take, open anytime, results in minutes.</p>
+      <div class="stats">
+        <div class="stat"><b>50%*</b><span>First-sem fee waiver</span></div>
+        <div class="stat"><b>₹0</b><span>Registration fee</span></div>
+        <div class="stat"><b>24×7</b><span>Take it anytime</span></div>
+        <div class="stat"><b>8</b><span>UG &amp; PG programs</span></div>
+      </div>
+      <div class="dates">
+        <div>📅 Exam window: <b>Open all year</b></div>
+        <div>🔁 Attempts: <b>1 every month</b></div>
+        <div>⚡ Result: <b>Instant</b></div>
+      </div>
+    </div>
+
+    <form class="formcard" id="register" novalidate>
+      <h3>Register for YDST 2026</h3>
+      <p class="s">Takes 1 minute. Start your test right after.</p>
+      <div class="lvl">
+        <label><input type="radio" name="lv" value="UG" checked>Undergraduate</label>
+        <label><input type="radio" name="lv" value="PG">Postgraduate</label>
+      </div>
+      <div class="fld"><label for="f-course">Program</label>
+        <select id="f-course"></select></div>
+      <div class="fld"><label for="f-name">Full name</label><input id="f-name" autocomplete="name" placeholder="As on your ID"></div>
+      <div class="fld"><label for="f-phone">Mobile number</label>
+        <div class="ph"><span>+91</span><input id="f-phone" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile"></div></div>
+      <div class="fld"><label for="f-email">Email</label><input id="f-email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+      <label class="chk"><input type="checkbox" id="f-ok" checked> I agree to the Terms &amp; Conditions and to be contacted by YourDegree counsellors on call, SMS and WhatsApp.</label>
+      <div class="ferr" id="f-err"></div>
+      <button class="btn red" type="submit">Register &amp; Start Test →</button>
+      <div class="fnote">🔒 Your details are safe with us</div>
+    </form>
+  </div>
+  <div class="ribbon"><div class="w">
+    <span>MAH MBA CET pattern</span><span>No negative marking</span><span>AI-proctored &amp; fair</span><span>UGC-entitled university</span>
+  </div></div>
+</section>
+
+<section class="s" id="scholarship">
   <div class="w">
-    <h2>How it works</h2>
-    <p class="sub">From registration to result in one sitting. Qualifiers get their scholarship code right away.</p>
-    <div class="steps">
-      <div class="step"><h3>Register</h3><p>Verify your mobile and email, then choose the program you're applying for.</p></div>
-      <div class="step"><h3>Take the test</h3><p>200 questions in 150 minutes, AI-proctored from your laptop with a webcam.</p></div>
-      <div class="step"><h3>Get your result</h3><p>Instant score with a section-wise breakdown. Score 170+ to qualify.</p></div>
-      <div class="step"><h3>Enroll at 50% off</h3><p>Use your scholarship code within 30 days to enroll for the current intake.</p></div>
+    <div class="kicker">Scholarship &amp; Rewards</div>
+    <h2>One score. Half your first-semester fee.</h2>
+    <p class="sub">Clear the cutoff and your scholarship code is generated instantly, ready to use when you enroll.</p>
+    <div class="reward">
+      <div class="big-reward">
+        <div class="pct">50%</div>
+        <h3>Tuition fee waiver for Semester 1</h3>
+        <p>Valid on any Chandigarh University Online UG or PG program you test for. Use it within 30 days of qualifying.</p>
+        <span class="score-pill">Qualifying score <b>170 / 200</b></span>
+        <div class="trophy">🏆</div>
+      </div>
+      <div class="perks">
+        <div class="perk"><div class="ic">⚡</div><div><h4>Instant scholarship code</h4><p>Qualify and get your code on the result screen, plus a call from your counsellor within 24 hours.</p></div></div>
+        <div class="perk"><div class="ic">🎯</div><div><h4>Fair for every program</h4><p>Same pattern for everyone. Difficulty is matched to your program level, UG or PG.</p></div></div>
+        <div class="perk"><div class="ic">🔁</div><div><h4>Didn't make it? Try next month</h4><p>One attempt every month, with a brand-new paper each time.</p></div></div>
+        <div class="perk"><div class="ic">🧭</div><div><h4>Free expert counselling</h4><p>Every test-taker gets a free session to choose the right program and specialisation.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
 
-<section class="s alt" id="pattern">
-  <div class="w two">
-    <div>
-      <h2>Test pattern</h2>
-      <p class="sub" style="margin-bottom:20px">Modelled on MAH MBA CET. The structure is the same for every program. Question difficulty is matched to your program level.</p>
-      <div class="panel">
-        <table>
-          <thead><tr><th>Section</th><th class="n">Questions</th></tr></thead>
+<section class="s soft">
+  <div class="w center">
+    <div class="kicker">Why YDST</div>
+    <h2>Built for busy learners</h2>
+    <p class="sub">No test centres, no fixed dates. Take it when you're ready.</p>
+    <div class="feat" style="text-align:left">
+      <div class="fc"><div class="ic">🕒</div><h4>Anytime, anywhere</h4><p>The test is live 24×7. All you need is a laptop with a webcam.</p></div>
+      <div class="fc"><div class="ic">🛡️</div><h4>AI-proctored</h4><p>Smart proctoring keeps it fair, so a qualifying score means something.</p></div>
+      <div class="fc"><div class="ic">📊</div><h4>Instant result</h4><p>Your total and section-wise score the moment you submit.</p></div>
+      <div class="fc"><div class="ic">✅</div><h4>Zero negative marking</h4><p>Attempt every question with confidence. Wrong answers cost nothing.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="pattern">
+  <div class="w">
+    <div class="kicker">Exam Pattern</div>
+    <h2>Modelled on MAH MBA CET</h2>
+    <p class="sub">200 questions, 150 minutes, 1 mark each. The structure is the same for every program, and question difficulty is set by program level.</p>
+    <div class="pat">
+      <div class="card">
+        <div class="secrow"><b>Logical Reasoning</b><span class="q">75</span><div class="bar"><i style="width:100%"></i></div></div>
+        <div class="secrow"><b>Quantitative Aptitude</b><span class="q">50</span><div class="bar"><i style="width:66.7%"></i></div></div>
+        <div class="secrow"><b>Verbal Ability &amp; Reading Comprehension</b><span class="q">50</span><div class="bar"><i style="width:66.7%"></i></div></div>
+        <div class="secrow"><b>Abstract Reasoning</b><span class="q">25</span><div class="bar"><i style="width:33.3%"></i></div></div>
+        <div class="facts">
+          <div><b>200</b><span>Questions</span></div>
+          <div><b>150 min</b><span>Duration</span></div>
+          <div><b>+1 / 0</b><span>Marking (no negative)</span></div>
+          <div><b>170</b><span>Scholarship cutoff</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <h4 style="margin:0 0 4px;font-size:18px;color:var(--ink)">Difficulty by program</h4>
+        <p style="margin:0 0 6px;color:var(--muted);font-size:14.5px">Your paper is matched to the program you choose at registration.</p>
+        <table class="lv">
+          <thead><tr><th>Programs</th><th>Level</th></tr></thead>
           <tbody>
-            <tr><td>Logical Reasoning</td><td class="n">75</td></tr>
-            <tr><td>Abstract Reasoning</td><td class="n">25</td></tr>
-            <tr><td>Quantitative Aptitude</td><td class="n">50</td></tr>
-            <tr><td>Verbal Ability &amp; Reading Comprehension</td><td class="n">50</td></tr>
+            <tr><td>BA, BCom</td><td><span class="lvl-tag l1">Foundation</span></td></tr>
+            <tr><td>BBA, BCA</td><td><span class="lvl-tag l2">Intermediate</span></td></tr>
+            <tr><td>MA, MCom</td><td><span class="lvl-tag l3">Advanced</span></td></tr>
+            <tr><td>MBA, MCA</td><td><span class="lvl-tag l4">CET level</span></td></tr>
           </tbody>
-          <tfoot><tr><td>Total · 150 minutes · 1 mark each</td><td class="n">200</td></tr></tfoot>
         </table>
       </div>
     </div>
-    <div>
-      <h2>Programs</h2>
-      <p class="sub" style="margin-bottom:20px">Choose your program before the test. Your scholarship code is valid for that program only.</p>
-      <div class="panel">
-        <b>Undergraduate</b>
-        <div class="chips" style="margin-bottom:18px"><span class="chip">BA</span><span class="chip">BCom</span><span class="chip">BBA</span><span class="chip">BCA</span></div>
-        <b>Postgraduate</b>
-        <div class="chips"><span class="chip">MA</span><span class="chip">MCom</span><span class="chip">MBA</span><span class="chip">MCA</span></div>
-      </div>
-    </div>
   </div>
 </section>
 
-<section class="s" id="eligibility">
+<section class="s soft" id="syllabus">
   <div class="w">
-    <h2>Eligibility and rules</h2>
-    <p class="sub">Simple rules that keep the scholarship fair for everyone.</p>
-    <div class="two">
-      <div class="panel">
-        <ul class="ticks">
-          <li>Open to <b>new applicants</b> to any Online CU program</li>
-          <li><b>One attempt per month</b>, with a fresh set of questions each time</li>
-          <li>Scholarship code valid for <b>30 days</b>, for the current intake</li>
-          <li>Covers <b>50% of first-semester tuition</b> for the program you tested for</li>
-        </ul>
+    <div class="kicker">Syllabus</div>
+    <h2>What to prepare</h2>
+    <p class="sub">Topics follow the MAH MBA CET syllabus. UG papers stay closer to Class 12 level.</p>
+    <div class="card">
+      <div class="tabs" id="syl-tabs">
+        <button class="tab on" data-k="lr">Logical Reasoning</button>
+        <button class="tab" data-k="qa">Quantitative Aptitude</button>
+        <button class="tab" data-k="va">Verbal Ability &amp; RC</button>
+        <button class="tab" data-k="ar">Abstract Reasoning</button>
       </div>
-      <div class="panel">
-        <ul class="ticks no">
-          <li>Can't be combined with any other discount or offer</li>
-          <li>Doesn't cover registration, exam or other fees</li>
-          <li>Not transferable to another program or person</li>
-          <li>Unfair means flagged by proctoring void the scholarship</li>
-        </ul>
-      </div>
+      <div class="topics" id="syl-topics"></div>
     </div>
   </div>
 </section>
 
-<section class="s alt" id="faq">
-  <div class="w" style="max-width:820px">
-    <h2>Frequently asked questions</h2>
-    <p class="sub">Anything else? Our admissions counsellors are happy to help.</p>
-    <details><summary>Is the test really free?</summary><p>Yes. There is no fee to register or take the test.</p></details>
-    <details><summary>What do I need to take the test?</summary><p>A laptop or desktop with a webcam and microphone, a stable internet connection, and 150 minutes in a quiet room. The test runs in full screen and is AI-proctored.</p></details>
-    <details><summary>Is there negative marking?</summary><p>No. Each correct answer carries 1 mark and wrong answers carry no penalty, so attempt every question.</p></details>
-    <details><summary>What if I don't score 170?</summary><p>You can try again next month with a new set of questions. You can also apply to your program at any time. Our counsellors will help you with your options.</p></details>
-    <details><summary>What if my internet disconnects?</summary><p>Your answers are saved as you go. Reconnect within 5 minutes to continue. After that, the attempt counts as used.</p></details>
-    <details><summary>Can I use my code for a different program?</summary><p>No. The code is valid only for the program you chose before the test.</p></details>
-    <details><summary>How long is my scholarship code valid?</summary><p>30 days from the day you qualify, for the current intake.</p></details>
+<section class="s" id="how">
+  <div class="w">
+    <div class="kicker">How to Register</div>
+    <h2>From sign-up to scholarship in 4 steps</h2>
+    <p class="sub">The whole journey takes under 3 hours, including the test.</p>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h4>Register free</h4><p>Choose your program and verify your mobile and email with OTP.</p></div>
+      <div class="step"><div class="n">2</div><h4>Take the test</h4><p>Start whenever you like. Webcam on, full screen, 150 minutes.</p></div>
+      <div class="step"><div class="n">3</div><h4>Get your result</h4><p>Instant score. Hit 170+ and your scholarship code appears on screen.</p></div>
+      <div class="step"><div class="n">4</div><h4>Enroll at 50% off</h4><p>Apply the code within 30 days with help from your YourDegree counsellor.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="s soft">
+  <div class="w">
+    <div class="partner">
+      <div class="uni">CU</div>
+      <div>
+        <div class="kicker">Scholarship partner</div>
+        <h3>Chandigarh University Online</h3>
+        <p>Your scholarship applies to Chandigarh University's online UG and PG degree programs.</p>
+        <div class="badges"><span>UGC-entitled</span><span>NAAC A+</span><span>8 UG &amp; PG programs</span></div>
+      </div>
+      <a class="btn red" href="#register">Check eligibility</a>
+    </div>
+  </div>
+</section>
+
+<section class="s" id="rules">
+  <div class="w">
+    <div class="kicker">Eligibility &amp; Rules</div>
+    <h2>Good to know</h2>
+    <p class="sub">Simple rules that keep the scholarship fair for everyone.</p>
+    <div class="rules">
+      <div class="card"><h4>You're eligible if</h4><ul>
+        <li>You're a new applicant to a Chandigarh University Online program</li>
+        <li>You meet the admission criteria of the program you choose</li>
+        <li>You haven't used this month's attempt yet</li>
+        <li>You enroll within 30 days of qualifying, for the current intake</li>
+      </ul></div>
+      <div class="card"><h4>Keep in mind</h4><ul class="no">
+        <li>Can't be combined with any other discount or offer</li>
+        <li>Covers first-semester tuition only, not registration or exam fees</li>
+        <li>Valid only for the program you tested for, and not transferable</li>
+        <li>Unfair means flagged by proctoring void the scholarship</li>
+      </ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="s soft" id="faq">
+  <div class="w">
+    <div class="center"><div class="kicker">FAQs</div><h2>Questions, answered</h2><p class="sub">Still unsure? Call us on +91 80979 18025, 10 AM to 7 PM, all week.</p></div>
+    <div class="faq">
+      <details><summary>What is YDST?</summary><p>The YourDegree Scholarship Test is a free online aptitude test. Score 170/200 or above and you get 50% off your first-semester tuition at Chandigarh University Online.</p></details>
+      <details><summary>Is the test free?</summary><p>Yes. There is no fee to register or take the test.</p></details>
+      <details><summary>When can I take the test?</summary><p>Anytime. The test is live 24×7. You get one attempt per calendar month.</p></details>
+      <details><summary>What do I need?</summary><p>A laptop or desktop with a webcam and microphone, a stable internet connection, and 150 uninterrupted minutes. The test runs in full screen and is AI-proctored.</p></details>
+      <details><summary>Is there negative marking?</summary><p>No. Each correct answer gets 1 mark and wrong answers cost nothing.</p></details>
+      <details><summary>What if I score below 170?</summary><p>You can retake next month with a new paper. You can also apply to your program anytime, and a counsellor will help with your options.</p></details>
+      <details><summary>Can I use my scholarship for a different program?</summary><p>No. The code is valid only for the program you chose before the test, and for 30 days from issue.</p></details>
+      <details><summary>Can I combine it with other offers?</summary><p>No. The YDST scholarship can't be combined with any other discount, offer or scholarship.</p></details>
+    </div>
   </div>
 </section>
 
 <section class="s">
   <div class="w">
-    <div class="band">
-      <div><h2>Ready when you are</h2><div style="opacity:.75">The test is open 24×7. Start now and get your result instantly.</div></div>
-      <a class="btn primary" href="exam.html">Start free test</a>
+    <div class="cta-band">
+      <div><h2>Your 50% scholarship is one test away</h2><p>Register free and start right now. The test is open 24×7.</p></div>
+      <a class="btn white" href="#register">Register Free →</a>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="w">Scholarship subject to the full Terms &amp; Conditions. Draft page, for internal review.</div>
+  <div class="w">
+    <div class="fgrid">
+      <div>
+        <div class="flogo"><img src="assets/yourdegree-logo.svg" alt="YourDegree"></div>
+        <p style="margin:0">YourDegree helps you discover, compare and apply to online degree programs from UGC-entitled universities.</p>
+      </div>
+      <div><h5>YDST 2026</h5><a href="#scholarship">Scholarship</a><a href="#pattern">Exam pattern</a><a href="#syllabus">Syllabus</a><a href="#faq">FAQs</a></div>
+      <div><h5>Talk to us</h5><a href="tel:+918097918025">+91 80979 18025</a><span>7 days a week, 10 AM to 7 PM</span></div>
+    </div>
+    <div class="disc">*Scholarship of 50% on first-semester tuition for scores of 170/200 or above, subject to proctoring review and the full Terms &amp; Conditions. YourDegree is a counselling platform. Admission and fees are governed by the university.</div>
+  </div>
 </footer>
+
+<div class="mbar"><div><b>YDST 2026</b><small>50% scholarship · Free test</small></div><a class="btn red sm" href="#register">Register Free</a></div>
+
+<script>
+const PROGRAMS = {UG:[['BBA','BBA'],['BCA','BCA'],['BCOM','BCom'],['BA','BA']], PG:[['MBA','MBA'],['MCA','MCA'],['MCOM','MCom'],['MA','MA']]};
+const sel = document.getElementById('f-course');
+function fill(lv){ sel.innerHTML = PROGRAMS[lv].map(([v,t]) => `<option value="${v}">${t}</option>`).join(''); }
+document.querySelectorAll('input[name=lv]').forEach(r => r.onchange = () => fill(r.value));
+fill('UG');
+
+const SYL = {
+  lr:['Coding–decoding','Series','Blood relations','Direction sense','Seating arrangement','Syllogisms','Statements & assumptions','Analogies','Odd one out','Input–output','Puzzles','Data sufficiency'],
+  qa:['Percentages','Profit & loss','Simple & compound interest','Ratio & proportion','Averages','Time, speed & distance','Time & work','Number system','Algebra basics','Mensuration','Data interpretation','Probability'],
+  va:['Reading comprehension','Synonyms & antonyms','Sentence correction','Fill in the blanks','Para jumbles','Error spotting','Idioms & phrases','Vocabulary in context'],
+  ar:['Figure series','Rotation patterns','Mirror & water images','Odd figure out','Pattern completion','Figure matrix','Analogy of figures'],
+};
+const tabs = document.querySelectorAll('#syl-tabs .tab'), box = document.getElementById('syl-topics');
+function showSyl(k){ tabs.forEach(t => t.classList.toggle('on', t.dataset.k === k)); box.innerHTML = SYL[k].map(x => `<span>${x}</span>`).join(''); }
+tabs.forEach(t => t.onclick = () => showSyl(t.dataset.k));
+showSyl('lr');
+
+document.getElementById('register').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = id => document.getElementById(id).value.trim();
+  const err = m => document.getElementById('f-err').textContent = m;
+  const name = v('f-name'), phone = v('f-phone'), email = v('f-email').toLowerCase(), course = v('f-course');
+  if(name.length < 2) return err('Please enter your full name.');
+  if(!/^[6-9]\d{9}$/.test(phone)) return err('Please enter a valid 10-digit mobile number.');
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return err('Please enter a valid email.');
+  if(!document.getElementById('f-ok').checked) return err('Please accept the Terms & Conditions.');
+  err('');
+  location.href = 'exam.html?' + new URLSearchParams({name, phone, email, course});
+});
+</script>
 </body>
 </html>
