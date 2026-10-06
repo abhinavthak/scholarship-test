@@ -299,7 +299,7 @@ body.in-exam .draft{display:none}
         <label class="mode"><input type="radio" name="mode" value="demo" checked><b>Practice paper</b><span>20 questions · 15 min · cutoff 17</span></label>
         <label class="mode"><input type="radio" name="mode" value="full"><b>Full paper</b><span>200 questions · 150 min · cutoff 170</span></label>
       </div>
-      <label class="chk"><input type="checkbox" id="newapp"> I am a new applicant and have never been enrolled in a Chandigarh University Online program.</label>
+      <label class="chk"><input type="checkbox" id="newapp"> I am a new applicant and have never been enrolled in an online program at a university listed on YourDegree.</label>
       <label class="chk"><input type="checkbox" id="consent"> I agree to the Terms &amp; Conditions and consent to webcam, microphone and screen monitoring during the test.</label>
       <div class="err" id="reg-err"></div>
       <div class="row-end">
@@ -760,7 +760,7 @@ function finish(how){
   if(qualified && !flagged){
     const code = `YDST-${S.course}-${Math.random().toString(36).slice(2,8).toUpperCase()}`;
     const exp = fmtDate(new Date(Date.now() + 30*864e5));
-    verdict = `<div class="verdict good"><div class="ic"><svg class="i"><use href="#i-award"/></svg></div><div><h3>You've won the YDST scholarship</h3><p>50% off your ${COURSE_NAME[S.course]} first-semester tuition at Chandigarh University Online. Valid until <b>${exp}</b>.</p>
+    verdict = `<div class="verdict good"><div class="ic"><svg class="i"><use href="#i-award"/></svg></div><div><h3>You've won the YDST scholarship</h3><p>50% off your ${COURSE_NAME[S.course]} first-semester tuition at any university on YourDegree. Valid until <b>${exp}</b>.</p>
       <div class="codebox"><span class="code" id="code">${code}</span><button class="btn" id="copy"><svg class="i"><use href="#i-copy"/></svg>Copy code</button></div></div></div>`;
     steps = ['A YourDegree counsellor will call you within 24 hours.', `Apply to the ${COURSE_NAME[S.course]} program and enter your code at fee payment.`, `Enroll before ${exp} to keep the 50% waiver.`];
   } else if(qualified){
