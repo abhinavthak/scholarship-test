@@ -13,48 +13,54 @@
   --red:#ee2c3c; --red-d:#c41a29; --red-dd:#8f0f1b; --red-50:#fff1f2; --red-100:#fcd5d8;
   --ink:#101112; --text:#1d2027; --muted:#5d6577; --line:#e6e8ee; --bg:#ffffff; --soft:#f6f7fa;
   --gold:#f5b301; --green:#16a34a;
+  --check:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+  --cross:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3.2' stroke-linecap='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E");
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:80px}
 body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 "Plus Jakarta Sans",system-ui,sans-serif}
 a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
 .w{max-width:1200px;margin:0 auto;padding:0 16px}
+.i{width:20px;height:20px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .draft{background:#fef3c7;color:#78350f;text-align:center;padding:7px 16px;font-size:13px;font-weight:600;border-bottom:1px solid #f59e0b}
 
 /* header */
 header.top{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--line)}
 .top .w{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.logo img{height:38px;display:block}
+.logo img{height:38px}
 .menu{display:flex;gap:24px;font-size:14.5px;font-weight:600;color:#3a3f4b}
 .menu a:hover{color:var(--red)}
-.top-r{display:flex;align-items:center;gap:14px}
-.phone{font-size:14px;font-weight:700;color:var(--ink)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;font-weight:700;padding:12px 22px;border:0;cursor:pointer;font:700 15px "Plus Jakarta Sans",sans-serif}
+.top-r{display:flex;align-items:center;gap:16px}
+.phone{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:700;color:var(--ink)}
+.phone .i{color:var(--red);width:18px;height:18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:10px;padding:12px 22px;border:0;cursor:pointer;font:700 15px "Plus Jakarta Sans",sans-serif}
 .btn.red{background:var(--red);color:#fff}
 .btn.red:hover{background:var(--red-d)}
 .btn.sm{padding:9px 16px;font-size:14px}
 .btn.white{background:#fff;color:var(--red)}
-.btn.outline{background:transparent;border:1.5px solid rgba(255,255,255,.6);color:#fff}
 @media (max-width:980px){.menu,.phone{display:none}}
 
 /* hero */
-.hero{position:relative;overflow:hidden;color:#fff;background:radial-gradient(1200px 500px at 85% -10%,#ff5a67 0%,transparent 60%),linear-gradient(120deg,#5c0911 0%,#a3101e 45%,#ee2c3c 100%);padding:48px 0 0}
-.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.08) 1px,transparent 1px);background-size:22px 22px;pointer-events:none}
+.hero{position:relative;overflow:hidden;color:#fff;padding:48px 0 0;
+  background:linear-gradient(100deg,rgba(92,9,17,.97) 0%,rgba(163,16,30,.93) 45%,rgba(238,44,60,.82) 100%),url(assets/hero-student.jpg) center 30%/cover no-repeat}
 .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:start}
 @media (max-width:980px){.hero-grid{grid-template-columns:1fr}}
-.hero-grid>*,.pat>*,.reward>*,.rules>*{min-width:0}
-.tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.02em}
-.tag i{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.25)}
+.hero-grid>*,.split>*,.pat>*,.reward>*,.rules>*{min-width:0}
+.tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 14px;border-radius:999px;font-size:13px;font-weight:700}
+.tag b{width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.25)}
 .ydst{font-size:15px;font-weight:800;letter-spacing:.18em;opacity:.85;margin:18px 0 6px}
 .hero h1{font-size:clamp(34px,5.4vw,60px);line-height:1.05;margin:0 0 16px;font-weight:800;letter-spacing:-.02em}
 .hero h1 em{font-style:normal;color:var(--gold)}
 .hero .lead{font-size:18px;opacity:.92;max-width:580px;margin:0 0 28px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:640px}
 @media (max-width:560px){.stats{grid-template-columns:1fr 1fr}}
-.stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:14px}
+.stat{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:14px;backdrop-filter:blur(3px)}
 .stat b{display:block;font-size:26px;line-height:1.1;font-weight:800}
 .stat span{font-size:12.5px;opacity:.85}
 .dates{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px 28px;font-size:14.5px}
+.dates div{display:flex;align-items:center;gap:8px}
+.dates .i{width:18px;height:18px;opacity:.85}
 .dates b{color:var(--gold)}
 
 /* form */
@@ -75,11 +81,13 @@ header.top{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px so
 .chk{display:flex;gap:8px;font-size:12.5px;color:var(--muted);margin:6px 0 14px;align-items:flex-start}
 .ferr{color:var(--red-d);font-size:13px;font-weight:600;min-height:18px;margin:-4px 0 8px}
 .formcard .btn{width:100%;padding:14px}
-.fnote{text-align:center;font-size:12px;color:var(--muted);margin-top:10px}
+.fnote{display:flex;justify-content:center;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin-top:10px}
+.fnote .i{width:14px;height:14px}
 
-.ribbon{position:relative;z-index:1;margin-top:44px;background:rgba(0,0,0,.25);backdrop-filter:blur(4px)}
+.ribbon{position:relative;z-index:1;margin-top:44px;background:rgba(0,0,0,.28);backdrop-filter:blur(4px)}
 .ribbon .w{display:flex;justify-content:space-around;flex-wrap:wrap;gap:12px;padding:14px 16px;font-size:14px;font-weight:600}
-.ribbon span::before{content:"✓";color:var(--gold);margin-right:8px;font-weight:800}
+.ribbon span{display:flex;align-items:center;gap:8px}
+.ribbon span::before{content:"";width:16px;height:16px;background:var(--gold);-webkit-mask:var(--check) center/contain no-repeat;mask:var(--check) center/contain no-repeat}
 
 /* sections */
 section.s{padding:80px 0}
@@ -88,32 +96,36 @@ section.soft{background:var(--soft)}
 h2{font-size:clamp(28px,3.6vw,40px);line-height:1.15;margin:8px 0 12px;color:var(--ink);letter-spacing:-.01em}
 .sub{color:var(--muted);max-width:680px;margin:0 0 40px;font-size:17px}
 .center{text-align:center}.center .sub{margin-left:auto;margin-right:auto}
+.ic{flex:none;width:46px;height:46px;border-radius:12px;background:var(--red-50);color:var(--red);display:grid;place-items:center}
+.ic .i{width:22px;height:22px}
 
 /* reward */
 .reward{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
 @media (max-width:900px){.reward{grid-template-columns:1fr}}
-.big-reward{position:relative;overflow:hidden;border-radius:22px;padding:36px;color:#fff;background:linear-gradient(135deg,#101112 0%,#2a0a0e 60%,#5c0911 100%)}
-.big-reward .pct{font-size:clamp(80px,12vw,140px);font-weight:800;line-height:.9;color:var(--gold);letter-spacing:-.04em}
+.big-reward{position:relative;overflow:hidden;border-radius:22px;padding:36px;color:#fff;min-height:420px;display:flex;flex-direction:column;justify-content:flex-end;
+  background:linear-gradient(180deg,rgba(16,17,18,.15) 0%,rgba(16,17,18,.7) 45%,rgba(16,17,18,.95) 100%),url(assets/graduation.jpg) center/cover}
+.big-reward .pct{font-size:clamp(80px,12vw,130px);font-weight:800;line-height:.9;color:var(--gold);letter-spacing:-.04em}
 .big-reward h3{font-size:24px;margin:10px 0 8px}
-.big-reward p{opacity:.8;margin:0 0 22px;max-width:440px}
-.score-pill{display:inline-flex;gap:10px;align-items:center;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:999px;padding:8px 16px;font-weight:700}
+.big-reward p{opacity:.85;margin:0 0 22px;max-width:440px}
+.score-pill{align-self:flex-start;display:inline-flex;gap:10px;align-items:center;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:999px;padding:8px 16px;font-weight:700;backdrop-filter:blur(4px)}
 .score-pill b{color:var(--gold)}
-.trophy{position:absolute;right:-20px;bottom:-30px;font-size:200px;opacity:.08;line-height:1}
 .perks{display:grid;gap:14px}
 .perk{display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px}
-.perk .ic{flex:none;width:46px;height:46px;border-radius:12px;background:var(--red-50);color:var(--red);display:grid;place-items:center;font-size:22px}
 .perk h4{margin:0 0 3px;font-size:16.5px;color:var(--ink)}
 .perk p{margin:0;color:var(--muted);font-size:14.5px}
 
-/* features */
-.feat{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-@media (max-width:980px){.feat{grid-template-columns:1fr 1fr}}
-@media (max-width:520px){.feat{grid-template-columns:1fr}}
-.fc{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;transition:.2s}
-.fc:hover{border-color:var(--red-100);box-shadow:0 14px 30px -18px rgba(238,44,60,.4);transform:translateY(-2px)}
-.fc .ic{font-size:30px;margin-bottom:12px}
-.fc h4{margin:0 0 6px;font-size:17px;color:var(--ink)}
-.fc p{margin:0;color:var(--muted);font-size:14.5px}
+/* why: image + list */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+@media (max-width:900px){.split{grid-template-columns:1fr;gap:28px}}
+.photo{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:5/4;background:#ddd}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo .float{position:absolute;left:18px;bottom:18px;background:#fff;border-radius:14px;padding:12px 16px;display:flex;gap:12px;align-items:center;box-shadow:0 12px 30px -10px rgba(0,0,0,.35)}
+.photo .float b{display:block;color:var(--ink);font-size:18px;line-height:1.2}
+.photo .float span{font-size:12.5px;color:var(--muted)}
+.flist{display:grid;gap:22px}
+.fitem{display:flex;gap:16px}
+.fitem h4{margin:0 0 3px;font-size:17px;color:var(--ink)}
+.fitem p{margin:0;color:var(--muted);font-size:15px}
 
 /* pattern */
 .pat{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
@@ -129,25 +141,45 @@ h2{font-size:clamp(28px,3.6vw,40px);line-height:1.15;margin:8px 0 12px;color:var
 .facts div{background:var(--soft);border-radius:12px;padding:12px 14px}
 .facts b{display:block;font-size:20px;color:var(--ink)}
 .facts span{font-size:13px;color:var(--muted)}
-.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
-.tab{padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font:700 14px "Plus Jakarta Sans",sans-serif;cursor:pointer;color:#3a3f4b}
-.tab.on{background:var(--ink);border-color:var(--ink);color:#fff}
-.topics{display:flex;flex-wrap:wrap;gap:8px}
-.topics span{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px}
 table.lv{width:100%;border-collapse:collapse;margin-top:6px}
 table.lv th,table.lv td{text-align:left;padding:11px 8px;border-bottom:1px solid var(--line);font-size:14.5px}
 table.lv th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
 .lvl-tag{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:800}
 .l1{background:#dcfce7;color:#166534}.l2{background:#e0f2fe;color:#075985}.l3{background:#fef3c7;color:#92400e}.l4{background:var(--red-50);color:var(--red-dd)}
 
+/* syllabus */
+.syl{display:grid;grid-template-columns:.8fr 1.2fr;gap:24px;align-items:stretch}
+@media (max-width:900px){.syl{grid-template-columns:1fr}}
+.syl .photo{aspect-ratio:auto;min-height:260px}
+.tabs{display:flex;gap:8px;margin-bottom:16px;flex-wrap:wrap}
+.tab{padding:9px 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font:700 14px "Plus Jakarta Sans",sans-serif;cursor:pointer;color:#3a3f4b}
+.tab.on{background:var(--ink);border-color:var(--ink);color:#fff}
+.topics{display:flex;flex-wrap:wrap;gap:8px}
+.topics span{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:6px 12px;font-size:14px}
+
 /* steps */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;position:relative}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
 @media (max-width:900px){.steps{grid-template-columns:1fr 1fr}}
 @media (max-width:520px){.steps{grid-template-columns:1fr}}
-.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px;position:relative}
+.step{background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px}
 .step .n{width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;display:grid;place-items:center;font-weight:800;font-size:18px;margin-bottom:14px;box-shadow:0 0 0 6px var(--red-50)}
 .step h4{margin:0 0 6px;font-size:17px;color:var(--ink)}
 .step p{margin:0;color:var(--muted);font-size:14.5px}
+
+/* testimonials */
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media (max-width:900px){.tgrid{grid-template-columns:1fr}}
+.tcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;position:relative}
+.tcard::before{content:"\201C";position:absolute;right:22px;top:4px;font:800 84px/1 Georgia,serif;color:var(--red-100)}
+.stars{display:flex;gap:3px;color:var(--gold);margin-bottom:14px}
+.stars svg{width:18px;height:18px;fill:currentColor}
+.tcard blockquote{margin:0 0 20px;font-size:15.5px;color:var(--text);flex:1}
+.who{display:flex;gap:12px;align-items:center;padding-top:16px;border-top:1px solid var(--line)}
+.av{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;flex:none}
+.who b{display:block;color:var(--ink);font-size:15px}
+.who span{font-size:13px;color:var(--muted)}
+.score-chip{margin-left:auto;background:var(--red-50);color:var(--red-dd);font-weight:800;font-size:13px;padding:4px 10px;border-radius:999px;white-space:nowrap}
+.sample-note{font-size:12.5px;color:var(--muted);text-align:center;margin-top:18px}
 
 /* partner */
 .partner{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px}
@@ -164,8 +196,10 @@ table.lv th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
 .rules ul{list-style:none;padding:0;margin:0}
 .rules li{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:15px}
 .rules li:last-child{border-bottom:0}
-.rules li::before{content:"✓";flex:none;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;font-size:12px;font-weight:800;background:#dcfce7;color:var(--green)}
-.rules .no li::before{content:"✕";background:var(--red-50);color:var(--red)}
+.rules li::before{content:"";flex:none;width:22px;height:22px;border-radius:50%;background:#dcfce7 no-repeat center/12px;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2316a34a' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E")}
+.rules .no li::before{background-color:var(--red-50);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ee2c3c' stroke-width='3.2' stroke-linecap='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E")}
 .rules h4{margin:0 0 6px;font-size:17px;color:var(--ink)}
 
 /* faq */
@@ -175,13 +209,14 @@ details[open]{border-color:var(--red-100)}
 summary{cursor:pointer;list-style:none;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;gap:16px}
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";color:var(--red);font-size:22px;line-height:1}
-details[open] summary::after{content:"–"}
+details[open] summary::after{content:"\2013"}
 details p{margin:10px 0 0;color:var(--muted)}
 
 /* cta */
-.cta-band{border-radius:24px;padding:48px;color:#fff;background:linear-gradient(120deg,#5c0911,#ee2c3c);display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.cta-band{border-radius:24px;padding:56px 48px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  background:linear-gradient(100deg,rgba(92,9,17,.95) 0%,rgba(238,44,60,.85) 100%),url(assets/graduation.jpg) center 35%/cover}
 .cta-band h2{color:#fff;margin:0 0 6px}
-.cta-band p{margin:0;opacity:.85}
+.cta-band p{margin:0;opacity:.88}
 
 footer{background:var(--ink);color:#b9bfcc;padding:48px 0 90px;font-size:14px}
 .fgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
@@ -190,7 +225,7 @@ footer h5{color:#fff;font-size:15px;margin:0 0 10px}
 footer a{display:block;padding:3px 0}
 footer a:hover{color:#fff}
 .flogo{background:#fff;border-radius:10px;padding:8px 12px;display:inline-block;margin-bottom:12px}
-.flogo img{height:30px;display:block}
+.flogo img{height:30px}
 .disc{border-top:1px solid #2a2d33;margin-top:30px;padding-top:18px;font-size:12.5px;color:#8a90a0}
 
 .mbar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid var(--line);padding:10px 16px;display:none;gap:10px;align-items:center;justify-content:space-between;box-shadow:0 -8px 20px rgba(0,0,0,.08)}
@@ -199,6 +234,22 @@ footer a:hover{color:#fff}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="i-zap" viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M22 11.1V12a10 10 0 1 1-5.9-9.1"/><path d="M22 4L12 14l-3-3"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><path d="M8.2 13.9L7 23l5-3 5 3-1.2-9.1"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></symbol>
+</svg>
+
 <div class="draft">Draft prototype for internal review — not an official offer.</div>
 
 <header class="top">
@@ -208,11 +259,11 @@ footer a:hover{color:#fff}
       <a href="#scholarship">Scholarship</a>
       <a href="#pattern">Exam Pattern</a>
       <a href="#syllabus">Syllabus</a>
-      <a href="#how">How to Register</a>
+      <a href="#stories">Student Stories</a>
       <a href="#faq">FAQs</a>
     </nav>
     <div class="top-r">
-      <a class="phone" href="tel:+918097918025">📞 +91 80979 18025</a>
+      <a class="phone" href="tel:+918097918025"><svg class="i"><use href="#i-phone"/></svg>+91 80979 18025</a>
       <a class="btn red sm" href="#register">Register Free</a>
     </div>
   </div>
@@ -221,7 +272,7 @@ footer a:hover{color:#fff}
 <section class="hero">
   <div class="w hero-grid">
     <div>
-      <span class="tag"><i></i>Registrations open · Test live 24×7</span>
+      <span class="tag"><b></b>Registrations open · Test live 24×7</span>
       <div class="ydst">YDST 2026 · YOURDEGREE SCHOLARSHIP TEST</div>
       <h1>Scholarship Ka<br><em>Sabse Smart</em> Test</h1>
       <p class="lead">Score 170 out of 200 and get <b>50% off your first-semester tuition</b> for an online degree from Chandigarh University. Free to take, open anytime, results in minutes.</p>
@@ -232,9 +283,9 @@ footer a:hover{color:#fff}
         <div class="stat"><b>8</b><span>UG &amp; PG programs</span></div>
       </div>
       <div class="dates">
-        <div>📅 Exam window: <b>Open all year</b></div>
-        <div>🔁 Attempts: <b>1 every month</b></div>
-        <div>⚡ Result: <b>Instant</b></div>
+        <div><svg class="i"><use href="#i-cal"/></svg>Exam window: <b>Open all year</b></div>
+        <div><svg class="i"><use href="#i-repeat"/></svg>Attempts: <b>1 every month</b></div>
+        <div><svg class="i"><use href="#i-zap"/></svg>Result: <b>Instant</b></div>
       </div>
     </div>
 
@@ -245,8 +296,7 @@ footer a:hover{color:#fff}
         <label><input type="radio" name="lv" value="UG" checked>Undergraduate</label>
         <label><input type="radio" name="lv" value="PG">Postgraduate</label>
       </div>
-      <div class="fld"><label for="f-course">Program</label>
-        <select id="f-course"></select></div>
+      <div class="fld"><label for="f-course">Program</label><select id="f-course"></select></div>
       <div class="fld"><label for="f-name">Full name</label><input id="f-name" autocomplete="name" placeholder="As on your ID"></div>
       <div class="fld"><label for="f-phone">Mobile number</label>
         <div class="ph"><span>+91</span><input id="f-phone" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile"></div></div>
@@ -254,11 +304,11 @@ footer a:hover{color:#fff}
       <label class="chk"><input type="checkbox" id="f-ok" checked> I agree to the Terms &amp; Conditions and to be contacted by YourDegree counsellors on call, SMS and WhatsApp.</label>
       <div class="ferr" id="f-err"></div>
       <button class="btn red" type="submit">Register &amp; Start Test →</button>
-      <div class="fnote">🔒 Your details are safe with us</div>
+      <div class="fnote"><svg class="i"><use href="#i-lock"/></svg>Your details are safe with us</div>
     </form>
   </div>
   <div class="ribbon"><div class="w">
-    <span>MAH MBA CET pattern</span><span>No negative marking</span><span>AI-proctored &amp; fair</span><span>UGC-entitled university</span>
+    <span>4 sections, 200 questions</span><span>No negative marking</span><span>AI-proctored &amp; fair</span><span>UGC-entitled university</span>
   </div></div>
 </section>
 
@@ -273,28 +323,33 @@ footer a:hover{color:#fff}
         <h3>Tuition fee waiver for Semester 1</h3>
         <p>Valid on any Chandigarh University Online UG or PG program you test for. Use it within 30 days of qualifying.</p>
         <span class="score-pill">Qualifying score <b>170 / 200</b></span>
-        <div class="trophy">🏆</div>
       </div>
       <div class="perks">
-        <div class="perk"><div class="ic">⚡</div><div><h4>Instant scholarship code</h4><p>Qualify and get your code on the result screen, plus a call from your counsellor within 24 hours.</p></div></div>
-        <div class="perk"><div class="ic">🎯</div><div><h4>Fair for every program</h4><p>Same pattern for everyone. Difficulty is matched to your program level, UG or PG.</p></div></div>
-        <div class="perk"><div class="ic">🔁</div><div><h4>Didn't make it? Try next month</h4><p>One attempt every month, with a brand-new paper each time.</p></div></div>
-        <div class="perk"><div class="ic">🧭</div><div><h4>Free expert counselling</h4><p>Every test-taker gets a free session to choose the right program and specialisation.</p></div></div>
+        <div class="perk"><div class="ic"><svg class="i"><use href="#i-zap"/></svg></div><div><h4>Instant scholarship code</h4><p>Qualify and get your code on the result screen, plus a call from your counsellor within 24 hours.</p></div></div>
+        <div class="perk"><div class="ic"><svg class="i"><use href="#i-target"/></svg></div><div><h4>Fair for every program</h4><p>Same pattern for everyone. Difficulty is matched to your program level, UG or PG.</p></div></div>
+        <div class="perk"><div class="ic"><svg class="i"><use href="#i-repeat"/></svg></div><div><h4>Didn't make it? Try next month</h4><p>One attempt every month, with a brand-new paper each time.</p></div></div>
+        <div class="perk"><div class="ic"><svg class="i"><use href="#i-users"/></svg></div><div><h4>Free expert counselling</h4><p>Every test-taker gets a free session to choose the right program and specialisation.</p></div></div>
       </div>
     </div>
   </div>
 </section>
 
 <section class="s soft">
-  <div class="w center">
-    <div class="kicker">Why YDST</div>
-    <h2>Built for busy learners</h2>
-    <p class="sub">No test centres, no fixed dates. Take it when you're ready.</p>
-    <div class="feat" style="text-align:left">
-      <div class="fc"><div class="ic">🕒</div><h4>Anytime, anywhere</h4><p>The test is live 24×7. All you need is a laptop with a webcam.</p></div>
-      <div class="fc"><div class="ic">🛡️</div><h4>AI-proctored</h4><p>Smart proctoring keeps it fair, so a qualifying score means something.</p></div>
-      <div class="fc"><div class="ic">📊</div><h4>Instant result</h4><p>Your total and section-wise score the moment you submit.</p></div>
-      <div class="fc"><div class="ic">✅</div><h4>Zero negative marking</h4><p>Attempt every question with confidence. Wrong answers cost nothing.</p></div>
+  <div class="w split">
+    <div class="photo">
+      <img src="assets/learners.jpg" alt="Students working together on laptops" loading="lazy">
+      <div class="float"><div class="ic"><svg class="i"><use href="#i-award"/></svg></div><div><b>50% off</b><span>First-semester tuition</span></div></div>
+    </div>
+    <div>
+      <div class="kicker">Why YDST</div>
+      <h2>Built for busy learners</h2>
+      <p class="sub" style="margin-bottom:28px">No test centres and no fixed dates. Take it when you're ready, from wherever you are.</p>
+      <div class="flist">
+        <div class="fitem"><div class="ic"><svg class="i"><use href="#i-clock"/></svg></div><div><h4>Anytime, anywhere</h4><p>The test is live 24×7. All you need is a laptop with a webcam.</p></div></div>
+        <div class="fitem"><div class="ic"><svg class="i"><use href="#i-shield"/></svg></div><div><h4>AI-proctored</h4><p>Smart proctoring keeps it fair, so a qualifying score means something.</p></div></div>
+        <div class="fitem"><div class="ic"><svg class="i"><use href="#i-chart"/></svg></div><div><h4>Instant result</h4><p>Your total and section-wise score the moment you submit.</p></div></div>
+        <div class="fitem"><div class="ic"><svg class="i"><use href="#i-check"/></svg></div><div><h4>Zero negative marking</h4><p>Attempt every question with confidence. Wrong answers cost nothing.</p></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -302,8 +357,8 @@ footer a:hover{color:#fff}
 <section class="s" id="pattern">
   <div class="w">
     <div class="kicker">Exam Pattern</div>
-    <h2>Modelled on MAH MBA CET</h2>
-    <p class="sub">200 questions, 150 minutes, 1 mark each. The structure is the same for every program, and question difficulty is set by program level.</p>
+    <h2>4 sections. 200 questions. 150 minutes.</h2>
+    <p class="sub">Every question carries 1 mark. The structure is the same for every program, and question difficulty is set by program level.</p>
     <div class="pat">
       <div class="card">
         <div class="secrow"><b>Logical Reasoning</b><span class="q">75</span><div class="bar"><i style="width:100%"></i></div></div>
@@ -326,7 +381,7 @@ footer a:hover{color:#fff}
             <tr><td>BA, BCom</td><td><span class="lvl-tag l1">Foundation</span></td></tr>
             <tr><td>BBA, BCA</td><td><span class="lvl-tag l2">Intermediate</span></td></tr>
             <tr><td>MA, MCom</td><td><span class="lvl-tag l3">Advanced</span></td></tr>
-            <tr><td>MBA, MCA</td><td><span class="lvl-tag l4">CET level</span></td></tr>
+            <tr><td>MBA, MCA</td><td><span class="lvl-tag l4">Professional</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -338,15 +393,18 @@ footer a:hover{color:#fff}
   <div class="w">
     <div class="kicker">Syllabus</div>
     <h2>What to prepare</h2>
-    <p class="sub">Topics follow the MAH MBA CET syllabus. UG papers stay closer to Class 12 level.</p>
-    <div class="card">
-      <div class="tabs" id="syl-tabs">
-        <button class="tab on" data-k="lr">Logical Reasoning</button>
-        <button class="tab" data-k="qa">Quantitative Aptitude</button>
-        <button class="tab" data-k="va">Verbal Ability &amp; RC</button>
-        <button class="tab" data-k="ar">Abstract Reasoning</button>
+    <p class="sub">Topics across all four sections. UG papers stay close to Class 12 level, and PG papers go a step further.</p>
+    <div class="syl">
+      <div class="photo"><img src="assets/study.jpg" alt="Student taking notes while preparing" loading="lazy"></div>
+      <div class="card">
+        <div class="tabs" id="syl-tabs">
+          <button class="tab on" data-k="lr">Logical Reasoning</button>
+          <button class="tab" data-k="qa">Quantitative Aptitude</button>
+          <button class="tab" data-k="va">Verbal Ability &amp; RC</button>
+          <button class="tab" data-k="ar">Abstract Reasoning</button>
+        </div>
+        <div class="topics" id="syl-topics"></div>
       </div>
-      <div class="topics" id="syl-topics"></div>
     </div>
   </div>
 </section>
@@ -365,7 +423,31 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<section class="s soft">
+<section class="s soft" id="stories">
+  <div class="w">
+    <div class="center"><div class="kicker">Student Stories</div><h2>Learners who made the cut</h2><p class="sub">Working professionals and fresh graduates who turned one test into a head start.</p></div>
+    <div class="tgrid">
+      <div class="tcard">
+        <div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>I took the test on a Sunday night after work. Being able to choose my own time made all the difference. I got my code on the result screen and enrolled the same week.</blockquote>
+        <div class="who"><div class="av" style="background:#ee2c3c">PS</div><div><b>Priya S.</b><span>Online MBA · Pune</span></div><span class="score-chip">178/200</span></div>
+      </div>
+      <div class="tcard">
+        <div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>I missed the cutoff by six marks the first time. The section scores showed me exactly where to work. A month later I cleared it with a new paper.</blockquote>
+        <div class="who"><div class="av" style="background:#101112">RK</div><div><b>Rohit K.</b><span>Online BCA · Jaipur</span></div><span class="score-chip">174/200</span></div>
+      </div>
+      <div class="tcard">
+        <div class="stars"><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg><svg><use href="#i-star"/></svg></div>
+        <blockquote>No negative marking meant I attempted every question. My counsellor called within a day and helped me pick the right specialisation.</blockquote>
+        <div class="who"><div class="av" style="background:#b45309">AN</div><div><b>Ananya N.</b><span>Online MCom · Lucknow</span></div><span class="score-chip">171/200</span></div>
+      </div>
+    </div>
+    <p class="sample-note">Sample testimonials for layout only. Replace them with real student quotes, with their consent, before launch.</p>
+  </div>
+</section>
+
+<section class="s">
   <div class="w">
     <div class="partner">
       <div class="uni">CU</div>
@@ -380,7 +462,7 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<section class="s" id="rules">
+<section class="s soft" id="rules">
   <div class="w">
     <div class="kicker">Eligibility &amp; Rules</div>
     <h2>Good to know</h2>
@@ -402,7 +484,7 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<section class="s soft" id="faq">
+<section class="s" id="faq">
   <div class="w">
     <div class="center"><div class="kicker">FAQs</div><h2>Questions, answered</h2><p class="sub">Still unsure? Call us on +91 80979 18025, 10 AM to 7 PM, all week.</p></div>
     <div class="faq">
@@ -418,7 +500,7 @@ footer a:hover{color:#fff}
   </div>
 </section>
 
-<section class="s">
+<section class="s" style="padding-top:0">
   <div class="w">
     <div class="cta-band">
       <div><h2>Your 50% scholarship is one test away</h2><p>Register free and start right now. The test is open 24×7.</p></div>
@@ -437,7 +519,7 @@ footer a:hover{color:#fff}
       <div><h5>YDST 2026</h5><a href="#scholarship">Scholarship</a><a href="#pattern">Exam pattern</a><a href="#syllabus">Syllabus</a><a href="#faq">FAQs</a></div>
       <div><h5>Talk to us</h5><a href="tel:+918097918025">+91 80979 18025</a><span>7 days a week, 10 AM to 7 PM</span></div>
     </div>
-    <div class="disc">*Scholarship of 50% on first-semester tuition for scores of 170/200 or above, subject to proctoring review and the full Terms &amp; Conditions. YourDegree is a counselling platform. Admission and fees are governed by the university.</div>
+    <div class="disc">*Scholarship of 50% on first-semester tuition for scores of 170/200 or above, subject to proctoring review and the full Terms &amp; Conditions. YourDegree is a counselling platform. Admission and fees are governed by the university. Photos: Unsplash.</div>
   </div>
 </footer>
 
