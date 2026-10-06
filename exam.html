@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CU Scholarship Test</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6f7fb; --surface:#ffffff; --surface-2:#f0f2f7; --text:#151a2d; --muted:#5b6380;
+  --border:#dde1ec; --brand:#c8102e; --brand-ink:#ffffff; --accent:#1d4ed8;
+  --good:#15803d; --good-bg:#e7f6ec; --warn:#b45309; --warn-bg:#fdf3e2; --bad:#b91c1c; --bad-bg:#fdecec;
+  --answered:#16a34a; --review:#7c3aed; --visited:#e5484d;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0e111a; --surface:#161a26; --surface-2:#1e2333; --text:#e8eaf2; --muted:#9aa2bd;
+    --border:#2b3146; --brand:#ef4058; --accent:#6d8dff;
+    --good:#4ade80; --good-bg:#12291b; --warn:#fbbf24; --warn-bg:#2d2310; --bad:#f87171; --bad-bg:#2e1515;
+    --answered:#22c55e; --review:#a78bfa; --visited:#f05252;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0e111a; --surface:#161a26; --surface-2:#1e2333; --text:#e8eaf2; --muted:#9aa2bd;
+  --border:#2b3146; --brand:#ef4058; --accent:#6d8dff;
+  --good:#4ade80; --good-bg:#12291b; --warn:#fbbf24; --warn-bg:#2d2310; --bad:#f87171; --bad-bg:#2e1515;
+  --answered:#22c55e; --review:#a78bfa; --visited:#f05252;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,sans-serif}
+.wrap{max-width:880px;margin:0 auto;padding:32px 16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px}
+h1{font-size:26px;margin:0 0 6px} h2{font-size:19px;margin:0 0 12px}
+.muted{color:var(--muted)}
+.brandbar{display:flex;align-items:center;gap:10px;margin-bottom:20px;font-weight:700}
+.logo{width:34px;height:34px;border-radius:8px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:13px}
+label.f{display:block;font-weight:500;margin:14px 0 6px}
+input[type=text],input[type=email],input[type=tel],select{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font:inherit}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:640px){.row{grid-template-columns:1fr}}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 18px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:600 14px Inter,sans-serif;cursor:pointer}
+.btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.err{color:var(--bad);font-size:14px;margin-top:10px;min-height:20px}
+table{width:100%;border-collapse:collapse;margin:12px 0}
+th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);font-size:14px}
+th{color:var(--muted);font-weight:600}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+ul.rules{padding-left:20px;margin:8px 0} ul.rules li{margin:5px 0}
+.consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:14px}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.mode{border:1px solid var(--border);border-radius:10px;padding:12px;cursor:pointer}
+.mode input{margin-right:6px}
+.mode:has(input:checked){border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.hidden{display:none!important}
+
+/* exam */
+.exam{display:grid;grid-template-rows:auto auto 1fr;min-height:100vh}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap}
+.timer{font:700 18px Inter;font-variant-numeric:tabular-nums;padding:6px 12px;border-radius:8px;background:var(--surface-2)}
+.timer.low{color:var(--bad);background:var(--bad-bg)}
+.proc{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
+.proc video{width:64px;height:48px;border-radius:6px;object-fit:cover;background:#000}
+.dot{width:9px;height:9px;border-radius:50%;background:var(--good)}
+.dot.warn{background:var(--warn)} .dot.bad{background:var(--bad)}
+.tabs{display:flex;gap:6px;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border);overflow-x:auto}
+.tab{white-space:nowrap;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font:500 13px Inter}
+.tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
+.main{display:grid;grid-template-columns:1fr 280px;gap:16px;padding:16px;max-width:1200px;width:100%;margin:0 auto}
+@media (max-width:860px){.main{grid-template-columns:1fr}}
+.qhead{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-bottom:10px}
+.qtext{font-size:17px;margin:0 0 18px;white-space:pre-line}
+.qtext.big{font-size:28px;letter-spacing:6px}
+.opt{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin-bottom:10px;cursor:pointer}
+.opt:hover{background:var(--surface-2)}
+.opt:has(input:checked){border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.opt .ov{font-size:16px}
+.opt.big .ov{font-size:24px;letter-spacing:4px}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.palette{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;max-height:340px;overflow:auto;padding:2px}
+.pb{aspect-ratio:1;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:600 12px Inter;cursor:pointer}
+.pb.v{background:var(--visited);border-color:var(--visited);color:#fff}
+.pb.a{background:var(--answered);border-color:var(--answered);color:#fff}
+.pb.r{background:var(--review);border-color:var(--review);color:#fff}
+.pb.cur{outline:2px solid var(--accent);outline-offset:1px}
+.legend{display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--muted);margin:12px 0}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
+.toast{position:fixed;left:50%;top:16px;transform:translateX(-50%);background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn);padding:10px 16px;border-radius:10px;font-weight:600;z-index:20;max-width:calc(100% - 32px)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:grid;place-items:center;z-index:30;padding:16px}
+.modal .card{max-width:440px;width:100%}
+
+/* result */
+.verdict{padding:18px;border-radius:12px;margin:16px 0}
+.verdict.good{background:var(--good-bg);color:var(--good)}
+.verdict.warn{background:var(--warn-bg);color:var(--warn)}
+.verdict.bad{background:var(--surface-2);color:var(--text)}
+.code{font:700 24px ui-monospace,Menlo,monospace;letter-spacing:2px;padding:12px 16px;border:2px dashed currentColor;border-radius:10px;display:inline-block;margin:8px 0}
+.score{font-size:44px;font-weight:700;font-variant-numeric:tabular-nums}
+.bar{height:8px;border-radius:4px;background:var(--surface-2);overflow:hidden}
+.bar i{display:block;height:100%;background:var(--accent)}
+</style>
+</head>
+<body>
+<div style="background:#fef3c7;color:#78350f;text-align:center;padding:8px 16px;font:600 13px Inter,system-ui,sans-serif;border-bottom:1px solid #f59e0b">Draft prototype for internal review — not an official Online CU offer.</div>
+
+<!-- 1. Register -->
+<section id="s-register" class="wrap">
+  <div class="brandbar"><div class="logo">CU</div>Online CU · Scholarship Test</div>
+  <div class="card">
+    <h1>Register for the scholarship test</h1>
+    <p class="muted">Score 170/200 or above to get 50% off your first-semester tuition. Open to new applicants. One attempt per month.</p>
+    <div class="row">
+      <div><label class="f" for="name">Full name (as on ID)</label><input id="name" type="text" autocomplete="name"></div>
+      <div><label class="f" for="email">Email</label><input id="email" type="email" autocomplete="email"></div>
+    </div>
+    <div class="row">
+      <div><label class="f" for="phone">Mobile number</label><input id="phone" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile"></div>
+      <div><label class="f" for="course">Program you're applying for</label>
+        <select id="course">
+          <option value="">Select a program</option>
+          <optgroup label="Undergraduate">
+            <option value="BA">BA</option><option value="BCOM">BCom</option>
+            <option value="BBA">BBA</option><option value="BCA">BCA</option>
+          </optgroup>
+          <optgroup label="Postgraduate">
+            <option value="MA">MA</option><option value="MCOM">MCom</option>
+            <option value="MBA">MBA</option><option value="MCA">MCA</option>
+          </optgroup>
+        </select>
+      </div>
+    </div>
+    <label class="f">Paper (prototype only)</label>
+    <div class="modes">
+      <label class="mode"><input type="radio" name="mode" value="demo" checked><b>Demo paper</b><div class="muted" style="font-size:13px">20 questions · 15 min · cutoff 17</div></label>
+      <label class="mode"><input type="radio" name="mode" value="full"><b>Full paper</b><div class="muted" style="font-size:13px">200 questions · 150 min · cutoff 170</div></label>
+    </div>
+    <label class="consent"><input type="checkbox" id="newapp"> I am a new applicant and have never been enrolled in an Online CU program.</label>
+    <label class="consent"><input type="checkbox" id="consent"> I agree to the Terms &amp; Conditions and consent to webcam, microphone and screen monitoring during the test.</label>
+    <div class="err" id="reg-err"></div>
+    <div class="actions"><button class="btn primary" id="to-instr">Continue</button>
+      <button class="btn" id="reset-demo" title="Clears saved attempts in this browser">Reset demo attempts</button></div>
+    <p class="muted" style="font-size:12px;margin-top:14px">In production, the mobile number and email are verified by OTP here.</p>
+  </div>
+</section>
+
+<!-- 2. Instructions -->
+<section id="s-instr" class="wrap hidden">
+  <div class="brandbar"><div class="logo">CU</div>Online CU · Scholarship Test</div>
+  <div class="card">
+    <h1>Before you begin</h1>
+    <p class="muted" id="instr-sub"></p>
+    <table>
+      <thead><tr><th>Section</th><th class="n">Questions</th><th class="n">Marks</th></tr></thead>
+      <tbody id="pattern-body"></tbody>
+    </table>
+    <h2>Rules</h2>
+    <ul class="rules">
+      <li>Each question carries 1 mark. <b>No negative marking.</b></li>
+      <li>You can move freely between sections and questions. The test auto-submits when time runs out.</li>
+      <li>The test runs in full screen. Leaving full screen or switching tabs is logged as a proctoring warning.</li>
+      <li>Keep your face visible to the webcam. No phones, other people, notes or AI tools.</li>
+      <li>Starting the test uses your attempt for this month.</li>
+    </ul>
+    <div class="err" id="instr-err"></div>
+    <div class="actions"><button class="btn" id="back-reg">Back</button><button class="btn primary" id="start">Allow camera &amp; start test</button></div>
+  </div>
+</section>
+
+<!-- 3. Exam -->
+<section id="s-exam" class="exam hidden">
+  <div class="topbar">
+    <div style="font-weight:700" id="exam-title"></div>
+    <div class="proc"><video id="cam" autoplay muted playsinline></video><span class="dot" id="proc-dot"></span><span id="proc-text">Proctoring active</span></div>
+    <div class="timer" id="timer">--:--</div>
+  </div>
+  <div class="tabs" id="tabs"></div>
+  <div class="main">
+    <div class="card">
+      <div class="qhead"><span id="qnum"></span><span id="qsec"></span></div>
+      <p class="qtext" id="qtext"></p>
+      <div id="opts"></div>
+      <div class="actions">
+        <button class="btn" id="mark">Mark for review &amp; next</button>
+        <button class="btn" id="clear">Clear response</button>
+        <button class="btn primary" id="next">Save &amp; next</button>
+      </div>
+    </div>
+    <div class="card" style="padding:18px">
+      <h2 style="font-size:15px" id="pal-title"></h2>
+      <div class="legend">
+        <span style="--c:var(--answered)">Answered</span>
+        <span style="--c:var(--visited)">Not answered</span>
+        <span style="--c:var(--review)">Marked for review</span>
+        <span style="--c:var(--border)">Not visited</span>
+      </div>
+      <div class="palette" id="palette"></div>
+      <div class="actions"><button class="btn primary" id="submit" style="width:100%">Submit test</button></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. Result -->
+<section id="s-result" class="wrap hidden">
+  <div class="brandbar"><div class="logo">CU</div>Online CU · Scholarship Test</div>
+  <div class="card" id="result"></div>
+</section>
+
+<div class="modal hidden" id="modal"><div class="card"><h2>Submit your test?</h2><p class="muted" id="modal-text"></p>
+  <div class="actions"><button class="btn" id="modal-no">Keep going</button><button class="btn primary" id="modal-yes">Submit</button></div></div></div>
+<div class="toast hidden" id="toast"></div>
+
+<script>
+// ---------- config ----------
+const LEVEL = {BA:1, BCOM:1, BBA:2, BCA:2, MA:3, MCOM:3, MBA:4, MCA:4};
+const COURSE_NAME = {BA:'BA', BCOM:'BCom', BBA:'BBA', BCA:'BCA', MA:'MA', MCOM:'MCom', MBA:'MBA', MCA:'MCA'};
+const LEVEL_NAME = {1:'UG general', 2:'UG specialised', 3:'PG general', 4:'PG professional'};
+const SECTIONS = [
+  {key:'LR', name:'Logical Reasoning'},
+  {key:'AR', name:'Abstract Reasoning'},
+  {key:'QA', name:'Quantitative Aptitude'},
+  {key:'VA', name:'Verbal Ability & RC'},
+];
+const MODES = {
+  demo: {counts:{LR:8, AR:2, QA:5, VA:5}, minutes:15, cutoff:17, total:20},
+  full: {counts:{LR:75, AR:25, QA:50, VA:50}, minutes:150, cutoff:170, total:200},
+};
+const MAX_WARNINGS = 3;
+
+// ---------- storage (best effort) ----------
+const store = {
+  get(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } },
+  set(k,v){ try{ localStorage.setItem(k, JSON.stringify(v)); }catch(e){} },
+  del(k){ try{ localStorage.removeItem(k); }catch(e){} },
+};
+const monthKey = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+
+// ---------- random ----------
+function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+let rnd = mulberry32(Date.now());
+const ri = (a,b) => a + Math.floor(rnd()*(b-a+1));
+const pick = a => a[Math.floor(rnd()*a.length)];
+const shuffle = a => { a=a.slice(); for(let i=a.length-1;i>0;i--){ const j=Math.floor(rnd()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; };
+const inr = n => '₹' + n.toLocaleString('en-IN');
+function mk(q, opts, ans, big){ const o = shuffle(opts); return {q, options:o, answer:o.indexOf(ans), big:!!big}; }
+function numQ(q, ans, spread, fmt){
+  fmt = fmt || String;
+  const set = new Set([ans]); let g = 0;
+  while(set.size < 4 && g++ < 60){ const v = ans + ri(1, Math.max(2, spread)) * (rnd() < .5 ? -1 : 1); if(v > 0) set.add(v); }
+  let k = 1; while(set.size < 4) set.add(ans + 7 * k++);
+  return mk(q, [...set].map(fmt), fmt(ans));
+}
+
+// ---------- generators: Quantitative Aptitude ----------
+const QA = [
+  d => { const p = d <= 2 ? pick([10,20,25,50]) : pick([12.5,37.5,62.5,15,35]);
+         const n = [12.5,37.5,62.5].includes(p) ? 8*ri(5,60) : 20*ri(3,50);
+         return numQ(`What is ${p}% of ${n}?`, p*n/100, Math.max(3, p*n/1000)); },
+  d => { const cp = 100*ri(2, 5*d+5); const loss = d >= 3 && rnd() < .5;
+         const r = loss ? pick([5,15,30]) : pick([10,20,25,40]);
+         const sp = cp*(loss ? 100-r : 100+r)/100;
+         return numQ(`An article bought for ${inr(cp)} is sold at a ${loss?'loss':'profit'} of ${r}%. What is the selling price?`, sp, cp/10, inr); },
+  d => { const P = 1000*ri(2,10*d), R = pick([4,5,8,10,12]), T = ri(2, d+2);
+         return numQ(`Find the simple interest on ${inr(P)} at ${R}% per annum for ${T} years.`, P*R*T/100, P/20, inr); },
+  d => { const k = d+3, A = ri(15,60); const xs = []; let s = 0;
+         for(let i=0;i<k-1;i++){ const x = A + ri(-10,10); xs.push(x); s += x; }
+         const last = k*A - s; if(last <= 0) return QA[0](d); xs.push(last);
+         return numQ(`What is the average of ${shuffle(xs).join(', ')}?`, A, 4); },
+  d => { let a = ri(1,3+d), b = ri(1,3+d); if(a === b) b++; const N = (a+b)*ri(5,30)*(d >= 3 ? 10 : 1);
+         return numQ(`${inr(N)} is divided between A and B in the ratio ${a}:${b}. What is the larger share?`, N*Math.max(a,b)/(a+b), N/(a+b), inr); },
+  d => { if(d >= 3){ const s = 18*ri(2,7); return numQ(`A car travels at ${s} km/h. What is its speed in metres per second?`, s*5/18, 4); }
+         const s = 10*ri(3,12), t = ri(2,6); return numQ(`A train covers ${s*t} km in ${t} hours. What is its speed in km/h?`, s, 8); },
+  d => { const [a,b,c] = pick([[6,3,2],[12,6,4],[10,15,6],[20,30,12],[12,24,8],[18,9,6],[4,12,3],[30,20,12],[36,12,9]]);
+         return numQ(`A can finish a job in ${a} days and B in ${b} days. Working together, how many days will they take?`, c, 3); },
+];
+
+// ---------- generators: Logical Reasoning ----------
+const WORDS3 = ['CAT','DOG','SUN','MAP','PEN','BOX','CUP','HAT','RUN','TOP','BAG','FAN','KEY','JAM','LOG','NET'];
+const WORDS5 = ['PLANT','TRAIN','CHAIR','GREEN','BRICK','STORM','LIGHT','CLOUD','RIVER','STONE','FRAME','QUICK'];
+const shiftWord = (w,s) => w.split('').map(c => String.fromCharCode((c.charCodeAt(0)-65+s+26*4)%26+65)).join('');
+const LR = [
+  d => { const t = ri(0, d-1); let xs = [];
+         if(t === 0){ const a = ri(1,20), k = ri(2,9); for(let i=0;i<6;i++) xs.push(a+i*k); }
+         else if(t === 1){ const a = ri(1,5), r = ri(2,3); for(let i=0;i<6;i++) xs.push(a*r**i); }
+         else if(t === 2){ let a = ri(2,15), k = ri(1,4); const m = ri(1,3); for(let i=0;i<6;i++){ xs.push(a); a += k; k += m; } }
+         else { let a = ri(1,6); const c = ri(1,5); for(let i=0;i<6;i++){ xs.push(a); a = i%2 ? a+c : a*2; } }
+         const ans = xs.pop(); return numQ(`Find the next number in the series:\n${xs.join(', ')}, ?`, ans, Math.max(3, Math.round(ans/8))); },
+  d => { const list = d >= 3 ? WORDS5 : WORDS3; const w1 = pick(list); let w2 = pick(list); while(w2 === w1) w2 = pick(list);
+         let s = ri(1, d+1); if(d >= 4 && rnd() < .5) s = -s;
+         const c = shiftWord(w2,s); const opts = new Set([c, shiftWord(w2,s+1), shiftWord(w2, s-1 === 0 ? s+2 : s-1), c.split('').reverse().join('')]);
+         let k = 3; while(opts.size < 4) opts.add(shiftWord(w2, s+k++));
+         return mk(`In a certain code, ${w1} is written as ${shiftWord(w1,s)}. How is ${w2} written in that code?`, [...opts], c); },
+  d => { const [a,b,c] = pick([[3,4,5],[6,8,10],[5,12,13],[8,15,17],[9,12,15],[12,16,20]]);
+         const turn = pick(['right','left']); const start = pick(['North','South','East','West']);
+         return numQ(`Ravi walks ${a} km ${start}, turns ${turn} and walks ${b} km. How far is he from his starting point (in km)?`, c, 3); },
+  d => { const f = pick(d >= 3 ? [['square', n=>n*n],['cube', n=>n**3],['double plus one', n=>2*n+1]] : [['square', n=>n*n],['double plus one', n=>2*n+1],['triple', n=>3*n]]);
+         const ns = shuffle([2,3,4,5,6,7,8,9,10,11,12]).slice(0,3);
+         const ans = f[1](ns[2]); return numQ(`If ${ns[0]} → ${f[1](ns[0])} and ${ns[1]} → ${f[1](ns[1])}, then ${ns[2]} → ?`, ans, Math.max(3, Math.round(ans/6))); },
+  d => { if(d >= 3 && rnd() < .5){
+           const primes = shuffle([13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73]).slice(0,3); const odd = pick([51,57,87,91,119,133,143]);
+           return mk('Which number is the odd one out?', [...primes, odd].map(String), String(odd)); }
+         const sq = shuffle([2,3,4,5,6,7,8,9,10,11,12,13,14,15]).slice(0,4).map(n=>n*n); const odd = sq[3] + pick([1,2,-1,3]);
+         return mk('Which number is the odd one out?', [sq[0],sq[1],sq[2],odd].map(String), String(odd)); },
+  d => { const m = ri(1,14), k = ri(2,5+d); const L = i => String.fromCharCode(64+i);
+         const right = m+k <= 26; const pos = right ? m+k : m-k; if(pos < 1) return LR[0](d);
+         const opts = new Set([L(pos)]); for(const dlt of [1,-1,2,-2,3]) if(opts.size < 4 && pos+dlt >= 1 && pos+dlt <= 26) opts.add(L(pos+dlt));
+         return mk(`In the English alphabet, which letter is ${k} places to the ${right?'right':'left'} of the ${m}${['th','st','nd','rd'][(m%10<4 && Math.floor(m/10)!==1)?m%10:0]} letter from the left?`, [...opts], L(pos)); },
+];
+
+// ---------- generators: Abstract Reasoning ----------
+const ARROWS = ['↑','↗','→','↘','↓','↙','←','↖'];
+const SYMS = ['▲','●','■','◆'];
+const AR = [
+  d => { let i = ri(0,7); const dir = rnd() < .5 ? 1 : -1; let step = d >= 3 ? 1 : ri(1,2); const terms = [];
+         for(let n=0;n<5;n++){ terms.push(ARROWS[(i%8+8)%8]); i += dir*step; if(d >= 3) step++; }
+         const ans = terms.pop(); const opts = new Set([ans]); while(opts.size < 4) opts.add(pick(ARROWS));
+         return mk(`Which figure comes next?\n${terms.join('  ')}  ?`, [...opts], ans, true); },
+  d => { const a = pick(SYMS); let b = pick(SYMS); while(b === a) b = pick(SYMS);
+         const start = ri(1,2), inc = d >= 2 ? ri(1,2) : 1, alt = d >= 3; const terms = [];
+         for(let n=0;n<5;n++){ const s = alt && n%2 ? b : a; terms.push(s.repeat(start + n*inc)); }
+         const ans = terms.pop(); const cnt = start + 4*inc; const s = alt ? a : a;
+         const opts = new Set([ans, s.repeat(cnt+1), s.repeat(Math.max(1,cnt-1)), b.repeat(cnt)]);
+         return mk(`Which figure comes next?\n${terms.join('   ')}   ?`, [...opts], ans, true); },
+  d => { const base = ri(0,7), step = pick(d >= 3 ? [1,3] : [2]);
+         const row = [0,1,2].map(k => ARROWS[(base+k*step)%8]); const ans = ARROWS[(base+3*step)%8];
+         const opts = new Set([ans]); while(opts.size < 4) opts.add(pick(ARROWS));
+         return mk(`Each figure rotates by the same amount. Which comes next?\n${row.join('  ')}  ?`, [...opts], ans, true); },
+];
+
+// ---------- generators: Verbal Ability ----------
+const SYN = [['Abundant','Plentiful'],['Candid','Frank'],['Diligent','Hardworking'],['Eloquent','Articulate'],['Frugal','Thrifty'],['Hostile','Unfriendly'],['Lucid','Clear'],['Meticulous','Careful'],['Novice','Beginner'],['Obsolete','Outdated'],['Prudent','Sensible'],['Reluctant','Unwilling'],['Tedious','Boring'],['Zeal','Enthusiasm'],['Ample','Sufficient'],['Benevolent','Kind'],['Concise','Brief'],['Deter','Discourage'],['Elated','Joyful'],['Fragile','Delicate'],['Gregarious','Sociable'],['Hinder','Obstruct'],['Imminent','Impending'],['Jovial','Cheerful'],['Lethargic','Sluggish'],['Mitigate','Alleviate'],['Ominous','Threatening'],['Pragmatic','Practical'],['Resilient','Tough'],['Sagacious','Wise'],['Vivid','Bright'],['Wary','Cautious']];
+const ANT = [['Ancient','Modern'],['Brave','Cowardly'],['Generous','Stingy'],['Expand','Contract'],['Optimistic','Pessimistic'],['Transparent','Opaque'],['Humble','Arrogant'],['Scarce','Plentiful'],['Victory','Defeat'],['Artificial','Natural'],['Permanent','Temporary'],['Hasty','Deliberate'],['Include','Exclude'],['Praise','Criticise'],['Rigid','Flexible'],['Vague','Precise'],['Ascend','Descend'],['Superior','Inferior'],['Maximum','Minimum'],['Accept','Reject']];
+const SENT = [
+  ['Neither of the students has submitted the assignment.', ['Neither of the students have submitted the assignment.','Neither of the student has submitted the assignment.','Neither of the students submitting the assignment.']],
+  ['She has been working here since 2019.', ['She is working here since 2019.','She has been working here for 2019.','She was working here since 2019.']],
+  ['Each of the players was given a medal.', ['Each of the players were given a medal.','Each of the player were given a medal.','Each players was given a medal.']],
+  ['If I had known, I would have helped you.', ['If I would have known, I would have helped you.','If I knew, I would have helped you.','If I had known, I will help you.']],
+  ['The manager, along with his team, is attending the meeting.', ['The manager, along with his team, are attending the meeting.','The manager along with his team are attending meeting.','The manager, along with his team, attending the meeting.']],
+  ['He is one of the best players who have played for India.', ['He is one of the best player who has played for India.','He is one of the best players which have played for India.','He is one of best players who has played for India.']],
+  ['I prefer tea to coffee.', ['I prefer tea than coffee.','I prefer tea over to coffee.','I am prefer tea to coffee.']],
+  ['Hardly had we reached the station when the train left.', ['Hardly had we reached the station than the train left.','Hardly we had reached the station when the train left.','Hardly had we reach the station when the train left.']],
+  ['The news is too good to be true.', ['The news are too good to be true.','The news is too good to being true.','The news is so good to be true.']],
+  ['Scarcely anyone attended the lecture.', ['Scarcely no one attended the lecture.','Scarcely anyone did not attend the lecture.','Scarcely anyone attend the lecture.']],
+  ['The committee has submitted its report.', ['The committee have submitted its report.','The committee has submitted their report.','The committee have submit its report.']],
+  ['Not only did he win, but he also set a record.', ['Not only he won, but he also set a record.','Not only did he won, but also set a record.','Not only did he win, but he also sets a record.']],
+];
+const VA = [
+  d => { const [w,s] = pick(SYN); const others = shuffle(SYN.filter(p => p[0] !== w)).slice(0,3).map(p => p[1]);
+         return mk(`Choose the word most similar in meaning to "${w.toUpperCase()}".`, [s, ...others], s); },
+  d => { const [w,a] = pick(ANT); const others = shuffle(ANT.filter(p => p[0] !== w)).slice(0,3).map(p => p[0] === a ? p[1] : p[0]).filter(x => x !== a);
+         while(others.length < 3) others.push(pick(SYN)[1]);
+         return mk(`Choose the word most opposite in meaning to "${w.toUpperCase()}".`, [a, ...others.slice(0,3)], a); },
+  d => { const [c, wrong] = pick(SENT); return mk('Choose the grammatically correct sentence.', [c, ...wrong], c); },
+];
+
+const GENS = {LR, AR, QA, VA};
+function buildSection(key, count, level){
+  const out = [], seen = new Set(); let tries = 0;
+  while(out.length < count && tries++ < count*60){
+    const q = pick(GENS[key])(level);
+    const id = q.q + '|' + q.options[q.answer];
+    if(seen.has(id) || q.answer < 0 || new Set(q.options).size !== 4) continue;
+    seen.add(id); out.push(q);
+  }
+  while(out.length < count) out.push(pick(GENS[key])(level)); // prototype fallback
+  return out;
+}
+
+// ---------- state ----------
+const $ = id => document.getElementById(id);
+const show = id => ['s-register','s-instr','s-exam','s-result'].forEach(s => $(s).classList.toggle('hidden', s !== id));
+let S = null; // exam state
+
+$('reset-demo').onclick = () => { store.del('ocu_attempts'); $('reg-err').textContent = 'Demo attempts cleared.'; };
+
+$('to-instr').onclick = () => {
+  const name = $('name').value.trim(), email = $('email').value.trim().toLowerCase(), phone = $('phone').value.trim(), course = $('course').value;
+  const err = m => $('reg-err').textContent = m;
+  if(name.length < 2) return err('Enter your full name.');
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return err('Enter a valid email.');
+  if(!/^[6-9]\d{9}$/.test(phone)) return err('Enter a valid 10-digit Indian mobile number.');
+  if(!course) return err('Choose the program you are applying for.');
+  if(!$('newapp').checked) return err('The scholarship is open to new applicants only.');
+  if(!$('consent').checked) return err('Please accept the terms and proctoring consent.');
+  const attempts = store.get('ocu_attempts') || {}; const now = monthKey(new Date());
+  if(attempts[email] === now || attempts[phone] === now){
+    const n = new Date(); const next = new Date(n.getFullYear(), n.getMonth()+1, 1);
+    return err(`You've already used this month's attempt. Your next attempt opens on ${next.toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}.`);
+  }
+  err('');
+  const mode = document.querySelector('input[name=mode]:checked').value;
+  S = {name, email, phone, course, level: LEVEL[course], mode, cfg: MODES[mode]};
+  $('instr-sub').textContent = `${COURSE_NAME[course]} paper · ${LEVEL_NAME[S.level]} difficulty · ${S.cfg.total} questions · ${S.cfg.minutes} minutes · qualifying score ${S.cfg.cutoff}/${S.cfg.total}`;
+  $('pattern-body').innerHTML = SECTIONS.map(s => `<tr><td>${s.name}</td><td class="n">${S.cfg.counts[s.key]}</td><td class="n">${S.cfg.counts[s.key]}</td></tr>`).join('')
+    + `<tr><th>Total</th><th class="n">${S.cfg.total}</th><th class="n">${S.cfg.total}</th></tr>`;
+  show('s-instr');
+};
+$('back-reg').onclick = () => show('s-register');
+
+$('start').onclick = async () => {
+  $('start').disabled = true;
+  S.flags = []; S.warnings = 0;
+  // full screen must be requested while the click gesture is still fresh
+  try{ await document.documentElement.requestFullscreen(); }catch(e){}
+  try{
+    const stream = await navigator.mediaDevices.getUserMedia({video:true, audio:true});
+    $('cam').srcObject = stream; S.stream = stream;
+  }catch(e){
+    S.flags.push('Camera or microphone not available');
+    $('cam').classList.add('hidden');
+  }
+  // record the attempt as soon as the test starts
+  const attempts = store.get('ocu_attempts') || {}; const m = monthKey(new Date());
+  attempts[S.email] = m; attempts[S.phone] = m; store.set('ocu_attempts', attempts);
+
+  rnd = mulberry32(Date.now() ^ S.phone.split('').reduce((a,c) => a*31 + c.charCodeAt(0) | 0, 7));
+  S.sections = SECTIONS.map(s => ({...s, qs: buildSection(s.key, S.cfg.counts[s.key], S.level).map(q => ({...q, resp:null, status:'nv'}))}));
+  S.sec = 0; S.idx = 0; S.active = true; S.started = Date.now(); S.end = Date.now() + S.cfg.minutes*60000;
+  $('exam-title').textContent = `${COURSE_NAME[S.course]} Scholarship Test`;
+  show('s-exam'); renderTabs(); renderQ(); tick(); S.timer = setInterval(tick, 1000);
+  $('start').disabled = false;
+};
+
+// ---------- exam rendering ----------
+function cur(){ return S.sections[S.sec].qs[S.idx]; }
+function renderTabs(){
+  $('tabs').innerHTML = S.sections.map((s,i) => {
+    const done = s.qs.filter(q => q.resp !== null).length;
+    return `<button class="tab ${i===S.sec?'on':''}" data-i="${i}">${s.name} · ${done}/${s.qs.length}</button>`;
+  }).join('');
+  $('tabs').querySelectorAll('.tab').forEach(b => b.onclick = () => go(+b.dataset.i, 0));
+}
+function renderQ(){
+  const q = cur(); if(q.status === 'nv') q.status = 'v';
+  const sec = S.sections[S.sec];
+  $('qnum').textContent = `Question ${S.idx+1} of ${sec.qs.length}`;
+  $('qsec').textContent = sec.name;
+  $('qtext').textContent = q.q; $('qtext').classList.toggle('big', false);
+  $('opts').innerHTML = q.options.map((o,i) => `<label class="opt ${q.big?'big':''}"><input type="radio" name="opt" value="${i}" ${q.resp===i?'checked':''}><span class="ov">${String.fromCharCode(65+i)}. ${o.replace(/</g,'&lt;')}</span></label>`).join('');
+  $('opts').querySelectorAll('input').forEach(r => r.onchange = () => { q.resp = +r.value; if(q.status !== 'r') q.status = 'a'; renderPalette(); renderTabs(); });
+  renderPalette();
+}
+function renderPalette(){
+  const sec = S.sections[S.sec];
+  $('pal-title').textContent = sec.name;
+  $('palette').innerHTML = sec.qs.map((q,i) => {
+    const c = q.status === 'r' ? 'r' : q.resp !== null ? 'a' : q.status === 'v' ? 'v' : '';
+    return `<button class="pb ${c} ${i===S.idx?'cur':''}" data-i="${i}">${i+1}</button>`;
+  }).join('');
+  $('palette').querySelectorAll('.pb').forEach(b => b.onclick = () => go(S.sec, +b.dataset.i));
+}
+function go(sec, idx){ S.sec = sec; S.idx = idx; renderTabs(); renderQ(); }
+function advance(){
+  const sec = S.sections[S.sec];
+  if(S.idx < sec.qs.length-1) go(S.sec, S.idx+1);
+  else if(S.sec < S.sections.length-1) go(S.sec+1, 0);
+  else renderQ();
+}
+$('next').onclick = () => { const q = cur(); if(q.status === 'r' && q.resp !== null) q.status = 'a'; advance(); };
+$('mark').onclick = () => { cur().status = 'r'; advance(); };
+$('clear').onclick = () => { const q = cur(); q.resp = null; q.status = 'v'; renderQ(); renderTabs(); };
+
+function tick(){
+  const left = Math.max(0, S.end - Date.now());
+  const m = Math.floor(left/60000), s = Math.floor(left/1000)%60;
+  $('timer').textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  $('timer').classList.toggle('low', left < 5*60000);
+  if(left <= 0) finish('Time is up');
+}
+
+// ---------- proctoring (prototype) ----------
+let toastT;
+function toast(msg){ $('toast').textContent = msg; $('toast').classList.remove('hidden'); clearTimeout(toastT); toastT = setTimeout(() => $('toast').classList.add('hidden'), 4000); }
+function warn(reason){
+  if(!S || !S.active) return;
+  S.warnings++; S.flags.push(reason);
+  const dot = $('proc-dot');
+  dot.className = 'dot ' + (S.warnings >= MAX_WARNINGS ? 'bad' : 'warn');
+  $('proc-text').textContent = `${S.warnings} warning${S.warnings>1?'s':''}`;
+  toast(`Proctoring warning ${S.warnings}: ${reason}`);
+}
+document.addEventListener('visibilitychange', () => { if(document.hidden) warn('Switched tab or window'); });
+document.addEventListener('fullscreenchange', () => { if(!document.fullscreenElement && S && S.active) warn('Left full screen'); });
+['copy','paste','cut','contextmenu'].forEach(ev => document.addEventListener(ev, e => { if(S && S.active){ e.preventDefault(); if(ev !== 'contextmenu') warn('Copy/paste attempted'); } }));
+
+// ---------- submit ----------
+$('submit').onclick = () => {
+  const all = S.sections.flatMap(s => s.qs); const ans = all.filter(q => q.resp !== null).length;
+  $('modal-text').textContent = `You have answered ${ans} of ${all.length} questions. You can't change answers after submitting.`;
+  $('modal').classList.remove('hidden');
+};
+$('modal-no').onclick = () => $('modal').classList.add('hidden');
+$('modal-yes').onclick = () => { $('modal').classList.add('hidden'); finish('Submitted'); };
+
+function finish(how){
+  if(!S.active) return;
+  S.active = false; clearInterval(S.timer);
+  if(S.stream) S.stream.getTracks().forEach(t => t.stop());
+  if(document.fullscreenElement) document.exitFullscreen().catch(() => {});
+  const rows = S.sections.map(s => ({name:s.name, total:s.qs.length, correct:s.qs.filter(q => q.resp === q.answer).length, attempted:s.qs.filter(q => q.resp !== null).length}));
+  const score = rows.reduce((a,r) => a + r.correct, 0);
+  const qualified = score >= S.cfg.cutoff;
+  const flagged = S.warnings >= MAX_WARNINGS || S.flags.includes('Camera or microphone not available');
+  const mins = Math.round((Date.now() - S.started)/60000);
+  let verdict;
+  if(qualified && !flagged){
+    const code = `OCU-${S.course}-${Math.random().toString(36).slice(2,8).toUpperCase()}`;
+    const exp = new Date(Date.now() + 30*864e5).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'});
+    verdict = `<div class="verdict good"><b>Congratulations, you've qualified!</b><br>Your scholarship code for 50% off ${COURSE_NAME[S.course]} first-semester tuition:<br><span class="code">${code}</span><br>Valid until <b>${exp}</b>, for the ${COURSE_NAME[S.course]} program only. An admissions counsellor will call you within 24 hours.</div>`;
+  } else if(qualified){
+    verdict = `<div class="verdict warn"><b>You've scored above the cutoff. Your result is under proctoring review.</b><br>${S.warnings} proctoring warning(s) were logged. We'll confirm your scholarship within 48 hours.</div>`;
+  } else {
+    const n = new Date(); const next = new Date(n.getFullYear(), n.getMonth()+1, 1).toLocaleDateString('en-IN',{day:'numeric',month:'long'});
+    verdict = `<div class="verdict bad"><b>You needed ${S.cfg.cutoff} to qualify. You were ${S.cfg.cutoff - score} marks short.</b><br>Your next attempt opens on <b>${next}</b> with a new set of questions. You can still apply to ${COURSE_NAME[S.course]} now. A counsellor will reach out to help.</div>`;
+  }
+  $('result').innerHTML = `
+    <p class="muted" style="margin:0">${how} · ${S.name} · ${COURSE_NAME[S.course]} paper · ${mins} min</p>
+    <div class="score">${score}<span class="muted" style="font-size:22px"> / ${S.cfg.total}</span></div>
+    ${verdict}
+    <h2>Section scores</h2>
+    <table><thead><tr><th>Section</th><th class="n">Attempted</th><th class="n">Correct</th><th style="width:30%"></th></tr></thead><tbody>
+    ${rows.map(r => `<tr><td>${r.name}</td><td class="n">${r.attempted}/${r.total}</td><td class="n">${r.correct}</td><td><div class="bar"><i style="width:${Math.round(100*r.correct/r.total)}%"></i></div></td></tr>`).join('')}
+    </tbody></table>
+    <p class="muted" style="font-size:13px">Proctoring: ${S.flags.length ? S.flags.join(' · ') : 'no issues logged'}.</p>
+    <div class="actions"><a class="btn" href="index.html">Back to scholarship page</a></div>`;
+  show('s-result');
+}
+</script>
+</body>
+</html>
