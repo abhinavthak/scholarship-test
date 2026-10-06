@@ -225,49 +225,65 @@ table.lv th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
 .l1{background:#dcfce7;color:#166534}.l2{background:#e0f2fe;color:#075985}.l3{background:#fef3c7;color:#92400e}.l4{background:var(--red-50);color:var(--red-dd)}
 
 /* syllabus */
-.syl-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:24px}
+.syl-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:22px}
 .syl-head .sub{margin-bottom:0}
 .seg{display:inline-flex;background:#fff;border:1.5px solid var(--line);border-radius:14px;padding:4px;gap:4px}
 .seg button{border:0;background:transparent;border-radius:10px;padding:10px 18px;cursor:pointer;text-align:left;font:700 15px "Plus Jakarta Sans",sans-serif;color:#3a3f4b}
 .seg button small{display:block;font-weight:500;font-size:12px;color:var(--muted)}
 .seg button.on{background:var(--ink);color:#fff}
 .seg button.on small{color:#c9cdd6}
-.mix{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:20px}
-.mix-top{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:14px;color:var(--muted);margin-bottom:12px}
-.mix-top b{color:var(--ink)}
-.mixbar{display:flex;height:34px;border-radius:9px;overflow:hidden;gap:3px}
-.mixbar div{background:var(--c);color:#fff;font-size:12.5px;font-weight:700;display:flex;align-items:center;padding:0 10px;white-space:nowrap;overflow:hidden}
-.mixleg{display:none;grid-template-columns:1fr 1fr;gap:6px 12px;margin-top:12px;font-size:13px}
-.mixleg span{display:flex;align-items:center;gap:7px}
-.mixleg span::before{content:"";width:10px;height:10px;border-radius:3px;background:var(--c)}
-@media (max-width:640px){.mixbar{height:12px}.mixbar div{font-size:0;padding:0}.mixleg{display:grid}}
-.sgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
-@media (max-width:900px){.sgrid{grid-template-columns:1fr}}
-.sgrid>*{min-width:0}
-.scard{background:#fff;border:1px solid var(--line);border-top:4px solid var(--c);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:14px}
-.scard header{display:flex;gap:14px;align-items:center}
-.scard .ic{background:color-mix(in srgb,var(--c) 12%,#fff);color:var(--c)}
-.scard h3{margin:0;font-size:18px;color:var(--ink);line-height:1.25}
-.scard header span{font-size:13.5px;color:var(--muted)}
-.scard .time{margin-left:auto;text-align:right;line-height:1.2;white-space:nowrap}
-.scard .time b{display:block;font-size:18px;color:var(--ink)}
-.scard .time span{font-size:12px}
-.scard .tests{margin:0;color:var(--text);font-size:15px}
-.lvlbox{background:var(--soft);border-radius:12px;padding:12px 14px;font-size:14.5px;color:var(--text)}
-.lvlbox b{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-bottom:2px}
-.lab{display:block;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
-.topics{display:flex;flex-wrap:wrap;gap:7px}
-.topics span{background:#fff;border:1px solid var(--line);border-radius:999px;padding:5px 11px;font-size:13.5px}
-.topics span.hot{border-color:var(--c);color:var(--ink);font-weight:700;background:color-mix(in srgb,var(--c) 8%,#fff)}
-.topics span.hot::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--c);margin-right:7px;vertical-align:2px}
-.try{align-self:flex-start;background:transparent;border:1.5px solid var(--c);color:var(--c);border-radius:10px;padding:9px 16px;cursor:pointer;font:700 14px "Plus Jakarta Sans",sans-serif}
+.syl-meta{font-size:14px;color:var(--muted);margin-bottom:14px}
+.syl-meta b{color:var(--ink)}
+.stiles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+@media (max-width:900px){.stiles{grid-template-columns:1fr 1fr}}
+.stile{position:relative;text-align:left;background:#fff;border:1.5px solid var(--line);border-radius:16px;padding:16px;cursor:pointer;font:inherit;color:inherit;display:flex;gap:12px;align-items:center;transition:border-color .15s,box-shadow .15s,transform .15s}
+.stile:hover{transform:translateY(-1px);border-color:color-mix(in srgb,var(--c) 40%,#fff)}
+.stile .ic{background:color-mix(in srgb,var(--c) 12%,#fff);color:var(--c)}
+.stile b{display:block;color:var(--ink);font-size:15px;line-height:1.25}
+.stile span{display:block;font-size:12.5px;color:var(--muted)}
+.stile .share{position:absolute;left:16px;right:16px;bottom:8px;height:4px;border-radius:2px;background:var(--soft);overflow:hidden}
+.stile .share i{display:block;height:100%;background:var(--c)}
+.stile.on{border-color:var(--c);box-shadow:0 14px 30px -20px var(--c);background:color-mix(in srgb,var(--c) 5%,#fff)}
+@media (max-width:560px){.stile{flex-direction:column;align-items:flex-start;gap:8px;padding:14px 14px 18px}.stile .ic{width:38px;height:38px}}
+.sdetail{display:grid;grid-template-columns:1.4fr .6fr;gap:18px;align-items:start}
+@media (max-width:980px){.sdetail{grid-template-columns:1fr}}
+.sdetail>*{min-width:0}
+.tcardx{background:#fff;border:1px solid var(--line);border-top:4px solid var(--c);border-radius:18px;overflow:hidden}
+.tc-head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:18px 22px;border-bottom:1px solid var(--line)}
+.tc-head h3{margin:0;font-size:18px;color:var(--ink)}
+.tc-head span{font-size:13px;color:var(--muted)}
+.trow{display:grid;grid-template-columns:28px 1fr 150px;gap:14px;align-items:center;padding:14px 22px;border-bottom:1px solid var(--line)}
+.trow:last-child{border-bottom:0}
+@media (max-width:600px){.trow{grid-template-columns:24px 1fr;padding:14px 16px}.trow .qs{grid-column:2}}
+.trow .no{width:26px;height:26px;border-radius:8px;background:var(--soft);display:grid;place-items:center;font-size:12px;font-weight:800;color:var(--muted)}
+.trow b{color:var(--ink);font-size:15px}
+.trow .hi{display:inline-block;margin-left:8px;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--c);background:color-mix(in srgb,var(--c) 10%,#fff);border-radius:6px;padding:2px 7px;vertical-align:2px}
+.trow p{margin:2px 0 0;font-size:13.5px;color:var(--muted)}
+.qs{display:flex;align-items:center;gap:10px}
+.qs .bar{flex:1;height:8px;border-radius:4px;background:var(--soft);overflow:hidden}
+.qs .bar i{display:block;height:100%;background:var(--c);border-radius:4px}
+.qs em{font-style:normal;font-size:13px;font-weight:800;color:var(--ink);white-space:nowrap;min-width:44px;text-align:right}
+.tc-foot{display:flex;justify-content:space-between;gap:12px;padding:12px 22px;background:var(--soft);font-size:12.5px;color:var(--muted)}
+.tc-foot b{color:var(--ink)}
+.sside{display:grid;gap:14px}
+.ovr{background:#fff;border:1px solid var(--line);border-radius:18px;padding:20px}
+.ovr .ttl{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:10px}
+.ovr .ttl b{font-size:16px;color:var(--ink)}
+.ovr .time{text-align:right;line-height:1.2;white-space:nowrap}
+.ovr .time b{display:block;font-size:18px;color:var(--ink)}
+.ovr .time span{font-size:12px;color:var(--muted)}
+.ovr p{margin:0 0 12px;font-size:14.5px}
+.lvlbox{background:var(--soft);border-radius:12px;padding:12px 14px;font-size:14px;color:var(--text)}
+.lvlbox b{display:block;font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-bottom:2px}
+.try{width:100%;background:transparent;border:1.5px solid var(--c);color:var(--c);border-radius:12px;padding:11px 16px;cursor:pointer;font:700 14px "Plus Jakarta Sans",sans-serif}
 .try:hover{background:color-mix(in srgb,var(--c) 8%,#fff)}
-.quiz{border:1.5px dashed var(--line);border-radius:14px;padding:16px}
-.quiz .qq{margin:0 0 12px;font-weight:600;color:var(--ink);font-size:15px;white-space:pre-line}
+.quiz{background:#fff;border:1px solid var(--line);border-radius:18px;padding:18px}
+.quiz .qq{margin:0 0 12px;font-weight:600;color:var(--ink);font-size:15px}
+.quiz .lab{display:block;font-size:11.5px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--c);margin-bottom:6px}
 .quiz .figs{display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
 .quiz .figs .qm{width:56px;height:56px;border:1.5px dashed var(--muted);border-radius:8px;display:grid;place-items:center;font-weight:800;color:var(--muted)}
-.qopts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.qopts button{display:flex;align-items:center;gap:8px;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:9px 12px;cursor:pointer;font:500 14px "Plus Jakarta Sans",sans-serif;color:var(--text)}
+.qopts{display:grid;gap:8px}
+.qopts button{display:flex;align-items:center;gap:10px;text-align:left;border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:9px 12px;cursor:pointer;font:500 14px "Plus Jakarta Sans",sans-serif;color:var(--text)}
 .qopts button:hover:not(:disabled){border-color:var(--c)}
 .qopts button:disabled{cursor:default}
 .qopts button.ok{border-color:var(--green);background:#ecfdf3}
@@ -286,8 +302,6 @@ table.lv th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:v
 .prep li{display:flex;gap:12px;font-size:15px}
 .prep li::before{counter-increment:p;content:counter(p);flex:none;width:28px;height:28px;border-radius:50%;background:var(--red-50);color:var(--red);font-weight:800;display:grid;place-items:center;font-size:14px}
 .prep .btns{display:flex;gap:10px;flex-wrap:wrap}
-.btn.ghost{background:#fff;color:var(--ink);border:1.5px solid var(--line)}
-
 
 /* steps */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
@@ -565,26 +579,16 @@ footer a:hover{color:#fff}
       <div>
         <div class="kicker">Syllabus</div>
         <h2>What to prepare</h2>
-        <p class="sub">One paper, four sections. Choose your level to see what each section asks of you, then try a sample question.</p>
+        <p class="sub">Every topic in the paper, with roughly how many questions it carries. Pick your level, then a section.</p>
       </div>
       <div class="seg" id="lvl-seg">
         <button class="on" data-l="UG">UG programs<small>BA · BCom · BBA · BCA</small></button>
         <button data-l="PG">PG programs<small>MA · MCom · MBA · MCA</small></button>
       </div>
     </div>
-
-    <div class="mix">
-      <div class="mix-top"><span><b>200 MCQs</b> · 150 minutes · 1 mark each · no negative marking</span><span>Share of the paper</span></div>
-      <div class="mixbar">
-        <div style="--c:#ee2c3c;flex:75">Logical Reasoning · 75</div>
-        <div style="--c:#2563eb;flex:50">Quant · 50</div>
-        <div style="--c:#059669;flex:50">Verbal · 50</div>
-        <div style="--c:#7c3aed;flex:25">Abstract · 25</div>
-      </div>
-      <div class="mixleg"><span style="--c:#ee2c3c">Logical · 75</span><span style="--c:#2563eb">Quant · 50</span><span style="--c:#059669">Verbal · 50</span><span style="--c:#7c3aed">Abstract · 25</span></div>
-    </div>
-
-    <div class="sgrid rv" id="sgrid"></div>
+    <div class="syl-meta rv"><b>200 MCQs</b> · 150 minutes · 1 mark each · no negative marking</div>
+    <div class="stiles rv" id="stiles"></div>
+    <div class="sdetail rv" id="sdetail"></div>
 
     <div class="prep rv">
       <img src="assets/study.jpg" alt="Student taking notes while preparing" loading="lazy">
@@ -593,7 +597,7 @@ footer a:hover{color:#fff}
         <h3>Three steps before your attempt</h3>
         <ol>
           <li><span>Take the free 20-question practice paper to find your weakest section.</span></li>
-          <li><span>Spend the most time on Logical Reasoning. It is 75 of the 200 questions.</span></li>
+          <li><span>Start with the high-weight topics in each section. They carry the most marks.</span></li>
           <li><span>Answer every question on the day. Wrong answers cost nothing.</span></li>
         </ol>
         <div class="btns"><a class="btn red" href="exam.html">Take the practice paper</a><a class="btn ghost" href="#register">Register for the full test</a></div>
@@ -734,73 +738,75 @@ document.getElementById('ugrid').innerHTML = UNIS.map(([k,n,c,r]) => `<div class
   + `<a class="ucard more" href="https://yourdegree.com/universities/" target="_blank" rel="noopener"><div class="plus">+79</div><div><b>79 more universities</b><span>See all on YourDegree</span></div></a>`;
 
 const SECTIONS = [
-  {key:'lr', name:'Logical Reasoning', c:'#ee2c3c', icon:'i-puzzle', q:75, time:'~55 min',
+  {key:'lr', name:'Logical Reasoning', short:'Logical', c:'#ee2c3c', icon:'i-puzzle', q:75, time:'~55 min',
    tests:'Spotting patterns, following rules and drawing conclusions.',
-   UG:{what:'Single-step questions: number and letter series, coding, directions and blood relations.',
-       hot:['Series','Coding–decoding','Direction sense','Blood relations'], more:['Analogies','Odd one out','Alphabet test','Simple arrangements'],
-       quiz:{q:'In a certain code, CAT is written as DBU. How is DOG written in that code?', opts:['EPH','EPI','DPH','CNF'], a:0,
-             why:'Each letter moves one place forward: D→E, O→P, G→H.'}},
-   PG:{what:'Multi-step reasoning: seating arrangements, puzzles with several conditions, syllogisms and data sufficiency.',
-       hot:['Seating arrangement','Puzzles','Syllogisms','Coding–decoding'], more:['Series','Blood relations','Direction sense','Statements & assumptions','Input–output','Data sufficiency'],
-       quiz:{q:'Five friends sit in a row. C sits at one end. D sits next to both C and A. B sits to the immediate right of A. Who sits in the middle?', opts:['A','B','D','E'], a:0,
-             why:'C must be at the left end, giving C, D, A, B, E. A is in the middle.'}}},
-  {key:'qa', name:'Quantitative Aptitude', c:'#2563eb', icon:'i-calc', q:50, time:'~40 min',
+   UG:{what:'Single-step questions you can solve in under a minute.',
+       topics:[['Series','Number series, letter series, missing term',12],['Coding–decoding','Letter shift, number and symbol coding',10],['Direction sense','Distance, final direction, shadows',8],['Blood relations','Family trees, coded relations',8],['Analogies','Word, number and letter analogies',8],['Odd one out','Numbers, words, letter groups',8],['Simple arrangements','Linear seating, ranking and order',8],['Alphabet test','Letter positions, ordering, word formation',7],['Syllogisms','Two-statement conclusions',6]],
+       quiz:{q:'In a certain code, CAT is written as DBU. How is DOG written in that code?', opts:['EPH','EPI','DPH','CNF'], a:0, why:'Each letter moves one place forward: D→E, O→P, G→H.'}},
+   PG:{what:'Multi-step sets where one set of conditions answers several questions.',
+       topics:[['Seating arrangement','Linear, circular and multi-variable seating',14],['Puzzles','Floor, box, scheduling and comparison puzzles',12],['Syllogisms','Possibility cases, either–or conclusions',8],['Coding–decoding','New-pattern coding, input–output',7],['Statements & assumptions','Assumptions, conclusions, courses of action',7],['Blood relations','Coded and multi-generation relations',6],['Series','Mixed series, wrong term',6],['Data sufficiency','Two-statement sufficiency questions',6],['Direction sense','Multi-turn paths and coordinates',5],['Inequalities','Direct and coded inequalities',4]],
+       quiz:{q:'Five friends sit in a row. C sits at one end. D sits next to both C and A. B sits to the immediate right of A. Who sits in the middle?', opts:['A','B','D','E'], a:0, why:'C must be at the left end, giving C, D, A, B, E. A is in the middle.'}}},
+  {key:'qa', name:'Quantitative Aptitude', short:'Quant', c:'#2563eb', icon:'i-calc', q:50, time:'~40 min',
    tests:'Speed and accuracy with numbers, mostly arithmetic.',
    UG:{what:'Class 10–12 arithmetic, solved in one or two steps.',
-       hot:['Percentages','Profit & loss','Ratio & proportion','Averages'], more:['Simple interest','Time, speed & distance','Time & work','Number system'],
-       quiz:{q:'A shirt bought for ₹800 is sold at a 25% profit. What is the selling price?', opts:['₹900','₹1,000','₹1,025','₹1,200'], a:1,
-             why:'25% of ₹800 is ₹200, so the selling price is ₹800 + ₹200 = ₹1,000.'}},
+       topics:[['Percentages','Percentage change, successive change',7],['Number system','Divisibility, HCF and LCM, simplification',7],['Profit & loss','Cost and selling price, discount, marked price',6],['Ratio & proportion','Ratios, partnership, ages',6],['Time, speed & distance','Trains, relative speed',6],['Averages','Mean, weighted average',5],['Time & work','Work efficiency, pipes and cisterns',5],['Simple interest','Simple interest, basic compound interest',4],['Basic data interpretation','Tables and bar charts',4]],
+       quiz:{q:'A shirt bought for ₹800 is sold at a 25% profit. What is the selling price?', opts:['₹900','₹1,000','₹1,025','₹1,200'], a:1, why:'25% of ₹800 is ₹200, so the selling price is ₹800 + ₹200 = ₹1,000.'}},
    PG:{what:'Multi-step arithmetic, data interpretation sets and basic probability.',
-       hot:['Data interpretation','Percentages','Time, speed & distance','Time & work'], more:['Profit & loss','Simple & compound interest','Ratio & mixtures','Algebra','Mensuration','Probability'],
-       quiz:{q:'A car goes 180 km at 60 km/h and returns at 90 km/h. What is its average speed for the whole trip?', opts:['72 km/h','75 km/h','78 km/h','80 km/h'], a:0,
-             why:'Total distance is 360 km. Total time is 3 + 2 = 5 hours. 360 ÷ 5 = 72 km/h.'}}},
-  {key:'va', name:'Verbal Ability & RC', c:'#059669', icon:'i-book', q:50, time:'~35 min',
+       topics:[['Data interpretation','Tables, bar, line and pie charts, caselets',12],['Percentages','Successive change, percentage comparisons',5],['Ratio, mixtures & alligation','Mixtures, alligation, partnership',5],['Time, speed & distance','Boats and streams, races, relative speed',5],['Profit & loss','Discounts, marked price, dishonest dealer',4],['Simple & compound interest','Compounding, instalments, difference of SI and CI',4],['Time & work','Pipes, wages, efficiency',4],['Algebra','Linear and quadratic equations',4],['Probability & counting','Permutations, combinations, basic probability',4],['Mensuration','Area, perimeter, volume',3]],
+       quiz:{q:'A car goes 180 km at 60 km/h and returns at 90 km/h. What is its average speed for the whole trip?', opts:['72 km/h','75 km/h','78 km/h','80 km/h'], a:0, why:'Total distance is 360 km. Total time is 3 + 2 = 5 hours. 360 ÷ 5 = 72 km/h.'}}},
+  {key:'va', name:'Verbal Ability & RC', short:'Verbal', c:'#059669', icon:'i-book', q:50, time:'~35 min',
    tests:'Reading, vocabulary and grammar in everyday English.',
-   UG:{what:'Synonyms, antonyms, grammar fixes and short reading passages.',
-       hot:['Synonyms & antonyms','Sentence correction','Short passages'], more:['Fill in the blanks','Spelling','Idioms & phrases'],
-       quiz:{q:'Choose the word most similar in meaning to METICULOUS.', opts:['Careful','Careless','Quick','Generous'], a:0,
-             why:'Meticulous means showing great attention to detail, so the closest word is careful.'}},
-   PG:{what:'Longer passages, inference questions, para jumbles and vocabulary in context.',
-       hot:['Reading comprehension','Para jumbles','Sentence correction'], more:['Vocabulary in context','Error spotting','Fill in the blanks','Idioms & phrases','Critical reasoning'],
-       quiz:{q:'Choose the grammatically correct sentence.', opts:['Hardly had we reached when the train left.','Hardly had we reached than the train left.','Hardly we had reached when the train left.','Hardly had we reach when the train left.'], a:0,
-             why:'"Hardly" takes inverted word order (had we) and pairs with "when", not "than".'}}},
-  {key:'ar', name:'Abstract Reasoning', c:'#7c3aed', icon:'i-shapes', q:25, time:'~15 min',
+   UG:{what:'Short passages and everyday grammar and vocabulary.',
+       topics:[['Reading comprehension','3 short passages, direct questions',12],['Synonyms & antonyms','Common words in context',10],['Sentence correction','Tenses, subject–verb agreement',8],['Fill in the blanks','Prepositions, articles, vocabulary',8],['Idioms & phrases','Meanings and usage',7],['Spelling & word usage','Correct spelling, confusing words',5]],
+       quiz:{q:'Choose the word most similar in meaning to METICULOUS.', opts:['Careful','Careless','Quick','Generous'], a:0, why:'Meticulous means showing great attention to detail, so the closest word is careful.'}},
+   PG:{what:'Longer passages, inference questions and sentence structure.',
+       topics:[['Reading comprehension','4 passages: main idea, inference, tone',18],['Sentence correction','Parallelism, modifiers, agreement',7],['Para jumbles','Ordering 4–5 sentences',6],['Vocabulary in context','Word meaning from the passage',6],['Error spotting','Find the part with the error',5],['Fill in the blanks','Double blanks, word pairs',4],['Critical reasoning','Strengthen, weaken, assumption',4]],
+       quiz:{q:'Choose the grammatically correct sentence.', opts:['Hardly had we reached when the train left.','Hardly had we reached than the train left.','Hardly we had reached when the train left.','Hardly had we reach when the train left.'], a:0, why:'"Hardly" takes inverted word order (had we) and pairs with "when", not "than".'}}},
+  {key:'ar', name:'Abstract Reasoning', short:'Abstract', c:'#7c3aed', icon:'i-shapes', q:25, time:'~15 min',
    tests:'Visual patterns in figures, with no words or numbers.',
    UG:{what:'Figure series that follow one rule, such as rotation or count.',
-       hot:['Figure series','Rotation patterns'], more:['Odd figure out','Mirror images','Pattern completion'],
-       quiz:{q:'Which figure comes next?', seq:[[0,0],[90,0],[180,0]], opts:[[270,0],[0,0],[90,0],[225,0]], a:0,
-             why:'The arrow turns 90° clockwise at each step, so it points left next.'}},
-   PG:{what:'Figure series and matrices that combine two rules at once.',
-       hot:['Figure matrix','Two-rule series'], more:['Rotation patterns','Odd figure out','Mirror & water images','Figure analogy'],
-       quiz:{q:'Which figure comes next?', seq:[[0,1],[45,2],[90,3]], opts:[[135,3],[135,4],[180,4],[90,4]], a:1,
-             why:'Two rules at once: the arrow turns 45° clockwise and one dot is added at each step.'}}},
+       topics:[['Figure series','One-rule series: count, size, position',8],['Rotation patterns','Rotations of 45°, 90° and 180°',5],['Odd figure out','Find the figure that breaks the rule',5],['Mirror & water images','Reflections of figures and letters',4],['Pattern completion','Complete the missing part',3]],
+       quiz:{q:'Which figure comes next?', seq:[[0,0],[90,0],[180,0]], opts:[[270,0],[0,0],[90,0],[225,0]], a:0, why:'The arrow turns 90° clockwise at each step, so it points left next.'}},
+   PG:{what:'Series and matrices that combine two rules at once.',
+       topics:[['Figure matrix','3×3 grids with row and column rules',7],['Two-rule series','Rotation plus count, position plus shading',7],['Figure analogy','A is to B as C is to ?',4],['Odd figure out','Multi-rule odd one out',4],['Mirror & water images','Compound figures',3]],
+       quiz:{q:'Which figure comes next?', seq:[[0,1],[45,2],[90,3]], opts:[[135,3],[135,4],[180,4],[90,4]], a:1, why:'Two rules at once: the arrow turns 45° clockwise and one dot is added at each step.'}}},
 ];
-let LVL = 'UG';
+let LVL = 'UG', SEC = 'lr';
 const fig = ([deg, dots], c) => `<svg class="fig" viewBox="0 0 56 56"><rect x="1" y="1" width="54" height="54" rx="8" fill="#fff" stroke="#d5d9e2" stroke-width="1.5"/><g transform="rotate(${deg} 28 24)"><path d="M28 36V12M20 20l8-8 8 8" fill="none" stroke="${c}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></g>${Array.from({length:dots},(_,i)=>`<circle cx="${28-(dots-1)*4+i*8}" cy="47" r="2.6" fill="#101112"/>`).join('')}</svg>`;
 
 function renderSyllabus(){
-  document.getElementById('sgrid').innerHTML = SECTIONS.map(s => {
-    const L = s[LVL];
-    return `<article class="scard" style="--c:${s.c}">
-      <header><div class="ic"><svg class="i"><use href="#${s.icon}"/></svg></div>
-        <div><h3>${s.name}</h3><span>${s.q} questions · ${Math.round(s.q/2)}% of the paper</span></div>
-        <div class="time"><b>${s.time}</b><span>suggested</span></div></header>
-      <p class="tests">${s.tests}</p>
-      <div class="lvlbox"><b>At ${LVL} level</b>${L.what}</div>
-      <div><span class="lab">Key topics</span><div class="topics">${L.hot.map(t=>`<span class="hot">${t}</span>`).join('')}${L.more.map(t=>`<span>${t}</span>`).join('')}</div></div>
-      <button class="try" data-k="${s.key}">Try a sample question</button>
-      <div class="quiz" id="quiz-${s.key}" hidden></div>
-    </article>`;
-  }).join('');
-  document.querySelectorAll('.try').forEach(b => b.onclick = () => openQuiz(b));
+  document.getElementById('stiles').innerHTML = SECTIONS.map(s => `<button class="stile ${s.key===SEC?'on':''}" style="--c:${s.c}" data-k="${s.key}">
+      <div class="ic"><svg class="i"><use href="#${s.icon}"/></svg></div>
+      <div><b>${s.name}</b><span>${s.q} questions · ${s.time}</span></div>
+      <div class="share"><i style="width:${s.q/75*100}%"></i></div></button>`).join('');
+  document.querySelectorAll('.stile').forEach(b => b.onclick = () => { SEC = b.dataset.k; renderSyllabus(); });
+  const s = SECTIONS.find(x => x.key === SEC), L = s[LVL];
+  const max = Math.max(...L.topics.map(t => t[2]));
+  const top3 = L.topics.map(t => t[2]).sort((a,b) => b-a)[2];
+  document.getElementById('sdetail').style.setProperty('--c', s.c);
+  document.getElementById('sdetail').innerHTML = `
+    <div class="tcardx">
+      <div class="tc-head"><h3>${s.name} topics</h3><span>${LVL} level · ${L.topics.length} topics</span></div>
+      ${L.topics.map(([n,d,q],i) => `<div class="trow"><span class="no">${i+1}</span>
+        <div><b>${n}</b>${q >= top3 && q === Math.max(q, top3) && i < 3 ? '<span class="hi">High weight</span>' : ''}<p>${d}</p></div>
+        <div class="qs"><div class="bar"><i style="width:${q/max*100}%"></i></div><em>~${q} Qs</em></div></div>`).join('')}
+      <div class="tc-foot"><span>Approximate questions in the full 200-question paper</span><span><b>${s.q}</b> in total</span></div>
+    </div>
+    <div class="sside">
+      <div class="ovr"><div class="ttl"><b>${s.name}</b><div class="time"><b>${s.time}</b><span>suggested</span></div></div>
+        <p>${s.tests}</p><div class="lvlbox"><b>At ${LVL} level</b>${L.what}</div></div>
+      <button class="try" id="try-btn">Try a sample question</button>
+      <div class="quiz" id="quiz" hidden></div>
+    </div>`;
+  document.getElementById('try-btn').onclick = openQuiz;
 }
-function openQuiz(btn){
-  const s = SECTIONS.find(x => x.key === btn.dataset.k), Q = s[LVL].quiz, box = document.getElementById('quiz-' + s.key);
-  btn.hidden = true; box.hidden = false;
+function openQuiz(){
+  const s = SECTIONS.find(x => x.key === SEC), Q = s[LVL].quiz, box = document.getElementById('quiz');
+  document.getElementById('try-btn').hidden = true; box.hidden = false;
   const isFig = !!Q.seq;
-  box.innerHTML = `<p class="qq">${Q.q}</p>
+  box.innerHTML = `<span class="lab">Sample · ${s.short} · ${LVL}</span><p class="qq">${Q.q}</p>
     ${isFig ? `<div class="figs">${Q.seq.map(f => fig(f, s.c)).join('')}<div class="qm">?</div></div>` : ''}
-    <div class="qopts">${Q.opts.map((o,i) => `<button data-i="${i}"><span class="k">${'ABCD'[i]}</span>${isFig ? fig(o, s.c) : o}</button>`).join('')}</div>
+    <div class="qopts" style="${isFig ? 'grid-template-columns:1fr 1fr' : ''}">${Q.opts.map((o,i) => `<button data-i="${i}"><span class="k">${'ABCD'[i]}</span>${isFig ? fig(o, s.c) : o}</button>`).join('')}</div>
     <div class="fb" hidden></div>`;
   box.querySelectorAll('.qopts button').forEach(b => b.onclick = () => {
     const i = +b.dataset.i, right = i === Q.a;
