@@ -4,223 +4,435 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>YDST Scholarship Test</title>
+<title>YDST 2026 Test</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f6f7fb; --surface:#ffffff; --surface-2:#f0f2f7; --text:#151a2d; --muted:#5b6380;
-  --border:#dde1ec; --brand:#ee2c3c; --brand-ink:#ffffff; --accent:#1d4ed8;
-  --good:#15803d; --good-bg:#e7f6ec; --warn:#b45309; --warn-bg:#fdf3e2; --bad:#b91c1c; --bad-bg:#fdecec;
-  --answered:#16a34a; --review:#7c3aed; --visited:#e5484d;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0e111a; --surface:#161a26; --surface-2:#1e2333; --text:#e8eaf2; --muted:#9aa2bd;
-    --border:#2b3146; --brand:#ef4058; --accent:#6d8dff;
-    --good:#4ade80; --good-bg:#12291b; --warn:#fbbf24; --warn-bg:#2d2310; --bad:#f87171; --bad-bg:#2e1515;
-    --answered:#22c55e; --review:#a78bfa; --visited:#f05252;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0e111a; --surface:#161a26; --surface-2:#1e2333; --text:#e8eaf2; --muted:#9aa2bd;
-  --border:#2b3146; --brand:#ef4058; --accent:#6d8dff;
-  --good:#4ade80; --good-bg:#12291b; --warn:#fbbf24; --warn-bg:#2d2310; --bad:#f87171; --bad-bg:#2e1515;
-  --answered:#22c55e; --review:#a78bfa; --visited:#f05252;
+  --red:#ee2c3c; --red-d:#c41a29; --red-50:#fff1f2; --red-100:#fcd5d8;
+  --ink:#101112; --text:#1d2027; --muted:#5d6577; --line:#e6e8ee; --bg:#f4f5f8; --card:#ffffff; --soft:#f6f7fa;
+  --green:#16a34a; --green-50:#ecfdf3; --amber:#b45309; --amber-50:#fffbeb;
+  --c-a:#16a34a; --c-v:#e5484d; --c-r:#7c3aed; --c-nv:#eef0f4;
+  --lr:#ee2c3c; --ar:#7c3aed; --qa:#2563eb; --va:#059669;
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 Inter,system-ui,sans-serif}
-.wrap{max-width:880px;margin:0 auto;padding:32px 16px}
-.card{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:28px}
-h1{font-size:26px;margin:0 0 6px} h2{font-size:19px;margin:0 0 12px}
-.muted{color:var(--muted)}
-.brandbar{display:flex;align-items:center;gap:10px;margin-bottom:20px;font-weight:700}
-.logo{width:34px;height:34px;border-radius:8px;background:var(--brand);color:var(--brand-ink);display:grid;place-items:center;font-size:13px}
-label.f{display:block;font-weight:500;margin:14px 0 6px}
-input[type=text],input[type=email],input[type=tel],select{width:100%;padding:11px 12px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font:inherit}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-@media (max-width:640px){.row{grid-template-columns:1fr}}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 18px;border-radius:10px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:600 14px Inter,sans-serif;cursor:pointer}
-.btn.primary{background:var(--brand);border-color:var(--brand);color:#fff}
-.btn:disabled{opacity:.5;cursor:not-allowed}
-.err{color:var(--bad);font-size:14px;margin-top:10px;min-height:20px}
-table{width:100%;border-collapse:collapse;margin:12px 0}
-th,td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border);font-size:14px}
-th{color:var(--muted);font-weight:600}
-td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
-ul.rules{padding-left:20px;margin:8px 0} ul.rules li{margin:5px 0}
-.consent{display:flex;gap:10px;align-items:flex-start;margin-top:16px;font-size:14px}
-.modes{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.mode{border:1px solid var(--border);border-radius:10px;padding:12px;cursor:pointer}
-.mode input{margin-right:6px}
-.mode:has(input:checked){border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+body{margin:0;background:var(--bg);color:var(--text);font:15px/1.55 "Plus Jakarta Sans",system-ui,sans-serif}
+button{font-family:inherit}
 .hidden{display:none!important}
+.i{width:18px;height:18px;flex:none;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.draft{background:#fef3c7;color:#78350f;text-align:center;padding:6px 16px;font-size:12.5px;font-weight:600;border-bottom:1px solid #f59e0b}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:11px 20px;border-radius:10px;border:1.5px solid var(--line);background:#fff;color:var(--ink);font:700 14.5px "Plus Jakarta Sans",sans-serif;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn:hover{border-color:#cfd3dc}
+.btn.red{background:var(--red);border-color:var(--red);color:#fff}
+.btn.red:hover{background:var(--red-d);border-color:var(--red-d)}
+.btn.dark{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn.purple{background:#fff;border-color:var(--c-r);color:var(--c-r)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.link{background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;font-size:12.5px;padding:0}
+
+/* pre-test shell */
+.shell{max-width:1100px;margin:0 auto;padding:24px 16px 48px}
+.shell-top{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:22px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:36px}
+.brand span{font-weight:700;color:var(--muted);font-size:14px;padding-left:12px;border-left:1px solid var(--line)}
+.stepper{display:flex;gap:6px;align-items:center;font-size:13px;font-weight:700;color:var(--muted)}
+.stepper .st{display:flex;align-items:center;gap:8px}
+.stepper .st b{width:24px;height:24px;border-radius:50%;display:grid;place-items:center;background:#fff;border:1.5px solid var(--line);font-size:12px}
+.stepper .st.on{color:var(--ink)} .stepper .st.on b{background:var(--red);border-color:var(--red);color:#fff}
+.stepper .st.done b{background:var(--green);border-color:var(--green);color:#fff}
+.stepper .sep{width:28px;height:1.5px;background:var(--line)}
+@media (max-width:640px){.stepper .st span{display:none}}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.two{display:grid;grid-template-columns:.85fr 1.15fr}
+@media (max-width:860px){.two{grid-template-columns:1fr}}
+.two>*{min-width:0}
+.side{background:linear-gradient(160deg,#5c0911 0%,#a3101e 55%,#ee2c3c 100%);color:#fff;padding:32px;position:relative;overflow:hidden}
+.side h1{font-size:30px;line-height:1.15;margin:8px 0 12px;letter-spacing:-.01em}
+.side .k{font-size:12px;font-weight:800;letter-spacing:.16em;opacity:.8}
+.side p{opacity:.9;margin:0 0 22px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:22px}
+.facts div{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:12px;padding:12px}
+.facts b{display:block;font-size:20px}
+.facts span{font-size:12.5px;opacity:.85}
+.need{list-style:none;padding:0;margin:0;display:grid;gap:10px;font-size:14px}
+.need li{display:flex;gap:10px;align-items:center}
+.need .i{opacity:.9}
+.main-p{padding:32px}
+.main-p h2{margin:0 0 4px;font-size:22px;color:var(--ink)}
+.main-p .sub{margin:0 0 20px;color:var(--muted);font-size:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:560px){.grid2{grid-template-columns:1fr}}
+.fld label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:#30343e}
+.fld input,.fld select{width:100%;padding:12px 13px;border:1.5px solid var(--line);border-radius:10px;font:500 15px "Plus Jakarta Sans",sans-serif;color:var(--ink);background:#fff}
+.fld input:focus,.fld select:focus{outline:none;border-color:var(--red)}
+.ph{display:flex}
+.ph span{display:grid;place-items:center;padding:0 12px;border:1.5px solid var(--line);border-right:0;border-radius:10px 0 0 10px;font-weight:700;background:var(--soft)}
+.ph input{border-radius:0 10px 10px 0}
+.modes{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:16px}
+.mode{border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;cursor:pointer;display:block}
+.mode input{display:none}
+.mode b{display:block;color:var(--ink)}
+.mode span{font-size:12.5px;color:var(--muted)}
+.mode:has(input:checked){border-color:var(--red);background:var(--red-50)}
+.tag-proto{font-size:11px;font-weight:800;letter-spacing:.08em;color:var(--muted);text-transform:uppercase;margin:16px 0 0}
+.chk{display:flex;gap:10px;align-items:flex-start;font-size:13.5px;color:var(--text);margin-top:12px}
+.chk input{margin-top:3px;accent-color:var(--red)}
+.err{color:var(--red-d);font-size:13.5px;font-weight:600;min-height:20px;margin:12px 0 4px}
+.row-end{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px}
+
+/* instructions */
+.inst{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+@media (max-width:900px){.inst{grid-template-columns:1fr}}
+.inst>*{min-width:0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+.card h2{margin:0 0 4px;font-size:21px;color:var(--ink)}
+.card h3{margin:22px 0 10px;font-size:16px;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+.chips span{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:13px;font-weight:600}
+table{width:100%;border-collapse:collapse}
+th,td{text-align:left;padding:10px 8px;border-bottom:1px solid var(--line);font-size:14px}
+th{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums}
+.dot{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:8px;vertical-align:0;background:var(--c)}
+.rules{margin:0;padding-left:18px}
+.rules li{margin:6px 0;font-size:14px}
+.legend-demo{display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px}
+.legend-demo div{display:flex;align-items:center;gap:10px}
+.sys{display:grid;gap:10px;margin:14px 0}
+.sysrow{display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--line);border-radius:12px}
+.sysrow .ic{width:36px;height:36px;border-radius:10px;background:var(--soft);display:grid;place-items:center;color:var(--muted)}
+.sysrow b{display:block;font-size:14px;color:var(--ink)}
+.sysrow small{color:var(--muted);font-size:12.5px}
+.sysrow .stt{margin-left:auto;font-size:12px;font-weight:800;padding:4px 10px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.sysrow.ok .stt{background:var(--green-50);color:var(--green)} .sysrow.ok .ic{background:var(--green-50);color:var(--green)}
+.sysrow.bad .stt{background:var(--red-50);color:var(--red-d)} .sysrow.bad .ic{background:var(--red-50);color:var(--red-d)}
+.preview{aspect-ratio:4/3;border-radius:14px;background:#0f1115;overflow:hidden;display:grid;place-items:center;color:#8a90a0;font-size:13px;position:relative}
+.preview>span{padding:16px;text-align:center}
+.preview video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}
 
 /* exam */
-.exam{display:grid;grid-template-rows:auto auto 1fr;min-height:100vh}
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border);flex-wrap:wrap}
-.timer{font:700 18px Inter;font-variant-numeric:tabular-nums;padding:6px 12px;border-radius:8px;background:var(--surface-2)}
-.timer.low{color:var(--bad);background:var(--bad-bg)}
-.proc{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--muted)}
-.proc video{width:64px;height:48px;border-radius:6px;object-fit:cover;background:#000}
-.dot{width:9px;height:9px;border-radius:50%;background:var(--good)}
-.dot.warn{background:var(--warn)} .dot.bad{background:var(--bad)}
-.tabs{display:flex;gap:6px;padding:10px 16px;background:var(--surface);border-bottom:1px solid var(--border);overflow-x:auto}
-.tab{white-space:nowrap;padding:8px 12px;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;font:500 13px Inter}
-.tab.on{background:var(--accent);border-color:var(--accent);color:#fff}
-.main{display:grid;grid-template-columns:1fr 280px;gap:16px;padding:16px;max-width:1200px;width:100%;margin:0 auto}
-@media (max-width:860px){.main{grid-template-columns:1fr}}
-.qhead{display:flex;justify-content:space-between;color:var(--muted);font-size:13px;margin-bottom:10px}
-.qtext{font-size:17px;margin:0 0 18px;white-space:pre-line}
-.qtext.big{font-size:28px;letter-spacing:6px}
-.opt{display:flex;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--border);border-radius:10px;margin-bottom:10px;cursor:pointer}
-.opt:hover{background:var(--surface-2)}
-.opt:has(input:checked){border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
-.opt .ov{font-size:16px}
-.opt.big .ov{font-size:24px;letter-spacing:4px}
-.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
-.palette{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;max-height:340px;overflow:auto;padding:2px}
-.pb{aspect-ratio:1;border-radius:8px;border:1px solid var(--border);background:var(--surface);color:var(--text);font:600 12px Inter;cursor:pointer}
-.pb.v{background:var(--visited);border-color:var(--visited);color:#fff}
-.pb.a{background:var(--answered);border-color:var(--answered);color:#fff}
-.pb.r{background:var(--review);border-color:var(--review);color:#fff}
-.pb.cur{outline:2px solid var(--accent);outline-offset:1px}
-.legend{display:grid;grid-template-columns:1fr 1fr;gap:6px;font-size:12px;color:var(--muted);margin:12px 0}
-.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:-1px;background:var(--c)}
-.toast{position:fixed;left:50%;top:16px;transform:translateX(-50%);background:var(--warn-bg);color:var(--warn);border:1px solid var(--warn);padding:10px 16px;border-radius:10px;font-weight:600;z-index:20;max-width:calc(100% - 32px)}
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:grid;place-items:center;z-index:30;padding:16px}
-.modal .card{max-width:440px;width:100%}
+.exam{display:flex;flex-direction:column;height:100vh;height:100dvh;background:var(--bg)}
+body.in-exam .draft{display:none}
+.xbar{display:flex;align-items:center;gap:16px;padding:10px 18px;background:#fff;border-bottom:1px solid var(--line)}
+.xbar img{height:30px}
+.xtitle{line-height:1.25}
+.xtitle b{display:block;color:var(--ink);font-size:15px}
+.xtitle span{font-size:12.5px;color:var(--muted)}
+.xbar .grow{flex:1}
+.timer{display:flex;align-items:center;gap:10px;padding:6px 14px 6px 8px;border-radius:12px;background:var(--soft);border:1px solid var(--line)}
+.timer svg{width:34px;height:34px}
+.timer b{display:block;font-size:20px;font-variant-numeric:tabular-nums;color:var(--ink);line-height:1.1}
+.timer small{font-size:11px;color:var(--muted)}
+.timer.low{background:var(--red-50);border-color:var(--red-100)} .timer.low b{color:var(--red-d)}
+.fs{display:flex;gap:4px}
+.fs button{width:32px;height:32px;border-radius:8px;border:1.5px solid var(--line);background:#fff;cursor:pointer;font-weight:800;color:var(--muted)}
+@media (max-width:760px){.xtitle span,.fs{display:none}}
+@media (max-width:640px){.xbar>img{display:none}.xbar{gap:10px;padding:10px 12px}.xtitle b{white-space:nowrap;font-size:14px}}
+.xtabs{display:flex;gap:6px;padding:10px 18px;background:#fff;border-bottom:1px solid var(--line);overflow-x:auto}
+.xtab{display:flex;align-items:center;gap:8px;white-space:nowrap;padding:8px 14px;border-radius:10px;border:1.5px solid var(--line);background:#fff;cursor:pointer;font:700 13.5px "Plus Jakarta Sans",sans-serif;color:#3a3f4b}
+.xtab i{width:8px;height:8px;border-radius:50%;background:var(--c)}
+.xtab small{font-weight:600;color:var(--muted)}
+.xtab.on{border-color:var(--c);background:color-mix(in srgb,var(--c) 8%,#fff);color:var(--ink)}
+.xbody{flex:1;display:grid;grid-template-columns:1fr 320px;min-height:0}
+@media (max-width:980px){.xbody{grid-template-columns:1fr}}
+.qpane{display:flex;flex-direction:column;min-height:0;min-width:0}
+.qscroll{flex:1;overflow:auto;padding:22px}
+.qcard{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;max-width:920px}
+.qmeta{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.qno{display:flex;align-items:center;gap:10px}
+.qno b{font-size:16px;color:var(--ink)}
+.pill{font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--soft);border:1px solid var(--line);color:var(--muted)}
+.pill.sec{color:var(--c);border-color:color-mix(in srgb,var(--c) 35%,#fff);background:color-mix(in srgb,var(--c) 7%,#fff)}
+.qtext{font-size:calc(17px * var(--fz,1));color:var(--ink);margin:0 0 20px;white-space:pre-line;font-weight:500}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:center;gap:14px;padding:13px 16px;border:1.5px solid var(--line);border-radius:12px;cursor:pointer;background:#fff;transition:border-color .12s,background .12s}
+.opt:hover{border-color:#cfd3dc;background:var(--soft)}
+.opt input{display:none}
+.opt .l{flex:none;width:32px;height:32px;border-radius:9px;display:grid;place-items:center;font-weight:800;border:1.5px solid var(--line);color:var(--muted);background:#fff}
+.opt .t{font-size:calc(16px * var(--fz,1))}
+.opt.big .t{font-size:calc(26px * var(--fz,1));letter-spacing:4px}
+.opt:has(input:checked){border-color:var(--ink);background:#fafafb}
+.opt:has(input:checked) .l{background:var(--ink);border-color:var(--ink);color:#fff}
+.kbd{margin-top:16px;font-size:12px;color:var(--muted)}
+.kbd kbd{font:700 11px ui-monospace,Menlo,monospace;border:1px solid var(--line);border-bottom-width:2px;border-radius:5px;padding:1px 6px;background:#fff}
+.actbar{display:flex;gap:10px;padding:12px 22px;background:#fff;border-top:1px solid var(--line);flex-wrap:wrap}
+.actbar .grow{flex:1}
+@media (max-width:640px){.actbar .btn{padding:10px 12px;font-size:13px}.actbar .lbl{display:none}}
+.rpane{background:#fff;border-left:1px solid var(--line);display:flex;flex-direction:column;min-height:0}
+@media (max-width:980px){.rpane{position:fixed;inset:0 0 0 auto;width:min(340px,92vw);z-index:60;transform:translateX(100%);transition:transform .2s;visibility:hidden}.rpane.open{transform:none;visibility:visible;box-shadow:-20px 0 40px rgba(0,0,0,.15)}}
+.palbtn{display:none}
+@media (max-width:980px){.palbtn{display:inline-flex}}
+.cand{display:flex;gap:12px;align-items:center;padding:16px;border-bottom:1px solid var(--line)}
+.cam{position:relative;width:96px;height:72px;border-radius:10px;overflow:hidden;background:#0f1115;flex:none;display:grid;place-items:center;color:#8a90a0;font-size:11px}
+.cam video{width:100%;height:100%;object-fit:cover;transform:scaleX(-1)}
+.rec{position:absolute;left:6px;top:6px;display:flex;align-items:center;gap:4px;font-size:9.5px;font-weight:800;color:#fff;background:rgba(0,0,0,.55);padding:2px 6px;border-radius:999px}
+.rec i{width:6px;height:6px;border-radius:50%;background:#ef4444;animation:blink 1.2s infinite}
+@keyframes blink{50%{opacity:.25}}
+.cand b{display:block;color:var(--ink);font-size:14.5px;line-height:1.3}
+.cand span{display:block;font-size:12.5px;color:var(--muted)}
+.cand .proc{display:inline-flex;align-items:center;gap:6px;margin-top:6px;white-space:nowrap;font-size:12px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--green-50);color:var(--green)}
+.cand .proc span{display:inline;font-size:12px;color:inherit}
+.cand .proc.warn{background:var(--amber-50);color:var(--amber)} .cand .proc.bad{background:var(--red-50);color:var(--red-d)}
+.counts{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px 16px;border-bottom:1px solid var(--line)}
+.cnt{display:flex;align-items:center;gap:10px;font-size:12.5px;color:var(--muted);line-height:1.2}
+.cnt b{display:block;font-size:15px;color:var(--ink)}
+.palhead{display:flex;justify-content:space-between;align-items:center;padding:14px 16px 8px;font-weight:800;color:var(--ink);font-size:14px}
+.palwrap{flex:1;overflow:auto;padding:4px 16px 16px}
+.palette{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
+.pb,.sw{position:relative;aspect-ratio:1;border-radius:9px;border:1.5px solid transparent;background:var(--c-nv);color:#4a5060;font:700 12.5px "Plus Jakarta Sans",sans-serif;cursor:pointer;display:grid;place-items:center}
+.sw{width:30px;height:30px;aspect-ratio:auto;cursor:default;flex:none}
+.pb.v,.sw.v{background:var(--c-v);color:#fff;border-radius:9px 9px 3px 3px}
+.pb.a,.sw.a{background:var(--c-a);color:#fff;border-radius:3px 3px 9px 9px}
+.pb.r,.sw.r{background:var(--c-r);color:#fff;border-radius:50%}
+.pb.ra,.sw.ra{background:var(--c-r);color:#fff;border-radius:50%}
+.pb.ra::after,.sw.ra::after{content:"";position:absolute;right:-2px;bottom:-2px;width:11px;height:11px;border-radius:50%;background:var(--c-a);border:2px solid #fff}
+.pb.cur{outline:2.5px solid var(--ink);outline-offset:2px}
+.rfoot{padding:14px 16px;border-top:1px solid var(--line);display:grid;gap:8px}
+.scrim{position:fixed;inset:0;background:rgba(16,17,18,.4);z-index:55}
+
+/* modal + toast */
+.modal{position:fixed;inset:0;background:rgba(16,17,18,.5);display:grid;place-items:center;z-index:80;padding:16px}
+.modal .card{max-width:560px;width:100%}
+.modal .acts{display:flex;justify-content:flex-end;gap:10px;margin-top:18px;flex-wrap:wrap}
+.toast{position:fixed;left:50%;top:14px;transform:translateX(-50%);display:flex;gap:10px;align-items:center;background:#fff;border:1.5px solid #f59e0b;color:var(--amber);padding:11px 16px;border-radius:12px;font-weight:700;font-size:14px;z-index:90;box-shadow:0 12px 30px -10px rgba(0,0,0,.25);max-width:calc(100% - 32px)}
 
 /* result */
-.verdict{padding:18px;border-radius:12px;margin:16px 0}
-.verdict.good{background:var(--good-bg);color:var(--good)}
-.verdict.warn{background:var(--warn-bg);color:var(--warn)}
-.verdict.bad{background:var(--surface-2);color:var(--text)}
-.code{font:700 24px ui-monospace,Menlo,monospace;letter-spacing:2px;padding:12px 16px;border:2px dashed currentColor;border-radius:10px;display:inline-block;margin:8px 0}
-.score{font-size:44px;font-weight:700;font-variant-numeric:tabular-nums}
-.bar{height:8px;border-radius:4px;background:var(--surface-2);overflow:hidden}
-.bar i{display:block;height:100%;background:var(--accent)}
+.res-hero{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;padding:30px}
+@media (max-width:700px){.res-hero{grid-template-columns:1fr;justify-items:center;text-align:center}}
+.ring{position:relative;width:170px;height:170px}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .v{position:absolute;inset:0;display:grid;place-items:center;text-align:center}
+.ring .v b{display:block;font-size:40px;line-height:1;color:var(--ink)}
+.ring .v span{font-size:13px;color:var(--muted)}
+.res-hero h2{font-size:26px;margin:0 0 6px;color:var(--ink)}
+.res-hero p{margin:0;color:var(--muted)}
+.verdict{margin:0 30px 6px;border-radius:16px;padding:22px;display:flex;gap:16px;align-items:flex-start}
+.verdict .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;flex:none}
+.verdict h3{margin:0 0 4px;font-size:18px}
+.verdict p{margin:0;font-size:14.5px}
+.verdict.good{background:var(--green-50);border:1px solid #bbf7d0} .verdict.good .ic{background:var(--green);color:#fff} .verdict.good h3{color:#166534}
+.verdict.warn{background:var(--amber-50);border:1px solid #fde68a} .verdict.warn .ic{background:#f59e0b;color:#fff} .verdict.warn h3{color:#92400e}
+.verdict.miss{background:var(--soft);border:1px solid var(--line)} .verdict.miss .ic{background:var(--ink);color:#fff} .verdict.miss h3{color:var(--ink)}
+.codebox{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+.code{font:800 22px ui-monospace,Menlo,monospace;letter-spacing:2px;padding:10px 16px;border:2px dashed var(--green);border-radius:12px;background:#fff;color:#166534}
+.secres{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:24px 30px}
+@media (max-width:860px){.secres{grid-template-columns:1fr 1fr}}
+.sr{border:1px solid var(--line);border-radius:14px;padding:16px;border-top:4px solid var(--c)}
+.sr b{display:block;font-size:13.5px;color:var(--ink)}
+.sr .num{font-size:26px;font-weight:800;color:var(--ink);margin:6px 0 2px}
+.sr .num small{font-size:14px;color:var(--muted);font-weight:600}
+.sr .bar{height:7px;border-radius:4px;background:var(--soft);overflow:hidden;margin:8px 0 6px}
+.sr .bar i{display:block;height:100%;background:var(--c)}
+.sr span{font-size:12px;color:var(--muted)}
+.next{padding:0 30px 30px}
+.next ol{margin:0;padding-left:20px}
+.next li{margin:6px 0;font-size:14.5px}
+.res-acts{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.prox{font-size:12.5px;color:var(--muted);margin-top:12px}
 </style>
 </head>
 <body>
-<div style="background:#fef3c7;color:#78350f;text-align:center;padding:8px 16px;font:600 13px Inter,system-ui,sans-serif;border-bottom:1px solid #f59e0b">Draft prototype for internal review — not an official offer.</div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-cam" viewBox="0 0 24 24"><path d="M23 7l-7 5 7 5V7z"/><rect x="1" y="5" width="15" height="14" rx="2"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M8 22h8"/></symbol>
+  <symbol id="i-wifi" viewBox="0 0 24 24"><path d="M5 12.6a11 11 0 0 1 14 0M1.4 9a16 16 0 0 1 21.2 0M8.5 16.1a6 6 0 0 1 7 0M12 20h.01"/></symbol>
+  <symbol id="i-max" viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M21 8V5a2 2 0 0 0-2-2h-3M3 16v3a2 2 0 0 0 2 2h3M16 21h3a2 2 0 0 0 2-2v-3"/></symbol>
+  <symbol id="i-laptop" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M1 20h22"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+  <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9L1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="7"/><path d="M8.2 13.9L7 23l5-3 5 3-1.2-9.1"/></symbol>
+  <symbol id="i-repeat" viewBox="0 0 24 24"><path d="M17 1l4 4-4 4"/><path d="M3 11V9a4 4 0 0 1 4-4h14"/><path d="M7 23l-4-4 4-4"/><path d="M21 13v2a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></symbol>
+  <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1zM4 22v-7"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></symbol>
+</svg>
 
-<!-- 1. Register -->
-<section id="s-register" class="wrap">
-  <div class="brandbar"><img src="assets/yourdegree-logo.svg" alt="YourDegree" style="height:34px;background:#fff;padding:4px 8px;border-radius:8px"><span class="muted" style="font-weight:600">· YDST 2026 Scholarship Test</span></div>
-  <div class="card">
-    <h1>Register for the scholarship test</h1>
-    <p class="muted">Score 170/200 or above to get 50% off your first-semester tuition. Open to new applicants. One attempt per month.</p>
-    <div class="row">
-      <div><label class="f" for="name">Full name (as on ID)</label><input id="name" type="text" autocomplete="name"></div>
-      <div><label class="f" for="email">Email</label><input id="email" type="email" autocomplete="email"></div>
+<div class="draft">Draft prototype for internal review — not an official offer.</div>
+
+<!-- ========== 1. Register ========== -->
+<section id="s-register" class="shell">
+  <div class="shell-top">
+    <div class="brand"><img src="assets/yourdegree-logo.svg" alt="YourDegree"><span>YDST 2026</span></div>
+    <div class="stepper"><div class="st on"><b>1</b><span>Register</span></div><div class="sep"></div><div class="st"><b>2</b><span>Instructions</span></div><div class="sep"></div><div class="st"><b>3</b><span>Test</span></div><div class="sep"></div><div class="st"><b>4</b><span>Result</span></div></div>
+  </div>
+  <div class="panel two">
+    <div class="side">
+      <div class="k">YOURDEGREE SCHOLARSHIP TEST</div>
+      <h1>Score 170+ and get 50% off your first semester</h1>
+      <p>Free, online and open 24×7. One attempt per month.</p>
+      <div class="facts">
+        <div><b>200</b><span>Questions</span></div>
+        <div><b>150 min</b><span>Duration</span></div>
+        <div><b>+1 / 0</b><span>No negative marking</span></div>
+        <div><b>170</b><span>Scholarship cutoff</span></div>
+      </div>
+      <ul class="need">
+        <li><svg class="i"><use href="#i-laptop"/></svg>Laptop or desktop, Chrome or Edge</li>
+        <li><svg class="i"><use href="#i-cam"/></svg>Working webcam and microphone</li>
+        <li><svg class="i"><use href="#i-wifi"/></svg>Stable internet connection</li>
+        <li><svg class="i"><use href="#i-clock"/></svg>150 uninterrupted minutes in a quiet room</li>
+      </ul>
     </div>
-    <div class="row">
-      <div><label class="f" for="phone">Mobile number</label><input id="phone" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile"></div>
-      <div><label class="f" for="course">Program you're applying for</label>
-        <select id="course">
-          <option value="">Select a program</option>
-          <optgroup label="Undergraduate">
-            <option value="BA">BA</option><option value="BCOM">BCom</option>
-            <option value="BBA">BBA</option><option value="BCA">BCA</option>
-          </optgroup>
-          <optgroup label="Postgraduate">
-            <option value="MA">MA</option><option value="MCOM">MCom</option>
-            <option value="MBA">MBA</option><option value="MCA">MCA</option>
-          </optgroup>
-        </select>
+    <div class="main-p">
+      <h2>Your details</h2>
+      <p class="sub">Use the name on your government ID. It's checked at enrollment.</p>
+      <div class="grid2">
+        <div class="fld"><label for="name">Full name</label><input id="name" autocomplete="name" placeholder="As on your ID"></div>
+        <div class="fld"><label for="course">Program you're applying for</label>
+          <select id="course">
+            <option value="">Select a program</option>
+            <optgroup label="Undergraduate"><option value="BA">BA</option><option value="BCOM">BCom</option><option value="BBA">BBA</option><option value="BCA">BCA</option></optgroup>
+            <optgroup label="Postgraduate"><option value="MA">MA</option><option value="MCOM">MCom</option><option value="MBA">MBA</option><option value="MCA">MCA</option></optgroup>
+          </select></div>
+        <div class="fld"><label for="phone">Mobile number</label><div class="ph"><span>+91</span><input id="phone" type="tel" inputmode="numeric" maxlength="10" placeholder="10-digit mobile"></div></div>
+        <div class="fld"><label for="email">Email</label><input id="email" type="email" autocomplete="email" placeholder="you@example.com"></div>
+      </div>
+      <div class="tag-proto">Paper length (prototype only)</div>
+      <div class="modes">
+        <label class="mode"><input type="radio" name="mode" value="demo" checked><b>Practice paper</b><span>20 questions · 15 min · cutoff 17</span></label>
+        <label class="mode"><input type="radio" name="mode" value="full"><b>Full paper</b><span>200 questions · 150 min · cutoff 170</span></label>
+      </div>
+      <label class="chk"><input type="checkbox" id="newapp"> I am a new applicant and have never been enrolled in a Chandigarh University Online program.</label>
+      <label class="chk"><input type="checkbox" id="consent"> I agree to the Terms &amp; Conditions and consent to webcam, microphone and screen monitoring during the test.</label>
+      <div class="err" id="reg-err"></div>
+      <div class="row-end">
+        <button class="link" id="reset-demo">Prototype: reset attempts in this browser</button>
+        <button class="btn red" id="to-instr">Continue <svg class="i"><use href="#i-right"/></svg></button>
       </div>
     </div>
-    <label class="f">Paper (prototype only)</label>
-    <div class="modes">
-      <label class="mode"><input type="radio" name="mode" value="demo" checked><b>Demo paper</b><div class="muted" style="font-size:13px">20 questions · 15 min · cutoff 17</div></label>
-      <label class="mode"><input type="radio" name="mode" value="full"><b>Full paper</b><div class="muted" style="font-size:13px">200 questions · 150 min · cutoff 170</div></label>
-    </div>
-    <label class="consent"><input type="checkbox" id="newapp"> I am a new applicant and have never been enrolled in a Chandigarh University Online program.</label>
-    <label class="consent"><input type="checkbox" id="consent"> I agree to the Terms &amp; Conditions and consent to webcam, microphone and screen monitoring during the test.</label>
-    <div class="err" id="reg-err"></div>
-    <div class="actions"><button class="btn primary" id="to-instr">Continue</button>
-      <button class="btn" id="reset-demo" title="Clears saved attempts in this browser">Reset demo attempts</button></div>
-    <p class="muted" style="font-size:12px;margin-top:14px">In production, the mobile number and email are verified by OTP here.</p>
   </div>
 </section>
 
-<!-- 2. Instructions -->
-<section id="s-instr" class="wrap hidden">
-  <div class="brandbar"><img src="assets/yourdegree-logo.svg" alt="YourDegree" style="height:34px;background:#fff;padding:4px 8px;border-radius:8px"><span class="muted" style="font-weight:600">· YDST 2026 Scholarship Test</span></div>
-  <div class="card">
-    <h1>Before you begin</h1>
-    <p class="muted" id="instr-sub"></p>
-    <table>
-      <thead><tr><th>Section</th><th class="n">Questions</th><th class="n">Marks</th></tr></thead>
-      <tbody id="pattern-body"></tbody>
-    </table>
-    <h2>Rules</h2>
-    <ul class="rules">
-      <li>Each question carries 1 mark. <b>No negative marking.</b></li>
-      <li>You can move freely between sections and questions. The test auto-submits when time runs out.</li>
-      <li>The test runs in full screen. Leaving full screen or switching tabs is logged as a proctoring warning.</li>
-      <li>Keep your face visible to the webcam. No phones, other people, notes or AI tools.</li>
-      <li>Starting the test uses your attempt for this month.</li>
-    </ul>
-    <div class="err" id="instr-err"></div>
-    <div class="actions"><button class="btn" id="back-reg">Back</button><button class="btn primary" id="start">Allow camera &amp; start test</button></div>
+<!-- ========== 2. Instructions + system check ========== -->
+<section id="s-instr" class="shell hidden">
+  <div class="shell-top">
+    <div class="brand"><img src="assets/yourdegree-logo.svg" alt="YourDegree"><span>YDST 2026</span></div>
+    <div class="stepper"><div class="st done"><b><svg class="i" style="width:13px;height:13px;stroke-width:3"><use href="#i-check"/></svg></b><span>Register</span></div><div class="sep"></div><div class="st on"><b>2</b><span>Instructions</span></div><div class="sep"></div><div class="st"><b>3</b><span>Test</span></div><div class="sep"></div><div class="st"><b>4</b><span>Result</span></div></div>
   </div>
-</section>
-
-<!-- 3. Exam -->
-<section id="s-exam" class="exam hidden">
-  <div class="topbar">
-    <div style="font-weight:700" id="exam-title"></div>
-    <div class="proc"><video id="cam" autoplay muted playsinline></video><span class="dot" id="proc-dot"></span><span id="proc-text">Proctoring active</span></div>
-    <div class="timer" id="timer">--:--</div>
-  </div>
-  <div class="tabs" id="tabs"></div>
-  <div class="main">
+  <div class="inst">
     <div class="card">
-      <div class="qhead"><span id="qnum"></span><span id="qsec"></span></div>
-      <p class="qtext" id="qtext"></p>
-      <div id="opts"></div>
-      <div class="actions">
-        <button class="btn" id="mark">Mark for review &amp; next</button>
-        <button class="btn" id="clear">Clear response</button>
-        <button class="btn primary" id="next">Save &amp; next</button>
+      <h2>Read before you start</h2>
+      <div class="chips" id="instr-chips"></div>
+      <h3>Paper structure</h3>
+      <table><thead><tr><th>Section</th><th class="n">Questions</th><th class="n">Marks</th></tr></thead><tbody id="pattern-body"></tbody></table>
+      <h3>Rules</h3>
+      <ul class="rules">
+        <li>Each correct answer gets 1 mark. There is <b>no negative marking</b>, so attempt every question.</li>
+        <li>Move freely between sections and questions. The test submits itself when time runs out.</li>
+        <li>The test runs in full screen. Leaving full screen or switching tabs is logged as a warning. Three warnings send your result for review.</li>
+        <li>Keep your face in the camera frame. No phones, other people, notes or AI tools.</li>
+        <li>Starting the test uses this month's attempt.</li>
+      </ul>
+      <h3>Question palette</h3>
+      <div class="legend-demo">
+        <div><span class="sw nv">1</span>Not visited</div>
+        <div><span class="sw v">2</span>Not answered</div>
+        <div><span class="sw a">3</span>Answered</div>
+        <div><span class="sw r">4</span>Marked for review</div>
+        <div><span class="sw ra">5</span>Answered and marked for review (will be evaluated)</div>
       </div>
     </div>
-    <div class="card" style="padding:18px">
-      <h2 style="font-size:15px" id="pal-title"></h2>
-      <div class="legend">
-        <span style="--c:var(--answered)">Answered</span>
-        <span style="--c:var(--visited)">Not answered</span>
-        <span style="--c:var(--review)">Marked for review</span>
-        <span style="--c:var(--border)">Not visited</span>
+    <div class="card">
+      <h2>System check</h2>
+      <p style="margin:0;color:var(--muted);font-size:14px">We'll check your camera and microphone before you begin.</p>
+      <div class="preview" id="preview" style="margin-top:14px"><span id="preview-txt">Camera preview appears here</span></div>
+      <div class="sys">
+        <div class="sysrow" id="sys-cam"><div class="ic"><svg class="i"><use href="#i-cam"/></svg></div><div><b>Camera</b><small>Needed for proctoring</small></div><span class="stt">Not checked</span></div>
+        <div class="sysrow" id="sys-mic"><div class="ic"><svg class="i"><use href="#i-mic"/></svg></div><div><b>Microphone</b><small>Needed for proctoring</small></div><span class="stt">Not checked</span></div>
+        <div class="sysrow" id="sys-net"><div class="ic"><svg class="i"><use href="#i-wifi"/></svg></div><div><b>Internet</b><small>Answers save as you go</small></div><span class="stt">Not checked</span></div>
+        <div class="sysrow" id="sys-fs"><div class="ic"><svg class="i"><use href="#i-max"/></svg></div><div><b>Full screen</b><small>The test runs in full screen</small></div><span class="stt">Not checked</span></div>
       </div>
-      <div class="palette" id="palette"></div>
-      <div class="actions"><button class="btn primary" id="submit" style="width:100%">Submit test</button></div>
+      <button class="btn" id="run-check" style="width:100%">Run system check</button>
+      <label class="chk"><input type="checkbox" id="declare"> I have read the instructions and will not use unfair means.</label>
+      <div class="err" id="instr-err"></div>
+      <div class="row-end">
+        <button class="btn" id="back-reg"><svg class="i"><use href="#i-left"/></svg>Back</button>
+        <button class="btn red" id="start">Start test</button>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- 4. Result -->
-<section id="s-result" class="wrap hidden">
-  <div class="brandbar"><img src="assets/yourdegree-logo.svg" alt="YourDegree" style="height:34px;background:#fff;padding:4px 8px;border-radius:8px"><span class="muted" style="font-weight:600">· YDST 2026 Scholarship Test</span></div>
-  <div class="card" id="result"></div>
+<!-- ========== 3. Exam ========== -->
+<section id="s-exam" class="exam hidden">
+  <div class="xbar">
+    <img src="assets/yourdegree-logo.svg" alt="YourDegree">
+    <div class="xtitle"><b id="x-title">YDST 2026</b><span id="x-sub"></span></div>
+    <div class="grow"></div>
+    <div class="fs" title="Text size"><button id="fz-down" aria-label="Smaller text">A-</button><button id="fz-up" aria-label="Larger text">A+</button></div>
+    <div class="timer" id="timer"><svg viewBox="0 0 36 36"><circle cx="18" cy="18" r="15" fill="none" stroke="#e6e8ee" stroke-width="4"/><circle id="t-ring" cx="18" cy="18" r="15" fill="none" stroke="#ee2c3c" stroke-width="4" stroke-linecap="round" stroke-dasharray="94.25" stroke-dashoffset="0" transform="rotate(-90 18 18)"/></svg><div><b id="t-val">--:--</b><small>Time left</small></div></div>
+    <button class="btn palbtn" id="pal-open"><svg class="i"><use href="#i-grid"/></svg></button>
+  </div>
+  <div class="xtabs" id="tabs"></div>
+  <div class="xbody">
+    <div class="qpane">
+      <div class="qscroll">
+        <div class="qcard" style="--c:var(--lr)" id="qcard">
+          <div class="qmeta">
+            <div class="qno"><b id="qnum"></b><span class="pill sec" id="qsec"></span></div>
+            <span class="pill">+1 correct · 0 wrong</span>
+          </div>
+          <p class="qtext" id="qtext"></p>
+          <div class="opts" id="opts"></div>
+          <div class="kbd">Shortcuts: <kbd>A</kbd>–<kbd>D</kbd> choose · <kbd>→</kbd> save &amp; next · <kbd>←</kbd> previous</div>
+        </div>
+      </div>
+      <div class="actbar">
+        <button class="btn" id="prev"><svg class="i"><use href="#i-left"/></svg><span class="lbl">Previous</span></button>
+        <button class="btn" id="clear"><svg class="i"><use href="#i-x"/></svg><span class="lbl">Clear</span></button>
+        <div class="grow"></div>
+        <button class="btn purple" id="mark"><svg class="i"><use href="#i-flag"/></svg><span class="lbl">Mark for review &amp; next</span></button>
+        <button class="btn dark" id="next"><span class="lbl">Save &amp; next</span><svg class="i"><use href="#i-right"/></svg></button>
+      </div>
+    </div>
+    <aside class="rpane" id="rpane">
+      <div class="cand">
+        <div class="cam"><video id="cam" autoplay muted playsinline></video><span id="cam-off" class="hidden">Camera off</span><span class="rec"><i></i>REC</span></div>
+        <div><b id="c-name"></b><span id="c-prog"></span><span class="proc" id="proc"><svg class="i" style="width:13px;height:13px"><use href="#i-shield"/></svg><span id="proc-text">Proctoring on</span></span></div>
+      </div>
+      <div class="counts" id="counts"></div>
+      <div class="palhead"><span id="pal-title"></span><button class="link" id="pal-close" style="display:none">Close</button></div>
+      <div class="palwrap"><div class="palette" id="palette"></div></div>
+      <div class="rfoot"><button class="btn red" id="submit" style="width:100%">Submit test</button></div>
+    </aside>
+  </div>
+</section>
+<div class="scrim hidden" id="scrim"></div>
+
+<!-- ========== 4. Result ========== -->
+<section id="s-result" class="shell hidden">
+  <div class="shell-top">
+    <div class="brand"><img src="assets/yourdegree-logo.svg" alt="YourDegree"><span>YDST 2026</span></div>
+    <div class="stepper"><div class="st done"><b><svg class="i" style="width:13px;height:13px;stroke-width:3"><use href="#i-check"/></svg></b><span>Register</span></div><div class="sep"></div><div class="st done"><b><svg class="i" style="width:13px;height:13px;stroke-width:3"><use href="#i-check"/></svg></b><span>Instructions</span></div><div class="sep"></div><div class="st done"><b><svg class="i" style="width:13px;height:13px;stroke-width:3"><use href="#i-check"/></svg></b><span>Test</span></div><div class="sep"></div><div class="st on"><b>4</b><span>Result</span></div></div>
+  </div>
+  <div class="panel" id="result"></div>
 </section>
 
-<div class="modal hidden" id="modal"><div class="card"><h2>Submit your test?</h2><p class="muted" id="modal-text"></p>
-  <div class="actions"><button class="btn" id="modal-no">Keep going</button><button class="btn primary" id="modal-yes">Submit</button></div></div></div>
-<div class="toast hidden" id="toast"></div>
+<div class="modal hidden" id="modal"><div class="card">
+  <h2>Submit your test?</h2>
+  <p style="margin:4px 0 14px;color:var(--muted);font-size:14px" id="modal-text"></p>
+  <table><thead><tr><th>Section</th><th class="n">Answered</th><th class="n">Not answered</th><th class="n">Marked</th><th class="n">Not visited</th></tr></thead><tbody id="modal-body"></tbody></table>
+  <div class="acts"><button class="btn" id="modal-no">Back to test</button><button class="btn red" id="modal-yes">Submit test</button></div>
+</div></div>
+<div class="toast hidden" id="toast"><svg class="i"><use href="#i-alert"/></svg><span id="toast-text"></span></div>
 
 <script>
 // ---------- config ----------
 const LEVEL = {BA:1, BCOM:1, BBA:2, BCA:2, MA:3, MCOM:3, MBA:4, MCA:4};
 const COURSE_NAME = {BA:'BA', BCOM:'BCom', BBA:'BBA', BCA:'BCA', MA:'MA', MCOM:'MCom', MBA:'MBA', MCA:'MCA'};
-const LEVEL_NAME = {1:'UG general', 2:'UG specialised', 3:'PG general', 4:'PG professional'};
+const LEVEL_NAME = {1:'Foundation', 2:'Intermediate', 3:'Advanced', 4:'Professional'};
 const SECTIONS = [
-  {key:'LR', name:'Logical Reasoning'},
-  {key:'AR', name:'Abstract Reasoning'},
-  {key:'QA', name:'Quantitative Aptitude'},
-  {key:'VA', name:'Verbal Ability & RC'},
+  {key:'LR', name:'Logical Reasoning', c:'var(--lr)'},
+  {key:'AR', name:'Abstract Reasoning', c:'var(--ar)'},
+  {key:'QA', name:'Quantitative Aptitude', c:'var(--qa)'},
+  {key:'VA', name:'Verbal Ability & RC', c:'var(--va)'},
 ];
 const MODES = {
   demo: {counts:{LR:8, AR:2, QA:5, VA:5}, minutes:15, cutoff:17, total:20},
@@ -235,6 +447,7 @@ const store = {
   del(k){ try{ localStorage.removeItem(k); }catch(e){} },
 };
 const monthKey = d => `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+const fmtDate = (d, opt) => d.toLocaleDateString('en-IN', opt || {day:'numeric', month:'long', year:'numeric'});
 
 // ---------- random ----------
 function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
@@ -367,131 +580,163 @@ function buildSection(key, count, level){
   return out;
 }
 
-// ---------- state ----------
+
+// ---------- app ----------
 const $ = id => document.getElementById(id);
-const show = id => ['s-register','s-instr','s-exam','s-result'].forEach(s => $(s).classList.toggle('hidden', s !== id));
-let S = null; // exam state
+const show = id => { ['s-register','s-instr','s-exam','s-result'].forEach(s => $(s).classList.toggle('hidden', s !== id)); window.scrollTo(0,0); };
+const esc = t => String(t).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+let S = null, stream = null;
 
 // prefill from the landing page form
 (() => { const p = new URLSearchParams(location.search);
-  [['name','name'],['email','email'],['phone','phone'],['course','course']].forEach(([k,id]) => { if(p.get(k)) $(id).value = p.get(k); });
+  ['name','email','phone','course'].forEach(k => { if(p.get(k)) $(k).value = p.get(k); });
 })();
-$('reset-demo').onclick = () => { store.del('ocu_attempts'); $('reg-err').textContent = 'Demo attempts cleared.'; };
+
+$('reset-demo').onclick = () => { store.del('ocu_attempts'); $('reg-err').textContent = 'Saved attempts cleared in this browser.'; };
 
 $('to-instr').onclick = () => {
   const name = $('name').value.trim(), email = $('email').value.trim().toLowerCase(), phone = $('phone').value.trim(), course = $('course').value;
   const err = m => $('reg-err').textContent = m;
   if(name.length < 2) return err('Enter your full name.');
-  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return err('Enter a valid email.');
-  if(!/^[6-9]\d{9}$/.test(phone)) return err('Enter a valid 10-digit Indian mobile number.');
   if(!course) return err('Choose the program you are applying for.');
+  if(!/^[6-9]\d{9}$/.test(phone)) return err('Enter a valid 10-digit mobile number.');
+  if(!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return err('Enter a valid email.');
   if(!$('newapp').checked) return err('The scholarship is open to new applicants only.');
   if(!$('consent').checked) return err('Please accept the terms and proctoring consent.');
   const attempts = store.get('ocu_attempts') || {}; const now = monthKey(new Date());
   if(attempts[email] === now || attempts[phone] === now){
-    const n = new Date(); const next = new Date(n.getFullYear(), n.getMonth()+1, 1);
-    return err(`You've already used this month's attempt. Your next attempt opens on ${next.toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'})}.`);
+    const n = new Date(); return err(`You've used this month's attempt. Your next attempt opens on ${fmtDate(new Date(n.getFullYear(), n.getMonth()+1, 1))}.`);
   }
   err('');
   const mode = document.querySelector('input[name=mode]:checked').value;
   S = {name, email, phone, course, level: LEVEL[course], mode, cfg: MODES[mode]};
-  $('instr-sub').textContent = `${COURSE_NAME[course]} paper · ${LEVEL_NAME[S.level]} difficulty · ${S.cfg.total} questions · ${S.cfg.minutes} minutes · qualifying score ${S.cfg.cutoff}/${S.cfg.total}`;
-  $('pattern-body').innerHTML = SECTIONS.map(s => `<tr><td>${s.name}</td><td class="n">${S.cfg.counts[s.key]}</td><td class="n">${S.cfg.counts[s.key]}</td></tr>`).join('')
-    + `<tr><th>Total</th><th class="n">${S.cfg.total}</th><th class="n">${S.cfg.total}</th></tr>`;
+  $('instr-chips').innerHTML = [`${COURSE_NAME[course]} paper`, `${LEVEL_NAME[S.level]} level`, `${S.cfg.total} questions`, `${S.cfg.minutes} minutes`, `Cutoff ${S.cfg.cutoff}/${S.cfg.total}`].map(x => `<span>${x}</span>`).join('');
+  $('pattern-body').innerHTML = SECTIONS.map(s => `<tr><td><span class="dot" style="--c:${s.c}"></span>${s.name}</td><td class="n">${S.cfg.counts[s.key]}</td><td class="n">${S.cfg.counts[s.key]}</td></tr>`).join('')
+    + `<tr><th style="color:var(--ink)">Total</th><th class="n" style="color:var(--ink)">${S.cfg.total}</th><th class="n" style="color:var(--ink)">${S.cfg.total}</th></tr>`;
   show('s-instr');
 };
 $('back-reg').onclick = () => show('s-register');
 
-$('start').onclick = async () => {
-  $('start').disabled = true;
-  S.flags = []; S.warnings = 0;
-  // full screen must be requested while the click gesture is still fresh
-  try{ await document.documentElement.requestFullscreen(); }catch(e){}
+// ---------- system check ----------
+function sys(id, ok, label){ const r = $(id); r.classList.remove('ok','bad'); r.classList.add(ok ? 'ok' : 'bad'); r.querySelector('.stt').textContent = label; }
+$('run-check').onclick = async () => {
+  $('run-check').disabled = true; $('run-check').textContent = 'Checking…';
+  sys('sys-net', navigator.onLine, navigator.onLine ? 'Connected' : 'Offline');
+  sys('sys-fs', !!document.documentElement.requestFullscreen, document.documentElement.requestFullscreen ? 'Supported' : 'Not supported');
   try{
-    const stream = await navigator.mediaDevices.getUserMedia({video:true, audio:true});
-    $('cam').srcObject = stream; S.stream = stream;
+    if(stream) stream.getTracks().forEach(t => t.stop());
+    stream = await navigator.mediaDevices.getUserMedia({video:true, audio:true});
+    const v = document.createElement('video'); v.autoplay = v.muted = v.playsInline = true; v.srcObject = stream;
+    $('preview').innerHTML = ''; $('preview').appendChild(v);
+    sys('sys-cam', true, 'Working'); sys('sys-mic', stream.getAudioTracks().length > 0, stream.getAudioTracks().length ? 'Working' : 'Not found');
   }catch(e){
-    S.flags.push('Camera or microphone not available');
-    $('cam').classList.add('hidden');
+    stream = null; sys('sys-cam', false, 'Blocked'); sys('sys-mic', false, 'Blocked');
+    $('preview-txt') && ($('preview-txt').textContent = 'Allow camera access in your browser, then run the check again.');
   }
-  // record the attempt as soon as the test starts
-  const attempts = store.get('ocu_attempts') || {}; const m = monthKey(new Date());
-  attempts[S.email] = m; attempts[S.phone] = m; store.set('ocu_attempts', attempts);
-
-  rnd = mulberry32(Date.now() ^ S.phone.split('').reduce((a,c) => a*31 + c.charCodeAt(0) | 0, 7));
-  S.sections = SECTIONS.map(s => ({...s, qs: buildSection(s.key, S.cfg.counts[s.key], S.level).map(q => ({...q, resp:null, status:'nv'}))}));
-  S.sec = 0; S.idx = 0; S.active = true; S.started = Date.now(); S.end = Date.now() + S.cfg.minutes*60000;
-  $('exam-title').textContent = `YDST 2026 · ${COURSE_NAME[S.course]}`;
-  show('s-exam'); renderTabs(); renderQ(); tick(); S.timer = setInterval(tick, 1000);
-  $('start').disabled = false;
+  S.checked = true; $('run-check').disabled = false; $('run-check').textContent = 'Run check again';
 };
 
-// ---------- exam rendering ----------
-function cur(){ return S.sections[S.sec].qs[S.idx]; }
-function renderTabs(){
-  $('tabs').innerHTML = S.sections.map((s,i) => {
-    const done = s.qs.filter(q => q.resp !== null).length;
-    return `<button class="tab ${i===S.sec?'on':''}" data-i="${i}">${s.name} · ${done}/${s.qs.length}</button>`;
-  }).join('');
-  $('tabs').querySelectorAll('.tab').forEach(b => b.onclick = () => go(+b.dataset.i, 0));
-}
-function renderQ(){
-  const q = cur(); if(q.status === 'nv') q.status = 'v';
-  const sec = S.sections[S.sec];
+$('start').onclick = async () => {
+  const err = m => $('instr-err').textContent = m;
+  if(!S.checked) return err('Run the system check first.');
+  if(!$('declare').checked) return err('Please confirm you have read the instructions.');
+  err('');
+  try{ await document.documentElement.requestFullscreen(); }catch(e){}
+  S.flags = []; S.warnings = 0;
+  if(stream){ $('cam').srcObject = stream; } else { S.flags.push('Camera or microphone not available'); $('cam').classList.add('hidden'); $('cam-off').classList.remove('hidden'); }
+  const attempts = store.get('ocu_attempts') || {}; const m = monthKey(new Date());
+  attempts[S.email] = m; attempts[S.phone] = m; store.set('ocu_attempts', attempts);
+  rnd = mulberry32(Date.now() ^ S.phone.split('').reduce((a,c) => a*31 + c.charCodeAt(0) | 0, 7));
+  S.sections = SECTIONS.map(s => ({...s, qs: buildSection(s.key, S.cfg.counts[s.key], S.level).map(q => ({...q, resp:null, seen:false, mark:false}))}));
+  S.sec = 0; S.idx = 0; S.active = true; S.started = Date.now(); S.end = Date.now() + S.cfg.minutes*60000; S.fz = 1;
+  $('x-title').textContent = `YDST 2026 · ${COURSE_NAME[S.course]}`;
+  $('x-sub').textContent = `${LEVEL_NAME[S.level]} level · ${S.cfg.total} questions`;
+  $('c-name').textContent = S.name; $('c-prog').textContent = `${COURSE_NAME[S.course]} · +91 ${S.phone}`;
+  document.body.classList.add('in-exam'); show('s-exam'); render(); tick(); S.timer = setInterval(tick, 1000);
+};
+
+// ---------- exam ----------
+const st = q => q.mark && q.resp !== null ? 'ra' : q.mark ? 'r' : q.resp !== null ? 'a' : q.seen ? 'v' : 'nv';
+const cur = () => S.sections[S.sec].qs[S.idx];
+function tally(qs){ const t = {a:0, v:0, r:0, ra:0, nv:0}; qs.forEach(q => t[st(q)]++); return t; }
+function render(){
+  const sec = S.sections[S.sec], q = cur(); q.seen = true;
+  $('tabs').innerHTML = S.sections.map((s,i) => { const t = tally(s.qs);
+    return `<button class="xtab ${i===S.sec?'on':''}" style="--c:${s.c}" data-i="${i}"><i></i>${s.name}<small>${t.a+t.ra}/${s.qs.length}</small></button>`; }).join('');
+  $('tabs').querySelectorAll('.xtab').forEach(b => b.onclick = () => go(+b.dataset.i, 0));
+  $('qcard').style.setProperty('--c', sec.c); $('qcard').style.setProperty('--fz', S.fz);
   $('qnum').textContent = `Question ${S.idx+1} of ${sec.qs.length}`;
   $('qsec').textContent = sec.name;
-  $('qtext').textContent = q.q; $('qtext').classList.toggle('big', false);
-  $('opts').innerHTML = q.options.map((o,i) => `<label class="opt ${q.big?'big':''}"><input type="radio" name="opt" value="${i}" ${q.resp===i?'checked':''}><span class="ov">${String.fromCharCode(65+i)}. ${o.replace(/</g,'&lt;')}</span></label>`).join('');
-  $('opts').querySelectorAll('input').forEach(r => r.onchange = () => { q.resp = +r.value; if(q.status !== 'r') q.status = 'a'; renderPalette(); renderTabs(); });
-  renderPalette();
+  $('qtext').textContent = q.q;
+  $('opts').innerHTML = q.options.map((o,i) => `<label class="opt ${q.big?'big':''}"><input type="radio" name="opt" value="${i}" ${q.resp===i?'checked':''}><span class="l">${'ABCD'[i]}</span><span class="t">${esc(o)}</span></label>`).join('');
+  $('opts').querySelectorAll('input').forEach(r => r.onchange = () => { q.resp = +r.value; side(); });
+  $('prev').disabled = S.sec === 0 && S.idx === 0;
+  side();
 }
-function renderPalette(){
-  const sec = S.sections[S.sec];
-  $('pal-title').textContent = sec.name;
-  $('palette').innerHTML = sec.qs.map((q,i) => {
-    const c = q.status === 'r' ? 'r' : q.resp !== null ? 'a' : q.status === 'v' ? 'v' : '';
-    return `<button class="pb ${c} ${i===S.idx?'cur':''}" data-i="${i}">${i+1}</button>`;
-  }).join('');
-  $('palette').querySelectorAll('.pb').forEach(b => b.onclick = () => go(S.sec, +b.dataset.i));
+function side(){
+  const sec = S.sections[S.sec], all = S.sections.flatMap(s => s.qs), t = tally(all);
+  $('counts').innerHTML = [['a','Answered',t.a],['v','Not answered',t.v],['r','Marked',t.r],['ra','Answered & marked',t.ra],['nv','Not visited',t.nv]]
+    .map(([k,l,n]) => `<div class="cnt"><span class="sw ${k}">${n}</span><div>${l}</div></div>`).join('');
+  $('pal-title').textContent = `${sec.name} · ${sec.qs.length} questions`;
+  $('palette').innerHTML = sec.qs.map((q,i) => `<button class="pb ${st(q)} ${i===S.idx?'cur':''}" data-i="${i}" aria-label="Question ${i+1}">${i+1}</button>`).join('');
+  $('palette').querySelectorAll('.pb').forEach(b => b.onclick = () => { go(S.sec, +b.dataset.i); closePal(); });
+  const tabT = tally(sec.qs); const tab = $('tabs').children[S.sec]; if(tab) tab.querySelector('small').textContent = `${tabT.a+tabT.ra}/${sec.qs.length}`;
 }
-function go(sec, idx){ S.sec = sec; S.idx = idx; renderTabs(); renderQ(); }
+function go(sec, idx){ S.sec = sec; S.idx = idx; render(); $('qcard').parentElement.scrollTop = 0; }
 function advance(){
   const sec = S.sections[S.sec];
   if(S.idx < sec.qs.length-1) go(S.sec, S.idx+1);
   else if(S.sec < S.sections.length-1) go(S.sec+1, 0);
-  else renderQ();
+  else render();
 }
-$('next').onclick = () => { const q = cur(); if(q.status === 'r' && q.resp !== null) q.status = 'a'; advance(); };
-$('mark').onclick = () => { cur().status = 'r'; advance(); };
-$('clear').onclick = () => { const q = cur(); q.resp = null; q.status = 'v'; renderQ(); renderTabs(); };
+function back(){ if(S.idx > 0) go(S.sec, S.idx-1); else if(S.sec > 0) go(S.sec-1, S.sections[S.sec-1].qs.length-1); }
+$('next').onclick = () => { cur().mark = false; advance(); };
+$('mark').onclick = () => { cur().mark = true; advance(); };
+$('prev').onclick = back;
+$('clear').onclick = () => { const q = cur(); q.resp = null; render(); };
+$('fz-up').onclick = () => { S.fz = Math.min(1.3, S.fz + .1); render(); };
+$('fz-down').onclick = () => { S.fz = Math.max(.9, S.fz - .1); render(); };
+const openPal = () => { $('rpane').classList.add('open'); $('scrim').classList.remove('hidden'); $('pal-close').style.display = ''; };
+const closePal = () => { $('rpane').classList.remove('open'); $('scrim').classList.add('hidden'); $('pal-close').style.display = 'none'; };
+$('pal-open').onclick = openPal; $('pal-close').onclick = closePal; $('scrim').onclick = closePal;
+document.addEventListener('keydown', e => {
+  if(!S || !S.active || !$('modal').classList.contains('hidden') || /input|select|textarea/i.test(e.target.tagName) && e.target.type !== 'radio') return;
+  const k = e.key.toUpperCase();
+  if('ABCD'.includes(k) && k.length === 1){ const i = 'ABCD'.indexOf(k); if(i < cur().options.length){ cur().resp = i; render(); } }
+  else if(e.key === 'ArrowRight'){ e.preventDefault(); $('next').click(); }
+  else if(e.key === 'ArrowLeft'){ e.preventDefault(); back(); }
+});
 
 function tick(){
-  const left = Math.max(0, S.end - Date.now());
-  const m = Math.floor(left/60000), s = Math.floor(left/1000)%60;
-  $('timer').textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  const total = S.cfg.minutes*60000, left = Math.max(0, S.end - Date.now());
+  const h = Math.floor(left/3600000), m = Math.floor(left/60000)%60, s = Math.floor(left/1000)%60;
+  $('t-val').textContent = (h ? h + ':' : '') + `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+  $('t-ring').setAttribute('stroke-dashoffset', (94.25 * (1 - left/total)).toFixed(2));
   $('timer').classList.toggle('low', left < 5*60000);
-  if(left <= 0) finish('Time is up');
+  if(left <= 0) finish('Time up');
 }
 
 // ---------- proctoring (prototype) ----------
 let toastT;
-function toast(msg){ $('toast').textContent = msg; $('toast').classList.remove('hidden'); clearTimeout(toastT); toastT = setTimeout(() => $('toast').classList.add('hidden'), 4000); }
+function toast(msg){ $('toast-text').textContent = msg; $('toast').classList.remove('hidden'); clearTimeout(toastT); toastT = setTimeout(() => $('toast').classList.add('hidden'), 4500); }
 function warn(reason){
   if(!S || !S.active) return;
   S.warnings++; S.flags.push(reason);
-  const dot = $('proc-dot');
-  dot.className = 'dot ' + (S.warnings >= MAX_WARNINGS ? 'bad' : 'warn');
+  $('proc').className = 'proc ' + (S.warnings >= MAX_WARNINGS ? 'bad' : 'warn');
   $('proc-text').textContent = `${S.warnings} warning${S.warnings>1?'s':''}`;
-  toast(`Proctoring warning ${S.warnings}: ${reason}`);
+  toast(`Warning ${S.warnings} of ${MAX_WARNINGS}: ${reason}. Stay on the test screen.`);
 }
-document.addEventListener('visibilitychange', () => { if(document.hidden) warn('Switched tab or window'); });
-document.addEventListener('fullscreenchange', () => { if(!document.fullscreenElement && S && S.active) warn('Left full screen'); });
-['copy','paste','cut','contextmenu'].forEach(ev => document.addEventListener(ev, e => { if(S && S.active){ e.preventDefault(); if(ev !== 'contextmenu') warn('Copy/paste attempted'); } }));
+document.addEventListener('visibilitychange', () => { if(document.hidden) warn('You switched tabs or windows'); });
+document.addEventListener('fullscreenchange', () => { if(!document.fullscreenElement && S && S.active) warn('You left full screen'); });
+['copy','paste','cut','contextmenu'].forEach(ev => document.addEventListener(ev, e => { if(S && S.active){ e.preventDefault(); if(ev !== 'contextmenu') warn('Copy and paste are disabled'); } }));
 
 // ---------- submit ----------
 $('submit').onclick = () => {
-  const all = S.sections.flatMap(s => s.qs); const ans = all.filter(q => q.resp !== null).length;
-  $('modal-text').textContent = `You have answered ${ans} of ${all.length} questions. You can't change answers after submitting.`;
+  closePal();
+  const all = S.sections.flatMap(s => s.qs), t = tally(all);
+  $('modal-text').textContent = `You've answered ${t.a + t.ra} of ${all.length} questions. You can't change answers after you submit.`;
+  $('modal-body').innerHTML = S.sections.map(s => { const x = tally(s.qs);
+    return `<tr><td><span class="dot" style="--c:${s.c}"></span>${s.name}</td><td class="n">${x.a+x.ra}</td><td class="n">${x.v}</td><td class="n">${x.r}</td><td class="n">${x.nv}</td></tr>`; }).join('');
   $('modal').classList.remove('hidden');
 };
 $('modal-no').onclick = () => $('modal').classList.add('hidden');
@@ -499,36 +744,42 @@ $('modal-yes').onclick = () => { $('modal').classList.add('hidden'); finish('Sub
 
 function finish(how){
   if(!S.active) return;
-  S.active = false; clearInterval(S.timer);
-  if(S.stream) S.stream.getTracks().forEach(t => t.stop());
+  S.active = false; clearInterval(S.timer); closePal();
+  if(stream) stream.getTracks().forEach(t => t.stop());
   if(document.fullscreenElement) document.exitFullscreen().catch(() => {});
-  const rows = S.sections.map(s => ({name:s.name, total:s.qs.length, correct:s.qs.filter(q => q.resp === q.answer).length, attempted:s.qs.filter(q => q.resp !== null).length}));
-  const score = rows.reduce((a,r) => a + r.correct, 0);
-  const qualified = score >= S.cfg.cutoff;
+  const rows = S.sections.map(s => ({name:s.name, c:s.c, total:s.qs.length, correct:s.qs.filter(q => q.resp === q.answer).length, attempted:s.qs.filter(q => q.resp !== null).length}));
+  const score = rows.reduce((a,r) => a + r.correct, 0), T = S.cfg.total, cut = S.cfg.cutoff;
+  const qualified = score >= cut;
   const flagged = S.warnings >= MAX_WARNINGS || S.flags.includes('Camera or microphone not available');
-  const mins = Math.round((Date.now() - S.started)/60000);
-  let verdict;
+  const mins = Math.max(1, Math.round((Date.now() - S.started)/60000));
+  const C = 2*Math.PI*70, frac = score/T, cutFrac = cut/T;
+  const ringColor = qualified && !flagged ? '#16a34a' : qualified ? '#f59e0b' : '#ee2c3c';
+  const ring = `<div class="ring"><svg viewBox="0 0 160 160"><circle cx="80" cy="80" r="70" fill="none" stroke="#eef0f4" stroke-width="12"/><circle cx="80" cy="80" r="70" fill="none" stroke="${ringColor}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${C}" stroke-dashoffset="${C*(1-frac)}"/><line x1="${80+58*Math.cos(2*Math.PI*cutFrac)}" y1="${80+58*Math.sin(2*Math.PI*cutFrac)}" x2="${80+82*Math.cos(2*Math.PI*cutFrac)}" y2="${80+82*Math.sin(2*Math.PI*cutFrac)}" stroke="#101112" stroke-width="3"/></svg><div class="v"><div><b>${score}</b><span>out of ${T}</span><span style="display:block;margin-top:4px;font-size:11.5px;font-weight:700;color:var(--ink)">Cutoff ${cut}</span></div></div></div>`;
+  const nextMonth = fmtDate(new Date(new Date().getFullYear(), new Date().getMonth()+1, 1), {day:'numeric', month:'long'});
+  let verdict, steps;
   if(qualified && !flagged){
     const code = `YDST-${S.course}-${Math.random().toString(36).slice(2,8).toUpperCase()}`;
-    const exp = new Date(Date.now() + 30*864e5).toLocaleDateString('en-IN',{day:'numeric',month:'long',year:'numeric'});
-    verdict = `<div class="verdict good"><b>Congratulations, you've qualified!</b><br>Your scholarship code for 50% off ${COURSE_NAME[S.course]} first-semester tuition:<br><span class="code">${code}</span><br>Valid until <b>${exp}</b>, for the ${COURSE_NAME[S.course]} program only. An admissions counsellor will call you within 24 hours.</div>`;
+    const exp = fmtDate(new Date(Date.now() + 30*864e5));
+    verdict = `<div class="verdict good"><div class="ic"><svg class="i"><use href="#i-award"/></svg></div><div><h3>You've won the YDST scholarship</h3><p>50% off your ${COURSE_NAME[S.course]} first-semester tuition at Chandigarh University Online. Valid until <b>${exp}</b>.</p>
+      <div class="codebox"><span class="code" id="code">${code}</span><button class="btn" id="copy"><svg class="i"><use href="#i-copy"/></svg>Copy code</button></div></div></div>`;
+    steps = ['A YourDegree counsellor will call you within 24 hours.', `Apply to the ${COURSE_NAME[S.course]} program and enter your code at fee payment.`, `Enroll before ${exp} to keep the 50% waiver.`];
   } else if(qualified){
-    verdict = `<div class="verdict warn"><b>You've scored above the cutoff. Your result is under proctoring review.</b><br>${S.warnings} proctoring warning(s) were logged. We'll confirm your scholarship within 48 hours.</div>`;
+    verdict = `<div class="verdict warn"><div class="ic"><svg class="i"><use href="#i-shield"/></svg></div><div><h3>Above the cutoff, under proctoring review</h3><p>${S.warnings ? S.warnings + ' proctoring warning(s) were logged' : 'Your camera was not available'}. We'll confirm your scholarship within 48 hours by SMS and email.</p></div></div>`;
+    steps = ['Our team reviews your proctoring recording.', 'You hear back within 48 hours.', 'If cleared, your scholarship code is sent to you.'];
   } else {
-    const n = new Date(); const next = new Date(n.getFullYear(), n.getMonth()+1, 1).toLocaleDateString('en-IN',{day:'numeric',month:'long'});
-    verdict = `<div class="verdict bad"><b>You needed ${S.cfg.cutoff} to qualify. You were ${S.cfg.cutoff - score} marks short.</b><br>Your next attempt opens on <b>${next}</b> with a new set of questions. You can still apply to ${COURSE_NAME[S.course]} now. A counsellor will reach out to help.</div>`;
+    verdict = `<div class="verdict miss"><div class="ic"><svg class="i"><use href="#i-repeat"/></svg></div><div><h3>${cut - score} marks short of the scholarship</h3><p>You needed ${cut}. Your next attempt opens on <b>${nextMonth}</b> with a brand-new paper.</p></div></div>`;
+    const weak = rows.slice().sort((a,b) => a.correct/a.total - b.correct/b.total)[0];
+    steps = [`Focus on ${weak.name}, your lowest-scoring section.`, `Retake from ${nextMonth}. Every attempt gets a new paper.`, `You can still apply to ${COURSE_NAME[S.course]} now. A counsellor will call to help.`];
   }
   $('result').innerHTML = `
-    <p class="muted" style="margin:0">${how} · ${S.name} · ${COURSE_NAME[S.course]} paper · ${mins} min</p>
-    <div class="score">${score}<span class="muted" style="font-size:22px"> / ${S.cfg.total}</span></div>
+    <div class="res-hero">${ring}<div><h2>${S.name}, here's your result</h2><p>${COURSE_NAME[S.course]} paper · ${LEVEL_NAME[S.level]} level · ${how} after ${mins} min</p></div></div>
     ${verdict}
-    <h2>Section scores</h2>
-    <table><thead><tr><th>Section</th><th class="n">Attempted</th><th class="n">Correct</th><th style="width:30%"></th></tr></thead><tbody>
-    ${rows.map(r => `<tr><td>${r.name}</td><td class="n">${r.attempted}/${r.total}</td><td class="n">${r.correct}</td><td><div class="bar"><i style="width:${Math.round(100*r.correct/r.total)}%"></i></div></td></tr>`).join('')}
-    </tbody></table>
-    <p class="muted" style="font-size:13px">Proctoring: ${S.flags.length ? S.flags.join(' · ') : 'no issues logged'}.</p>
-    <div class="actions"><a class="btn" href="index.html">Back to scholarship page</a></div>`;
-  show('s-result');
+    <div class="secres">${rows.map(r => `<div class="sr" style="--c:${r.c}"><b>${r.name}</b><div class="num">${r.correct}<small> / ${r.total}</small></div><div class="bar"><i style="width:${Math.round(100*r.correct/r.total)}%"></i></div><span>${r.attempted} attempted · ${Math.round(100*r.correct/r.total)}% correct</span></div>`).join('')}</div>
+    <div class="next"><h3 style="margin:0 0 8px;color:var(--ink)">What happens next</h3><ol>${steps.map(x => `<li>${x}</li>`).join('')}</ol>
+      <div class="res-acts"><a class="btn red" href="tel:+918097918025"><svg class="i"><use href="#i-phone"/></svg>Talk to a counsellor</a><a class="btn" href="index.html">Back to YDST page</a></div>
+      <div class="prox">Proctoring: ${S.flags.length ? esc(S.flags.join(' · ')) : 'no issues logged'}.</div></div>`;
+  const cp = $('copy'); if(cp) cp.onclick = () => { try{ navigator.clipboard.writeText($('code').textContent); cp.lastChild.textContent = 'Copied'; }catch(e){} };
+  document.body.classList.remove('in-exam'); show('s-result');
 }
 </script>
 </body>
